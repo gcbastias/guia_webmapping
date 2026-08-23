@@ -1,0 +1,73 @@
+site_name: Guía de Estudio — Desarrollo de Aplicaciones Webmapping
+site_description: Resumen estructurado, ejercicios prácticos y glosario del curso de Desarrollo de Aplicaciones Webmapping (MappingGIS)
+site_author: Gabriela
+repo_name: guia_webmapping
+# Reemplaza esta URL por la de tu propio repositorio antes de publicar
+repo_url: https://github.com/gcbastias/guia_webmapping
+
+theme:
+  name: material
+  language: es
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: orange
+      toggle:
+        icon: material/weather-night
+        name: Cambiar a modo oscuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: orange
+      toggle:
+        icon: material/weather-sunny
+        name: Cambiar a modo claro
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.instant
+    - navigation.tracking
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - toc.follow
+
+nav:
+  - Inicio: index.md
+  - Plan de estudio: plan-de-estudio.md
+  - Unidades:
+      - "Unidad 1. Introducción al webmapping": unidades/unidad-1.md
+      - "Unidad 2. PostGIS": unidades/unidad-2.md
+      - "Unidad 3. GeoServer y estándares OGC": unidades/unidad-3.md
+      - "Unidad 4. GeoWebCache": unidades/unidad-4.md
+      - "Unidad 5. HTML/CSS/JS y Leaflet": unidades/unidad-5.md
+      - "Unidad 6. OpenLayers": unidades/unidad-6.md
+      - "Unidad 7. MapStore": unidades/unidad-7.md
+      - "Unidad 8. Recomendaciones y proyecto final": unidades/unidad-8.md
+  - Glosario: glosario.md
+
+markdown_extensions:
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - tables
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+
+plugins:
+  - search:
+      lang: es
+
+extra:
+  social: []
