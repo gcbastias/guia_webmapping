@@ -1,0 +1,16 @@
+/* Jerarquía visual en el panel de navegación izquierdo:
+   las secciones (Unidades, Ejercicios) se distinguen de las páginas que contienen. */
+.md-sidebar--primary .md-nav__item--section > .md-nav__link {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--md-primary-fg-color);
+  opacity: 0.9;
+}
+
+.md-sidebar--primary .md-nav__item--section > nav.md-nav > .md-nav__list {
+  margin-left: 0.4rem;
+  padding-left: 0.9rem;
+  border-left: 1px solid var(--md-default-fg-color--lightest);
+}

@@ -5,6 +5,9 @@ repo_name: guia_webmapping
 # Reemplaza esta URL por la de tu propio repositorio antes de publicar
 repo_url: https://github.com/gcbastias/guia_webmapping
 
+extra_css:
+  - stylesheets/extra.css
+
 theme:
   name: material
   language: es
