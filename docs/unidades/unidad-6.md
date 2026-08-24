@@ -1,5 +1,16 @@
 ﻿# Unidad 6. OpenLayers
 
+**Antes de leer, mira el esquema.** Así se compone un mapa OpenLayers a partir de sus piezas:
+
+```mermaid
+flowchart TD
+    MAP["ol.Map"]
+    MAP --> V["ol.View<br>centro · zoom · proyección"]
+    MAP --> L["ol.layer.*<br>Tile · Image · Vector · VectorTile · Heatmap"]
+    MAP --> CT["ol.control.*<br>Zoom · ScaleLine · FullScreen…"]
+    MAP --> IX["ol.interaction.*<br>Select · Draw · Modify…"]
+```
+
 ### Resumen estructurado
 
 **1. ¿Qué es OpenLayers?**

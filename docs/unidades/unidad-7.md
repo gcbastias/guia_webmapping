@@ -1,5 +1,19 @@
 ﻿# Unidad 7. MapStore: Personalizar mapas, trabajar con datos y creación de paneles de control
 
+**Antes de leer, mira el esquema.** Las librerías sobre las que se apoya MapStore y sus módulos principales:
+
+```mermaid
+flowchart TD
+    REACT["React<br>interfaz de usuario"] --> MS["MapStore"]
+    OL["OpenLayers<br>escritorio"] --> MS
+    LEAF["Leaflet<br>móvil"] --> MS
+    CES["Cesium<br>3D"] --> MS
+    MS --> MM["MapManager"]
+    MS --> MC["MapComposer"]
+    MS --> MV["MapViewer"]
+    MS --> EX["Explorador de metadatos (CSW)"]
+```
+
 ### Resumen estructurado
 
 **1. Contenido de la unidad**

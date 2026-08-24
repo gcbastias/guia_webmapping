@@ -1,5 +1,17 @@
 ﻿# Unidad 5. Personalización de aplicaciones web de mapas
 
+**Antes de leer, mira el esquema.** Los tres lenguajes que forman cualquier aplicación web, incluida un visor de mapas:
+
+```mermaid
+flowchart TD
+    H["HTML<br>estructura"]
+    Css["CSS<br>estilo"]
+    JS["JavaScript<br>funcionalidad"]
+    H --> APP["Aplicación web<br>(ej. visor Leaflet)"]
+    Css --> APP
+    JS --> APP
+```
+
 ### Resumen estructurado
 
 **1. Contenido de la unidad**
@@ -88,6 +100,18 @@ La utilización de librerías JavaScript para crear mapas proporciona una serie 
 ---
 
 ## Unidad 5-1. Leaflet
+
+**Antes de leer, mira el esquema.** Así se compone un mapa Leaflet a partir de sus piezas:
+
+```mermaid
+flowchart TD
+    MAP["L.map()"]
+    MAP --> TL["L.tileLayer()<br>capa base"]
+    MAP --> MK["L.marker() / L.circle()<br>L.polygon() / L.polyline()"]
+    MAP --> GJ["L.geoJson()<br>capas vectoriales"]
+    MAP --> CTL["L.control.*<br>escala, capas, título…"]
+    MAP --> EV["map.on('click', …)<br>eventos"]
+```
 
 ### Resumen estructurado
 

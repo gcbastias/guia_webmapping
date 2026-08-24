@@ -11,6 +11,13 @@
 
 Flujo de despliegue en 4 etapas: **1. Datos → 2. Hardware → 3. Crear entornos → 4. Pruebas, producción y publicación**.
 
+```mermaid
+flowchart LR
+    D1["1. Datos<br>BBDD espacial, mismo SRS"] --> D2["2. Hardware<br>servidor interno o externo"]
+    D2 --> D3["3. Crear entornos<br>desarrollo · pruebas · producción"]
+    D3 --> D4["4. Pruebas, producción<br>y publicación"]
+```
+
 - **1. Datos:**
   - Definir qué información mostrará cada capa.
   - Incluirlos en una base de datos espacial.

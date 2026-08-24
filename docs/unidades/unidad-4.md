@@ -1,5 +1,18 @@
 ﻿# Unidad 4. El caché de mapas — GeoWebCache
 
+**Antes de leer, mira el esquema.** Esta es la decisión que toma GeoWebCache ante cada petición de tesela:
+
+```mermaid
+flowchart TD
+    A["Cliente pide un mapa"] --> B{"¿La tesela ya<br>está en caché?"}
+    B -->|"Sí"| C["GeoWebCache la envía<br>directamente"]
+    B -->|"No"| D["Se pide al servidor WMS<br>(ej. GeoServer)"]
+    D --> E["GeoWebCache guarda<br>la tesela en caché"]
+    E --> F["Se envía la tesela<br>al cliente"]
+    C --> G["Cliente recibe el mapa"]
+    F --> G
+```
+
 ### Resumen estructurado
 
 **1. ¿Qué es GeoWebCache?**

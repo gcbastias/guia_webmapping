@@ -1,5 +1,18 @@
 # Unidad 1. Introducción a la cartografía web y publicación de mapas online
 
+**Antes de leer, mira el esquema.** Esta es la arquitectura open source que vas a encontrar una y otra vez, unidad tras unidad:
+
+```mermaid
+flowchart LR
+    UI["Interfaz de usuario<br>Leaflet · OpenLayers · QGIS"]
+    SRV["Servidor web<br>GeoServer + GeoWebCache<br>(estándares OGC)"]
+    DB[("Base de datos<br>PostgreSQL / PostGIS")]
+    UI -->|"1. petición"| SRV
+    SRV -->|"2. consulta"| DB
+    DB -->|"3. datos"| SRV
+    SRV -->|"4. mapa / respuesta"| UI
+```
+
 ### Resumen estructurado
 
 **1. Breve historia del webmapping**

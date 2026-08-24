@@ -1,5 +1,15 @@
 # Unidad 2. Bases de datos espaciales. PostGIS 3 (Introducción)
 
+**Antes de leer, mira el esquema.** Esta unidad profundiza en el nivel inferior de la arquitectura que viste en la Unidad 1 — la base de datos:
+
+```mermaid
+flowchart LR
+    UI["Interfaz de usuario<br>Leaflet · OpenLayers · QGIS"]
+    SRV["Servidor web<br>GeoServer + GeoWebCache"]
+    DB[("Base de datos<br>PostGIS — el foco de esta unidad")]
+    UI --> SRV --> DB
+```
+
 ### Resumen estructurado
 
 **1. La base de datos PostgreSQL**
@@ -37,6 +47,22 @@ Una base de datos espacial es una base de datos optimizada para almacenar y cons
 *Jerarquía de tipos (superclase → subclases):*
 - Superclase: `ST_Geometry`
 - Subclases: `ST_Point`, `ST_Curve` (→ `ST_LineString`), `ST_Surface` (→ `ST_Polygon`), `ST_GeometryCollection` (→ `ST_MultiPoint`, `ST_MultiCurve` → `ST_MultiLineString`, `ST_MultiSurface` → `ST_MultiPolygon`)
+
+```mermaid
+flowchart TD
+    G["ST_Geometry"]
+    G --> P["ST_Point"]
+    G --> C["ST_Curve"]
+    C --> LS["ST_LineString"]
+    G --> S["ST_Surface"]
+    S --> PG["ST_Polygon"]
+    G --> GC["ST_GeometryCollection"]
+    GC --> MP["ST_MultiPoint"]
+    GC --> MC["ST_MultiCurve"]
+    MC --> MLS["ST_MultiLineString"]
+    GC --> MS["ST_MultiSurface"]
+    MS --> MPG["ST_MultiPolygon"]
+```
 
 **5. Índices espaciales**
 - El orden natural de números, cadenas y fechas es fácil de determinar (menor/mayor/igual). Pero los polígonos pueden solaparse, estar contenidos unos en otros y estar dispuestos en 2+ dimensiones, por lo que un B-tree no puede indexarlos eficientemente.

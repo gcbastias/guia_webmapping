@@ -1,5 +1,15 @@
 ﻿# Unidad 3-1. Servidores de datos espaciales. GeoServer
 
+**Antes de leer, mira el esquema.** Así responde un servidor de mapas a cualquier petición, sea WMS, WFS o WCS:
+
+```mermaid
+flowchart LR
+    C1["Cliente<br>navegador / QGIS / app"] -->|"petición HTTP"| I["Interpretar<br>la petición"]
+    I --> Q["Consultar datos<br>geoespaciales"]
+    Q --> R["Preparar<br>la respuesta"]
+    R -->|"imagen de mapa u otro dato geográfico"| C1
+```
+
 ### Resumen estructurado
 
 **1. Servidores web — conceptos básicos**
@@ -108,6 +118,16 @@ GeoServer implementa los protocolos *open web* del **OGC**; es servidor de alto 
 ## Unidad 3. Estándares abiertos e interoperables del OGC
 
 ### Resumen estructurado
+
+**Antes de leer, mira el esquema.** La clave de esta unidad es distinguir qué devuelve cada servicio OGC ante la misma petición de un cliente:
+
+```mermaid
+flowchart LR
+    C["Cliente"] -->|"GetMap"| WMS["WMS<br>→ imagen del mapa<br>(PNG/JPEG)"]
+    C -->|"GetFeature"| WFS["WFS<br>→ datos vectoriales<br>(GML)"]
+    C -->|"GetCoverage"| WCS["WCS<br>→ datos ráster<br>con su semántica"]
+    C -->|"Execute"| WPS["WPS<br>→ resultado de un<br>proceso geoespacial"]
+```
 
 #### 1. Introducción a las IDE (Infraestructura de Datos Espaciales)
 - **¿Qué es una IDE?** Sistema informático integrado por un conjunto de recursos que permite el acceso y la gestión de conjuntos de datos y servicios geográficos disponibles en Internet.
