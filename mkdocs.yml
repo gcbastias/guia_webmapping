@@ -43,28 +43,28 @@ nav:
   - Plan de estudio: plan-de-estudio.md
   - Unidades:
       - "Unidad 1. Introducción al webmapping":
-          - Contenido: unidades/unidad-1.md
+          - unidades/unidad-1.md
           - Ejercicios: ejercicios/ejercicio-1.md
       - "Unidad 2. PostGIS":
-          - Contenido: unidades/unidad-2.md
+          - unidades/unidad-2.md
           - Ejercicios: ejercicios/ejercicio-2.md
       - "Unidad 3. GeoServer y estándares OGC":
-          - Contenido: unidades/unidad-3.md
+          - unidades/unidad-3.md
           - Ejercicios: ejercicios/ejercicio-3.md
       - "Unidad 4. GeoWebCache":
-          - Contenido: unidades/unidad-4.md
+          - unidades/unidad-4.md
           - Ejercicios: ejercicios/ejercicio-4.md
       - "Unidad 5. HTML/CSS/JS y Leaflet":
-          - Contenido: unidades/unidad-5.md
+          - unidades/unidad-5.md
           - Ejercicios: ejercicios/ejercicio-5.md
       - "Unidad 6. OpenLayers":
-          - Contenido: unidades/unidad-6.md
+          - unidades/unidad-6.md
           - Ejercicios: ejercicios/ejercicio-6.md
       - "Unidad 7. MapStore":
-          - Contenido: unidades/unidad-7.md
+          - unidades/unidad-7.md
           - Ejercicios: ejercicios/ejercicio-7.md
       - "Unidad 8. Recomendaciones y proyecto final":
-          - Contenido: unidades/unidad-8.md
+          - unidades/unidad-8.md
           - Ejercicios: ejercicios/ejercicio-8.md
   - Glosario: glosario.md
 
@@ -95,3 +95,6 @@ plugins:
 
 extra:
   social: []
+
+hooks:
+  - hooks/navigation.py
