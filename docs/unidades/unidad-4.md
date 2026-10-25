@@ -73,11 +73,68 @@ La práctica incluye teselas vectoriales y Google Earth. Se conserva íntegramen
 
 <p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
+
+## 6. Preparar el entorno de caché {#preparacion-practica}
+
+Continúa con GeoServer de la Unidad 3, el espacio `earth`, el grupo `worldgroup` y la capa `cities`. Comprueba primero su previsualización WMS: una caché no corrige una capa mal publicada. Necesitas también el HTML comparativo de la carpeta `web` del paquete del curso y Google Earth para la última actividad.
+
+1. Inicia GeoServer y abre `http://localhost:8080/geoserver/gwc`.
+2. Entra en la lista de capas y demostraciones automáticas. Localiza `earth:worldgroup` y `earth:cities`.
+3. Si no aparecen, revisa en GeoServer sus opciones de cacheado y guarda. Conserva el CRS y los nombres que utilice la práctica.
+
+## 7. Configurar, generar y comprobar teselas {#procedimientos-guiados}
+
+### Generar la caché de worldgroup
+
+1. Abre la configuración de teselas de `worldgroup`. Comprueba la cuadrícula y el formato que pide el contexto original; la cuadrícula define CRS, niveles y extensión.
+2. Abre **Seed/Truncate** desde las herramientas de GeoWebCache. Selecciona el grupo, la cuadrícula, el formato, la extensión y el rango de niveles indicados en la práctica.
+3. Elige **Seed** y ejecuta la tarea. Revisa su estado hasta que termine. No amplíes los niveles por intuición: cada nivel adicional puede multiplicar el trabajo y el espacio.
+4. Consulta el directorio de caché configurado en esa instalación; puede estar dentro del directorio de datos o en otra ubicación definida por el administrador. Mide su tamaño en disco con el explorador de Windows para la actividad 1.
+
+**Comprueba:** la tarea ha terminado sin errores y la demostración del grupo carga teselas. No hay un tamaño universal correcto: registra lo que ocupa tu generación concreta.
+
+### Comparar bajo demanda y pregeneración
+
+1. Localiza el archivo con los dos visores de la carpeta `web` del paquete original. Colócalo en el `www` del directorio de datos de GeoServer, conservando sus dependencias.
+2. Revisa sus URL para que apunten a tu puerto y al grupo `earth:worldgroup`. Ábrelo mediante `http://localhost:8080/geoserver/www/` seguido del nombre real del archivo, no con doble clic como `file://`.
+3. Compara los mapas en la misma extensión y zoom. Desplázate hacia áreas aún no visitadas y repite la navegación.
+4. Distingue la caché del servidor de la del navegador. Si registras tiempos, observa las peticiones en **Red / Network** de las herramientas de desarrollo; una sensación de rapidez aislada no identifica por sí sola el origen de la mejora.
+
+### Habilitar teselas vectoriales
+
+1. Revisa si la instalación ofrece el módulo de teselas vectoriales. Si falta, instala la extensión compatible con tu versión y reinicia GeoServer.
+2. En el cacheado de `cities`, habilita el formato `application/vnd.mapbox-vector-tile` y la cuadrícula indicada por la práctica.
+3. Vuelve a la lista de demostraciones y abre la salida PBF de `earth:cities` en `EPSG:4326`, como pide la actividad.
+4. Comprueba los puntos en un cliente compatible. PBF es contenido binario: abrir su descarga como texto no debe producir una imagen PNG.
+
+### Revisar Google Earth y mantener la caché
+
+Utiliza la salida KML o el enlace de red generado por GeoServer que describe el contexto original. Guarda o abre ese enlace en Google Earth y comprueba que apunta a tu servidor activo. Un enlace con `localhost` funciona en el equipo del servidor, no en otro ordenador sin cambiar la dirección y el acceso.
+
+| Situación | Acción |
+|---|---|
+| Cambiaste el estilo pero ves lo anterior | Revisa el área y niveles afectados y regenera la caché correspondiente |
+| Quieres completar teselas ausentes | Usa `seed` con el alcance previsto |
+| Necesitas regenerar teselas existentes | Revisa `reseed` y su alcance |
+| Necesitas retirar una caché | Revisa `truncate`; elimina las teselas seleccionadas |
+| No aparece PBF | Comprueba extensión y formatos habilitados |
+| Google Earth no carga | Revisa URL, servidor iniciado y compatibilidad del enlace |
+
+Antes de ejecutar una tarea comprueba capa, extensión, niveles y formato: `truncate` no equivale a generar. Conserva el servidor y sus capas para las unidades siguientes.
+
+<p class="content-source"><strong>Fuentes:</strong> práctica original de MappingGIS · <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache integrado</a>.</p>
+
 ## Material y referencias
 
 
 Ampliación técnica: [GeoWebCache integrado en GeoServer](https://docs.geoserver.org/stable/en/user/geowebcache/index.html). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 
+
+## Antes de resolver las actividades {#antes-de-ejercicios}
+
+Completa la preparación y los procedimientos anteriores. Después avanza por los ejercicios en su orden original: varias actividades utilizan archivos, capas o cambios de las anteriores. Cada actividad conserva su enunciado y sus paneles de instrucciones y capturas dentro de la página; el PDF queda como respaldo.
+
+Si una consigna menciona «el código anterior» o «la imagen anterior», abre su panel de contexto antes de trabajar. Comprueba qué archivo o recurso debes modificar, guarda el cambio y verifica el resultado antes de tomar la captura. No ejecutes de nuevo una creación o importación si ya existe el objeto correspondiente.
 
 ## Ejercicio Unidad 4 {#ejercicios-originales-del-curso}
 

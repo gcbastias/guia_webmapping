@@ -140,6 +140,22 @@ El software libre permite inspeccionar y adaptar el código, pero sigue requirie
 **Recuerda:** formato no es servicio; biblioteca no es servidor; publicar no es lo mismo que analizar.
 
 
+
+## 7. Preparación para las unidades prácticas {#preparacion-practica}
+
+Esta unidad establece los conceptos; la práctica original comienza en la Unidad 2. No necesitas instalar un servidor para comprender el recorrido dato → servicio → visor.
+
+Al pasar a la Unidad 2, conserva el paquete de archivos del curso y prepara PostgreSQL/PostGIS, pgAdmin y QGIS siguiendo sus instrucciones. La base `world` y sus capas se reutilizan en las unidades siguientes.
+
+| Componente del curso | Se prepara en | Se reutiliza en |
+|---|---|---|
+| Base `world`, países, ciudades y ríos | Unidad 2 | GeoServer y visores |
+| Espacio `earth` y servicios de mapas | Unidad 3 | Caché, Leaflet, OpenLayers y MapStore |
+| Grupo `worldgroup` y teselas | Unidades 3–4 | Visores web |
+| HTML, CSS y JavaScript | Unidad 5 | OpenLayers y proyecto final |
+
+Un archivo GeoJSON no es una conexión WFS; un WMS dibuja datos que permanecen en el servidor. Esa distinción permite reconocer qué estás configurando en cada paso posterior.
+
 ## Fuentes y alcance
 
 - Base temática: material de la Unidad 1 de MappingGIS, consultado localmente. Las explicaciones, la ilustración de esta propuesta son originales; no se reproducen diapositivas.

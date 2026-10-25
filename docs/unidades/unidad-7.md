@@ -69,11 +69,77 @@ Los **9 ejercicios originales** conservan sus tareas de usuarios, mapas, anotaci
 
 <p class="content-source"><strong>Referencia:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
+
+## 6. Preparar MapStore y sus datos {#preparacion-practica}
+
+Necesitas GeoServer iniciado con `earth:cities`, `earth:countries` y `earth:rivers`, acceso administrativo a tu instalación de MapStore y el archivo `SalamancaMonumental.geojson` de la práctica. Conserva también el visor Leaflet de la Unidad 5 para la actividad de exportación.
+
+1. Para reproducir el entorno del curso utiliza su distribución de MapStore. Extrae el paquete binario completo y revisa su requisito de Java antes de iniciarlo; no mezcles componentes de versiones distintas.
+2. En el paquete de la clase ejecuta `mapstore2-startup.bat` y mantén activa su consola. Comprueba que el puerto no entra en conflicto con GeoServer.
+3. Abre `http://localhost:8082/mapstore`, dirección utilizada en el curso. Si cambiaste la configuración, abre el puerto que muestre tu instalación.
+4. Inicia sesión con las credenciales de tu instalación. No utilices un servidor de demostración ajeno para crear usuarios o modificar recursos.
+5. Localiza y extrae el archivo GeoJSON desde los materiales originales. El sitio no contiene el paquete completo de datos; un nombre de archivo en el enunciado no sustituye ese archivo.
+
+**Comprueba:** puedes abrir la página de recursos y aparecen las herramientas correspondientes a tu rol. Si no ves administración, revisa la sesión y los permisos antes de continuar.
+
+## 7. Trabajar con servicios y recursos {#procedimientos-guiados}
+
+### Usuarios y guardado
+
+1. Abre el administrador de usuarios y crea el usuario que pide la actividad. Configura sus grupos y rol según el contexto original; guarda.
+2. Comprueba que el usuario aparece en el listado. Para verificar su acceso utiliza otra sesión o cierra la actual antes de iniciar con ese usuario.
+3. Distingue permisos de un usuario de permisos de un recurso: un mapa guardado puede seguir restringido a su propietario o grupo.
+
+### Crear un mapa con las capas originales
+
+1. Desde **Añadir recurso / Nuevo mapa**, abre un mapa y entra en **Catálogo**.
+2. Añade una conexión WMS a `http://localhost:8080/geoserver/earth/wms`, adaptando el puerto. Selecciona `cities`, `countries` y `rivers` y añádelas.
+3. Ordena las capas para que rellenos, líneas y puntos resulten visibles. Comprueba su extensión y leyenda.
+4. Guarda el mapa con un nombre reconocible. Vuelve a la página de recursos y ábrelo para comprobar que guardaste los cambios.
+5. Si falla la conexión, prueba primero el servicio en QGIS. MapStore y GeoServer pueden estar en orígenes distintos; revisa la respuesta y CORS o el proxy de tu instalación.
+
+### Anotaciones e importación
+
+1. Abre la herramienta de anotaciones del mapa, elige el tipo geométrico requerido y dibuja sobre el lienzo. Ajusta su estilo y guarda la anotación y el mapa.
+2. Para importar Salamanca, utiliza la herramienta de importación y selecciona el GeoJSON original. Comprueba su extensión y propiedades antes de definir la simbología.
+3. Exportar una anotación genera un archivo que debes conservar. Para utilizarlo en Leaflet revisa su contenido y formato y cárgalo con el procedimiento de GeoJSON de la Unidad 5; no cambies únicamente su extensión.
+
+### Filtros y widgets
+
+1. Para consultar atributos, utiliza una capa WFS compatible con las herramientas de filtrado de tu versión. Añade el servicio de `earth` mediante su URL WFS si el catálogo no lo ofrece aún.
+2. Abre la tabla de atributos de `cities` y localiza el campo `sov0name`, utilizado por la práctica.
+3. Configura la condición que pide la actividad y aplica el filtro. Revisa en la tabla que aparecen registros acordes con el valor escogido.
+4. Crea el widget desde esa capa y configura el campo, la agregación y su relación con el filtro según el contexto original. Comprueba que el gráfico resume la selección esperada.
+5. Guarda el recurso, vuelve a abrirlo y revisa que conserva la configuración. Cambiar solo la visibilidad de una capa no equivale a filtrar sus entidades.
+
+### Contextos y paneles
+
+1. Con una sesión autorizada abre el administrador de contextos y crea el contexto indicado. Configura mapa inicial y complementos; guarda y comprueba la herramienta publicada en el visor del contexto.
+2. Crea un recurso de tipo panel. Añade mapa, leyenda y texto o título, conforme al ejercicio original.
+3. Ajusta la disposición y guarda. Comprueba el panel en una ventana de menor tamaño para verificar que sus elementos siguen siendo legibles.
+
+| Problema | Qué revisar |
+|---|---|
+| No abre MapStore | Consola de arranque, Java y puerto configurado |
+| Falta una herramienta | Rol de sesión y complementos habilitados en el contexto |
+| No carga el servicio | GeoServer activo, URL, capa publicada y acceso entre orígenes |
+| El filtro no devuelve datos | Campo real, valor exacto y disponibilidad de entidades WFS |
+| El widget no corresponde al mapa | Capa de origen, agregación y relación con el filtro |
+| Otro usuario no ve el recurso | Guardado, propietario, grupo y permisos de lectura |
+
+<p class="content-source"><strong>Fuentes:</strong> práctica original de MapStore de MappingGIS · <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario, recursos y herramientas</a>.</p>
+
 ## Material y referencias
 
 
 Ampliación técnica: [Guía oficial de MapStore](https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 
+
+## Antes de resolver las actividades {#antes-de-ejercicios}
+
+Completa la preparación y los procedimientos anteriores. Después avanza por los ejercicios en su orden original: varias actividades utilizan archivos, capas o cambios de las anteriores. Cada actividad conserva su enunciado y sus paneles de instrucciones y capturas dentro de la página; el PDF queda como respaldo.
+
+Si una consigna menciona «el código anterior» o «la imagen anterior», abre su panel de contexto antes de trabajar. Comprueba qué archivo o recurso debes modificar, guarda el cambio y verifica el resultado antes de tomar la captura. No ejecutes de nuevo una creación o importación si ya existe el objeto correspondiente.
 
 ## Ejercicio Unidad 7 {#ejercicios-originales-del-curso}
 

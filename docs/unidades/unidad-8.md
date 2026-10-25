@@ -68,11 +68,61 @@ Estos criterios pertenecen al curso: no son una evaluación nueva del piloto. El
 
 <p class="content-source"><strong>Referencia:</strong> <a href="../../materiales/Ejercicio_8_Proyecto%20final.pdf" target="_blank" rel="nofollow noopener noreferrer">MappingGIS · Ejercicio_8_Proyecto final.pdf</a>.</p>
 
+
+## 6. Preparar los materiales del proyecto {#preparacion-practica}
+
+Necesitas las capas originales de **Límite demarcación**, **segmentos de río** y **embalses**, además de PostgreSQL/PostGIS, QGIS, GeoServer con la extensión CSS y el entorno de Leaflet. Recupera los archivos desde los materiales del curso; las capas `countries` y `cities` de unidades anteriores no sustituyen los datos del Duero.
+
+1. Extrae cada shapefile junto con sus archivos auxiliares. Abre las capas en QGIS y revisa su geometría, atributos y sistema de referencia.
+2. La consigna original utiliza `EPSG:4326` y solicita `LATIN1` en la importación de los shapefiles. Comprueba su CRS de origen antes de transformar o asignar una etiqueta.
+3. Conserva una carpeta de trabajo y otra para las capturas de la entrega. Identifica el campo de nombre de río que necesitarás para las etiquetas.
+4. Comprueba que PostgreSQL y GeoServer están iniciados y que puedes abrir el visor Leaflet mediante HTTP.
+
+## 7. Integrar el recorrido de las unidades anteriores {#procedimientos-guiados}
+
+### De las capas a los servicios
+
+1. Sigue la importación PostGIS de la [Unidad 2](unidad-2.md#importar-datos) para las capas de demarcación y ríos. Utiliza nombres de tabla que puedas reconocer después y comprueba sus registros y SRID.
+2. En GeoServer conecta un almacén PostGIS a la base donde las importaste. Publica ambas tablas con el procedimiento de la [Unidad 3](unidad-3.md#procedimientos-guiados), calculando límites y comprobando su previsualización.
+3. Crea los estilos CSS que pide la consigna: borde de demarcación sin relleno y etiquetas de río siguiendo las líneas. Usa el nombre real del atributo de etiqueta.
+4. Valida los estilos y asígnalos a sus capas. Comprueba más de una escala antes de conectar el visor: una etiqueta oculta por escala no implica que la capa no exista.
+
+### Del servicio al visor Leaflet
+
+1. Reutiliza la estructura de la [Unidad 5](unidad-5.md#procedimientos-guiados): biblioteca cargada, contenedor con altura y mapa inicializado una sola vez.
+2. Añade demarcación y ríos como WMS con sus nombres publicados. Revisa transparencia y orden para que el fondo y los embalses sean visibles.
+3. Exporta embalses a GeoJSON desde QGIS y guárdalo dentro de la carpeta web del proyecto. Cárgalo por HTTP y configura su estilo azul; adapta la opción de estilo al tipo geométrico de esa capa.
+4. Añade el fondo elegido y los controles que enumera el enunciado. Comprueba que la escala muestra únicamente la unidad métrica y que el control de capas referencia las instancias que realmente añadiste al mapa.
+5. Añade un título visible del visor; el texto de la pestaña HTML por sí solo puede no cumplir ese propósito.
+
+### Comprobar antes de entregar
+
+| Revisión | Evidencia que puedes observar |
+|---|---|
+| PostGIS | Tablas cargadas y SRID correcto |
+| GeoServer | Capas publicadas y estilos aplicados |
+| WMS | Demarcación y ríos visibles desde el visor |
+| GeoJSON | Embalses visibles con la simbología solicitada |
+| Controles | Escala métrica, capas y título funcionales |
+| Integración | Sin errores de carga; orden y etiquetas legibles |
+
+Guarda las capturas de los pasos principales en la plantilla original. La rúbrica y el enunciado completos permanecen al final: este recorrido no añade requisitos ni entrega una solución terminada.
+
+**Para compartir el resultado:** una URL con `localhost` solo sirve en el equipo que ejecuta los servicios. Un alojamiento estático puede servir los archivos del visor, pero los servicios PostGIS/GeoServer necesitan su propio entorno accesible. El despliegue requiere revisar direcciones, HTTPS y acceso; no basta con subir el HTML que apunta al servidor local.
+
+<p class="content-source"><strong>Fuentes:</strong> enunciado original del proyecto final de MappingGIS y procedimientos de las unidades 2, 3 y 5. Referencias técnicas: <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · publicación de datos</a> · <a href="https://leafletjs.com/reference.html">Leaflet · capas y controles</a>.</p>
+
 ## Material y referencias
 
 
 Ampliación técnica: [Publicación con GeoServer](https://docs.geoserver.org/stable/en/user/data/webadmin/index.html) · [Visor Leaflet](https://leafletjs.com/examples/quick-start/). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 
+
+## Antes de resolver las actividades {#antes-de-ejercicios}
+
+Completa la preparación y los procedimientos anteriores. Después avanza por los ejercicios en su orden original: varias actividades utilizan archivos, capas o cambios de las anteriores. Cada actividad conserva su enunciado y sus paneles de instrucciones y capturas dentro de la página; el PDF queda como respaldo.
+
+Si una consigna menciona «el código anterior» o «la imagen anterior», abre su panel de contexto antes de trabajar. Comprueba qué archivo o recurso debes modificar, guarda el cambio y verifica el resultado antes de tomar la captura. No ejecutes de nuevo una creación o importación si ya existe el objeto correspondiente.
 
 ## Ejercicio Unidad 8 {#ejercicios-originales-del-curso}
 

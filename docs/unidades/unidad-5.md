@@ -77,11 +77,77 @@ Si el mapa falla, revisa tamaño del contenedor, bibliotecas, ejecución, variab
 
 <p class="content-source"><strong>Referencia:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a> · <a href="https://datatracker.ietf.org/doc/html/rfc7946">IETF · RFC 7946 (GeoJSON)</a>.</p>
 
+
+## 6. Preparar los archivos y abrir el entorno {#preparacion-practica}
+
+Necesitas un editor de texto, navegador con herramientas de desarrollo, GeoServer iniciado y las capas `earth:countries`, `earth:cities` y `earth:worldgroup`. Conserva los archivos HTML, JavaScript, estilos e imágenes del paquete del curso. Primero se realizan las actividades de HTML/CSS/JavaScript y después las de Leaflet.
+
+1. Localiza el directorio de datos de tu GeoServer y su carpeta `www`. Crea allí una carpeta para tus archivos de esta unidad.
+2. Guarda los archivos con su extensión real `.html`, `.css` o `.js`; comprueba que el editor no añade `.txt`.
+3. Abre cada HTML desde `http://localhost:8080/geoserver/www/` y su ruta relativa. Esto permite trabajar con los servicios locales desde el mismo origen.
+4. Abre las herramientas de desarrollo del navegador. Mantén visibles **Consola** para errores y **Red / Network** para archivos o servicios que no cargan.
+
+## 7. Del HTML al visor del curso {#procedimientos-guiados}
+
+### Editar estructura, estilo y comportamiento
+
+1. Abre el archivo indicado en el contexto de la primera actividad. Identifica `head`, `title` y `body`: el título de la pestaña y el contenido visible son elementos distintos.
+2. Para las actividades de listas y párrafos, conserva una estructura HTML válida y aplica CSS al selector que corresponda. Un selector `#nombre` apunta a un `id`; `.nombre` apunta a una clase.
+3. Guarda, recarga y comprueba el cambio en **Elementos / Inspector**. Si no aparece, confirma que editas el mismo archivo que muestra la URL.
+4. Carga el JavaScript después de los elementos que necesita, o espera a que el documento esté listo. Lee primero el primer error de consola: puede impedir la ejecución del resto.
+
+### Preparar Leaflet
+
+En el HTML de Leaflet del curso comprueba estos cuatro elementos antes de añadir capas: CSS de Leaflet en `head`, JavaScript de la misma versión, contenedor del mapa con un identificador y altura CSS, e inicialización después de que exista ese contenedor. Conserva la versión y los nombres de archivos usados en la práctica para evitar mezclar ejemplos.
+
+```javascript
+// Dentro del script del visor, con Leaflet ya cargado y un div id="map".
+const map = L.map('map').setView([40.4, -3.7], 5);
+const paises = L.tileLayer.wms('/geoserver/earth/wms', {
+  layers: 'earth:countries',
+  format: 'image/png',
+  transparent: true
+}).addTo(map);
+```
+
+Este fragmento explica cómo conectar la capa original; no es un HTML completo ni sustituye los archivos de partida de la práctica. Si el visor ya declara `map`, reutilízalo en lugar de crear otro. `setView` recibe **latitud, longitud**; las coordenadas internas de GeoJSON se escriben **longitud, latitud**.
+
+### Incorporar WMS y GeoJSON
+
+1. Prueba primero `earth:countries` en la previsualización de GeoServer. Después usa el mismo nombre en `layers` de la capa WMS de Leaflet.
+2. Repite el patrón para las otras capas que pida la actividad y revisa su orden, transparencia y nombre con prefijo.
+3. Para GeoJSON guarda el archivo exportado desde QGIS dentro del directorio web del proyecto. Conserva EPSG:4326 para el intercambio GeoJSON y revisa sus atributos.
+4. Carga el archivo por HTTP y entrégalo a `L.geoJSON`. Configura `style` para líneas y polígonos; para puntos utiliza las opciones adecuadas, como `pointToLayer`, cuando corresponda.
+5. Añade las capas al control de capas usando las mismas variables de las capas creadas. Crear un control no agrega automáticamente una capa al mapa.
+
+### Eventos, ventanas y depuración
+
+Asocia eventos con `.on(...)` al mapa o a la capa indicada. Para leer atributos de un GeoJSON utiliza `feature.properties` y revisa primero sus nombres reales. Un popup no genera información que no exista en esos atributos. Para radios distingue `L.circle`, que utiliza metros, de `L.circleMarker`, cuyo radio se expresa en píxeles.
+
+| Qué falla | Qué revisar |
+|---|---|
+| `L is not defined` | Archivo Leaflet cargado antes de tu script y respuesta HTTP correcta |
+| Mapa invisible | Altura del contenedor, identificador y momento de inicialización |
+| Map container is already initialized | Inicialización duplicada del mismo contenedor |
+| WMS en blanco | Nombre publicado, extensión, servidor activo y respuesta en Red |
+| Error al leer GeoJSON | Ruta, respuesta HTTP y JSON válido; no abrir como `file://` |
+| CORS o contenido mixto | Origen de página y servicios; HTTP/HTTPS y configuración del servidor |
+
+Las credenciales de ejemplo de Mapbox fueron omitidas de la copia publicada. Si una actividad depende de ese proveedor, necesitas tu propio acceso y configuración: la guía no proporciona un token. Mantén esa dependencia explícita al documentar tu práctica.
+
+<p class="content-source"><strong>Fuentes:</strong> prácticas originales de HTML/CSS/JavaScript y Leaflet de MappingGIS · <a href="https://leafletjs.com/examples/quick-start/">Leaflet · preparación del mapa</a> · <a href="https://leafletjs.com/reference.html">referencia de clases y opciones</a>.</p>
+
 ## Material y referencias
 
 
 Ampliación técnica: [Guía de Leaflet](https://leafletjs.com/examples/quick-start/) · [HTML en MDN](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 
+
+## Antes de resolver las actividades {#antes-de-ejercicios}
+
+Completa la preparación y los procedimientos anteriores. Después avanza por los ejercicios en su orden original: varias actividades utilizan archivos, capas o cambios de las anteriores. Cada actividad conserva su enunciado y sus paneles de instrucciones y capturas dentro de la página; el PDF queda como respaldo.
+
+Si una consigna menciona «el código anterior» o «la imagen anterior», abre su panel de contexto antes de trabajar. Comprueba qué archivo o recurso debes modificar, guarda el cambio y verifica el resultado antes de tomar la captura. No ejecutes de nuevo una creación o importación si ya existe el objeto correspondiente.
 
 ## Ejercicio Unidad 5 {#ejercicios-originales-del-curso}
 

@@ -264,6 +264,8 @@ Los esquemas muestran relaciones entre superficies; las definiciones también co
 Las consultas de la clase utilizan ejemplos de Nueva York para explicar relaciones y construcción. La práctica entregable de esta unidad utiliza las capas y ciudades indicadas en su PDF; se conserva esa distinción.
 
 
+## Preparación de la práctica {#preparacion-practica}
+
 ### Preparar los archivos
 
 1. Descarga `webmapping.zip` desde tu cuenta del curso y extrae **todo** su contenido en una ruta sin espacios, por ejemplo `C:\webmapping`.

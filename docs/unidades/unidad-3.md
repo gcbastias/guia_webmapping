@@ -81,11 +81,82 @@ Una vista general necesita menos detalle que una cercana. Las comparaciones de v
 
 <p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
 
+
+## 6. Preparar archivos y herramientas {#preparacion-practica}
+
+Necesitas QGIS, la base `world` de la Unidad 2 y las capas `countries`, `cities` y `rivers`. Conserva también `relieve.tiff`, `hotdogs.gpkg` y la carpeta `Estilos` del paquete original. El sitio no distribuye ese paquete: utiliza la copia del curso que tienes localmente o recupérala de su plataforma.
+
+### Instalar y abrir GeoServer
+
+1. Selecciona la distribución de GeoServer correspondiente al entorno del curso y comprueba su versión de Java requerida. La práctica de 2025 utiliza una distribución binaria con JDK 17; no supongas que esa combinación sirve para cualquier versión posterior.
+2. Instala el JDK requerido y ejecuta `java -version` en una terminal nueva. Configura `JAVA_HOME` apuntando a la carpeta del JDK si el lanzador lo necesita.
+3. Extrae la distribución completa. Identifica su directorio de datos, que contiene configuración, estilos y la carpeta `www`; no lo confundas con la carpeta de binarios.
+4. Inicia GeoServer con el lanzador de la distribución. Conserva abierta su consola mientras trabajas y revisa que no haya errores de Java o de puerto ocupado.
+5. Abre `http://localhost:8080/geoserver` e inicia sesión con las credenciales de tu instalación. Si elegiste otro puerto, úsalo también en QGIS y en los visores posteriores.
+6. Las extensiones **WPS** y **CSS** del curso deben coincidir exactamente con la versión de GeoServer. Detén el servidor, instala cada extensión según su distribución y reinícialo. Comprueba que aparecen sus herramientas antes de continuar.
+
+**Comprueba:** la página de administración responde y el servidor sigue ejecutándose. `localhost` siempre se refiere al equipo que abre la dirección: estos enlaces no publican tu servidor en Internet.
+
+## 7. Publicar las capas originales {#procedimientos-guiados}
+
+### Conectar earth con world
+
+1. En **Workspaces / Espacios de trabajo → Add new**, crea `earth`. Introduce un URI de identificación del espacio, por ejemplo `https://example.org/earth`; este identificador no es la dirección del servicio.
+2. En **Stores / Almacenes → Add new → PostGIS**, selecciona `earth` y asigna un nombre al almacén.
+3. Configura host `localhost`, puerto PostgreSQL de tu instalación, base `world`, esquema `public` y tus credenciales. Guarda.
+4. En la lista de recursos disponibles pulsa **Publish** para `countries`. Comprueba el CRS nativo y declara `EPSG:4326` solamente si corresponde a los datos. Calcula los límites nativos y los límites geográficos con los botones de la interfaz.
+5. Guarda y abre **Layer Preview**. Localiza `earth:countries` y abre su vista OpenLayers. Repite la publicación con `cities` y `rivers`.
+
+**Debes ver:** países, ciudades y ríos publicados por separado. Si el almacén no conecta, revisa PostgreSQL; si conecta pero no aparece una tabla, revisa el esquema, sus permisos y su columna geométrica.
+
+### Añadir relieve y organizar el mapa
+
+1. Crea un almacén **GeoTIFF** en `earth`, selecciona el archivo local `relieve.tiff` y publica su cobertura. El servidor debe poder leer la ruta elegida.
+2. Para el GeoPackage del curso, utiliza el almacén compatible con GeoPackage de tu instalación y publica la capa requerida por la actividad. Si ese tipo no aparece, revisa sus componentes y compatibilidad antes de seguir.
+3. Crea un **Layer Group** llamado `worldgroup`. Añade las capas y ordénalas de fondo a primer plano: un relieve o un relleno opaco situado encima puede ocultar líneas y puntos.
+4. Calcula sus límites, guarda y comprueba el grupo en **Layer Preview**.
+
+### Conectar QGIS a los servicios
+
+1. En QGIS abre **Administrador de fuentes de datos → WMS/WMTS → Nuevo**. Usa `http://localhost:8080/geoserver/earth/wms` como URL y un nombre reconocible.
+2. Conecta, selecciona la capa publicada y añádela. Comprueba el nombre con prefijo `earth:` y acércate a su extensión.
+3. Para WFS repite desde la pestaña **WFS / OGC API - Features** usando `http://localhost:8080/geoserver/earth/wfs`. Abre la tabla de atributos de la capa añadida.
+4. Para WCS utiliza la pestaña correspondiente y `http://localhost:8080/geoserver/earth/wcs`; elige la cobertura de relieve publicada.
+5. Las primeras actividades usan servicios externos del PDF. Copia su dirección del contexto de cada actividad y consulta las capas que el servidor anuncie; si el servicio no responde, distingue esa indisponibilidad de un fallo de tu instalación local.
+
+**Comprueba:** WMS muestra una representación; WFS permite examinar entidades y atributos; WCS entrega la cobertura. Las respuestas disponibles dependen de qué servicios y capas habilitaste.
+
+### Estilos, etiquetas y consultas
+
+1. En **Styles**, crea o carga el estilo del material original. Selecciona su formato real: un archivo CSS de GeoServer no es una hoja de estilos HTML.
+2. Valida el estilo antes de guardarlo. En **Layers → capa → Publishing**, asígnalo como estilo predeterminado o disponible.
+3. Comprueba el atributo de la etiqueta en la tabla original. Revisa la capa en varias escalas para verificar tamaño, visibilidad y solapamiento.
+4. Para inspeccionar un servicio abre su `GetCapabilities`. Por ejemplo, añade `?service=WMS&request=GetCapabilities` a la URL WMS anterior. La respuesta debe ser un documento de capacidades, no la página de inicio de administración.
+5. Usa la petición generada por la previsualización como punto de partida para interpretar capa, CRS, BBOX y formato. Revisa la respuesta del servidor si aparece un mensaje de excepción.
+
+| Problema | Comprobación |
+|---|---|
+| No abre GeoServer | Consola de arranque, Java y puerto |
+| No hay capas para publicar | Conexión a `world`, esquema `public` y permisos |
+| Vista en blanco | Límites, CRS, estilo y orden del grupo |
+| Falta CSS o WPS | Extensión de la misma versión y reinicio |
+| QGIS no conecta | URL del servicio, servidor iniciado y respuesta de capacidades |
+
+Conserva `earth`, las capas y `worldgroup`: son la entrada de la Unidad 4 y de los visores posteriores.
+
+<p class="content-source"><strong>Fuentes:</strong> secuencia y nombres de la práctica original de MappingGIS. Ampliación: <a href="https://docs.geoserver.org/stable/en/user/installation/index.html">GeoServer · instalación y compatibilidad</a> y <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">administración de datos</a>.</p>
+
 ## Material y referencias
 
 
 Ampliación técnica: [Organización de datos en GeoServer](https://docs.geoserver.org/stable/en/user/data/webadmin/index.html) · [OGC WMS](https://www.ogc.org/standards/wms/) · [OGC WFS](https://www.ogc.org/standards/wfs/). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 
+
+## Antes de resolver las actividades {#antes-de-ejercicios}
+
+Completa la preparación y los procedimientos anteriores. Después avanza por los ejercicios en su orden original: varias actividades utilizan archivos, capas o cambios de las anteriores. Cada actividad conserva su enunciado y sus paneles de instrucciones y capturas dentro de la página; el PDF queda como respaldo.
+
+Si una consigna menciona «el código anterior» o «la imagen anterior», abre su panel de contexto antes de trabajar. Comprueba qué archivo o recurso debes modificar, guarda el cambio y verifica el resultado antes de tomar la captura. No ejecutes de nuevo una creación o importación si ya existe el objeto correspondiente.
 
 ## Ejercicio Unidad 3 {#ejercicios-originales-del-curso}
 

@@ -70,11 +70,91 @@ Las **16 prácticas originales** construyen progresivamente el visor.
 
 <p class="content-source"><strong>Referencia:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
 
+
+## 6. Preparar los dos entornos del curso {#preparacion-practica}
+
+Necesitas editor, navegador, GeoServer y las capas de las unidades anteriores. La práctica comienza con `ol_basicMap.html` mediante la biblioteca global y continúa con un proyecto de módulos. No mezcles `ol.*` de la primera vía con clases importadas de la segunda en un mismo archivo sin adaptar el código.
+
+### Abrir el ejemplo con biblioteca global
+
+1. Crea `ol_basicMap.html` dentro de `www` del directorio de datos de GeoServer.
+2. Conserva los enlaces a `ol.js` y `ol.css` de la misma versión que utiliza el contexto original: OpenLayers `10.6.1`.
+3. Añade el contenedor del mapa con su altura CSS e inicializa el mapa después de ese elemento, siguiendo el código original conservado en el panel de la actividad 1.
+4. Abre `http://localhost:8080/geoserver/www/ol_basicMap.html` y revisa la consola. El resultado de esa etapa corresponde al primer ejercicio.
+
+### Abrir el proyecto modular
+
+1. Instala Node.js compatible con la herramienta del proyecto y Git si el generador lo solicita. En una terminal nueva comprueba `node --version` y `npm --version`.
+2. Si conservas el proyecto del curso con `package.json` y su archivo de bloqueo, abre una terminal en esa carpeta. Ejecuta `npm ci` si hay un archivo de bloqueo compatible; en caso contrario, utiliza `npm install`.
+3. Si partes de cero, el generador oficial ofrece esta secuencia. No la ejecutes dentro de un proyecto existente:
+
+```shell
+npm create ol-app visor-curso
+cd visor-curso
+npm start
+```
+
+4. Abre la URL que indique la terminal y mantenla ejecutándose. Comprueba los scripts de tu `package.json`: los nombres disponibles dependen de la plantilla.
+
+Un proyecto generado hoy puede utilizar otra versión de OpenLayers. Para reproducir los archivos originales conserva sus dependencias y adapta de forma explícita cualquier diferencia. El servidor de desarrollo y GeoServer suelen tener orígenes distintos: consumir WMS/WFS puede requerir un proxy de desarrollo o CORS configurado en el servicio. No atribuyas ese bloqueo a la proyección.
+
+## 7. Construir el visor paso a paso {#procedimientos-guiados}
+
+### Identificar los archivos y sus responsabilidades
+
+| Archivo o elemento | Revisión |
+|---|---|
+| HTML de entrada | Incluye el contenedor y carga el módulo JavaScript correcto |
+| CSS | El mapa tiene ancho y altura visibles |
+| JavaScript | Importa las clases y crea mapa, vista, capas y fuentes |
+| `package.json` | Define dependencias y scripts del entorno |
+
+Los archivos `ol_map2.js`, `ol_map6.js` y demás nombres aparecen en las actividades originales. Si utilizas un único archivo de entrada, guarda copias de cada etapa para poder documentarlas sin perder el trabajo previo.
+
+### Configurar vista y capas
+
+1. Localiza la instancia `View`. Revisa centro, zoom, rotación y proyección antes de añadir contenido.
+2. Convierte coordenadas geográficas mediante `fromLonLat` cuando la vista utilice el sistema proyectado habitual. No pases longitud/latitud en grados como si fueran metros.
+3. Para WMS crea una capa compatible con su fuente: `TileLayer` con `TileWMS` para teselas; `ImageLayer` con `ImageWMS` para una imagen por extensión.
+4. Configura la URL de tu GeoServer y `LAYERS` con el nombre publicado, como `earth:countries`. Comprueba primero la capa en GeoServer.
+5. Para los filtros CQL conserva los atributos y valores de `cities` y `countries` que pide la práctica. El filtro es una cadena enviada al servicio; revisa en Red qué parámetros se solicitaron.
+
+### Cargar entidades y definir su estilo
+
+1. Para WFS revisa que la petición devuelve GeoJSON e identifica su CRS. La fuente vectorial debe interpretar el formato y transformarlo a la proyección de la vista cuando corresponda.
+2. Asocia esa fuente a una capa vectorial y revisa el número de entidades antes de culpar al estilo.
+3. Aplica relleno, trazo y símbolo según el tipo geométrico. Para etiquetas comprueba el nombre real del atributo.
+4. Para teselas vectoriales verifica primero que GeoServer sirve MVT; una fuente de GeoJSON no interpreta una tesela MVT.
+5. Para el mapa de calor utiliza la fuente de puntos original y después ajusta las opciones que exige el ejercicio. Conserva las capas de fondo separadas.
+
+### Añadir controles e interacciones
+
+Los controles se incorporan al mapa; las interacciones, como seleccionar o dibujar, necesitan además una capa o fuente de destino cuando corresponda. Comprueba qué objeto recibe el resultado. Dibujar en el navegador no guarda por sí solo una entidad en PostGIS.
+
+| Problema | Comprobación |
+|---|---|
+| `ol is not defined` en un módulo | Utiliza las clases importadas; no la notación global de la etapa inicial |
+| Módulo no encontrado | Dependencias instaladas, ruta y mayúsculas exactas del import |
+| Mapa desplazado | Centro convertido y proyecciones de fuente y vista |
+| Servicio bloqueado | Consola, CORS, URL y configuración de proxy |
+| Capa vectorial vacía | Respuesta WFS, formato, filtro y extensión |
+| Dibujos desaparecen al recargar | Falta un mecanismo de persistencia; no equivale a guardar en la base |
+
+Guarda cada etapa y sus capturas. Al finalizar conserva las capas y el entorno; la próxima unidad reutiliza sus servicios desde MapStore.
+
+<p class="content-source"><strong>Fuentes:</strong> práctica original de OpenLayers de MappingGIS · <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · proyecto y archivos de entrada</a> · <a href="https://openlayers.org/doc/faq.html">proyecciones y preguntas frecuentes</a>.</p>
+
 ## Material y referencias
 
 
 Ampliación técnica: [Inicio oficial de OpenLayers](https://openlayers.org/doc/quickstart.html) · [Proyecciones y preguntas frecuentes](https://openlayers.org/doc/faq.html). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 
+
+## Antes de resolver las actividades {#antes-de-ejercicios}
+
+Completa la preparación y los procedimientos anteriores. Después avanza por los ejercicios en su orden original: varias actividades utilizan archivos, capas o cambios de las anteriores. Cada actividad conserva su enunciado y sus paneles de instrucciones y capturas dentro de la página; el PDF queda como respaldo.
+
+Si una consigna menciona «el código anterior» o «la imagen anterior», abre su panel de contexto antes de trabajar. Comprueba qué archivo o recurso debes modificar, guarda el cambio y verifica el resultado antes de tomar la captura. No ejecutes de nuevo una creación o importación si ya existe el objeto correspondiente.
 
 ## Ejercicio Unidad 6 {#ejercicios-originales-del-curso}
 
