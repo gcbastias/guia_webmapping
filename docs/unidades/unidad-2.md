@@ -12,15 +12,6 @@ Esta guía visual integra las tres clases de la unidad: introducción a PostGIS,
 
 ## Antes de comenzar {#antes-de-comenzar}
 
-Al terminar podrás preparar una base espacial, cargar y visualizar capas y escribir consultas que devuelvan atributos, medidas o geometrías. El recorrido guiado prepara las herramientas; los **17 ejercicios originales se mantienen al final**.
-
-<div class="visual-flow">
-<div class="visual-card"><b>1 · Preparar</b>Datos y programas disponibles.</div><span class="arrow" aria-hidden="true">→</span>
-<div class="visual-card"><b>2 · Conectar</b>PostGIS, pgAdmin y QGIS.</div><span class="arrow" aria-hidden="true">→</span>
-<div class="visual-card"><b>3 · Comprender</b>Geometrías, SQL y unidades.</div><span class="arrow" aria-hidden="true">→</span>
-<div class="visual-card"><b>4 · Practicar</b>Procedimientos, comprobaciones y ejercicios.</div>
-</div>
-
 | Necesitas | Cómo saber si está listo |
 |---|---|
 | PostgreSQL con PostGIS y pgAdmin 4 | Puedes conectarte al servidor y ejecutar `SELECT version();` |
