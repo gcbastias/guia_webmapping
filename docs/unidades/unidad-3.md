@@ -21,7 +21,7 @@ GeoServer recibe peticiones, accede a un origen y prepara una respuesta geográf
 
 HTTP admite imágenes, XML y otros contenidos: no se limita a páginas HTML.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3_Est%C3%A1ndares%20abiertos%20e%20interoperables%20del%20OGC.pdf">MappingGIS · Unidad3_Estándares abiertos e interoperables del OGC.pdf</a> · <a href="../../materiales/Unidad3.1_Servidores%20de%20datos%20espaciales.%20Geoserver.pdf">MappingGIS · Unidad3.1_Servidores de datos espaciales. Geoserver.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3_Est%C3%A1ndares%20abiertos%20e%20interoperables%20del%20OGC.pdf" rel="nofollow">MappingGIS · Unidad3_Estándares abiertos e interoperables del OGC.pdf</a> · <a href="../../materiales/Unidad3.1_Servidores%20de%20datos%20espaciales.%20Geoserver.pdf" rel="nofollow">MappingGIS · Unidad3.1_Servidores de datos espaciales. Geoserver.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
 
 ## 2. Workspace, store, layer y style
 
@@ -33,7 +33,7 @@ En la práctica se utiliza el espacio `earth` y la base `world`. El nombre `eart
 
 Un **layer group** combina capas en un orden de dibujo. Comprueba fondo, transparencia y límites. El directorio de datos conserva la configuración; los binarios y los datos del proyecto tienen ciclos de mantenimiento distintos.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3.1_Servidores%20de%20datos%20espaciales.%20Geoserver.pdf">MappingGIS · Unidad3.1_Servidores de datos espaciales. Geoserver.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3.1_Servidores%20de%20datos%20espaciales.%20Geoserver.pdf" rel="nofollow">MappingGIS · Unidad3.1_Servidores de datos espaciales. Geoserver.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
 
 ## 3. Elegir el servicio OGC
 
@@ -50,7 +50,7 @@ Para elegir un servicio, empieza por el resultado que necesitas.
 
 `GetCapabilities` anuncia las capacidades del servicio. WMS puede permitir consultar una posición; eso no sustituye el acceso a entidades de WFS. WCS conserva el sentido de los valores de una cobertura, mientras una imagen puede representarlos mediante colores. SLD describe estilos; no es otro servicio de descarga.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3_Est%C3%A1ndares%20abiertos%20e%20interoperables%20del%20OGC.pdf">MappingGIS · Unidad3_Estándares abiertos e interoperables del OGC.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a> · <a href="https://www.ogc.org/standards/wfs/">OGC · WFS</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3_Est%C3%A1ndares%20abiertos%20e%20interoperables%20del%20OGC.pdf" rel="nofollow">MappingGIS · Unidad3_Estándares abiertos e interoperables del OGC.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a> · <a href="https://www.ogc.org/standards/wfs/">OGC · WFS</a>.</p>
 
 ## 4. Leer una petición de mapa
 
@@ -62,7 +62,7 @@ La URL combina un punto de acceso con parámetros. Capa, estilo, referencia, enc
 
 El servidor puede reproyectar al vuelo cuando su configuración lo permite, sin modificar necesariamente los datos almacenados. La práctica conecta los servicios con QGIS antes de consumirlos en un visor.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3_Est%C3%A1ndares%20abiertos%20e%20interoperables%20del%20OGC.pdf">MappingGIS · Unidad3_Estándares abiertos e interoperables del OGC.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3_Est%C3%A1ndares%20abiertos%20e%20interoperables%20del%20OGC.pdf" rel="nofollow">MappingGIS · Unidad3_Estándares abiertos e interoperables del OGC.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a>.</p>
 
 ## 5. Simbología, etiquetas y escala
 
@@ -79,7 +79,7 @@ El estilo convierte atributos y geometrías en símbolos. Sus reglas controlan c
 
 Una vista general necesita menos detalle que una cercana. Las comparaciones de versiones del PDF describen el contexto de las clases; revisa la compatibilidad para la versión instalada.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3.1_Servidores%20de%20datos%20espaciales.%20Geoserver.pdf">MappingGIS · Unidad3.1_Servidores de datos espaciales. Geoserver.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3.1_Servidores%20de%20datos%20espaciales.%20Geoserver.pdf" rel="nofollow">MappingGIS · Unidad3.1_Servidores de datos espaciales. Geoserver.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
 
 ## Material y referencias
 
@@ -93,7 +93,7 @@ Ampliación técnica: [Organización de datos en GeoServer](https://docs.geoserv
 
 Enunciados y contexto de los PDF de MappingGIS. No se añaden actividades ni soluciones. Los paneles incluyen los pasos originales dentro de la unidad; el PDF conserva la maquetación completa.
 
-**Conexiones QGIS:** [PDF original completo](../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf){target="_blank" rel="noopener noreferrer"}.
+**Conexiones QGIS:** [PDF original completo](../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf){target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Ejercicio 1 · WMS en QGIS
 
@@ -187,9 +187,9 @@ cargado en la interfaz y pégala en la Plantilla de Resultados.
 
 </details>
 
-<details class="source-page"><summary>Ver página 6 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=6" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/1-pagina-6.png" alt="Página 6 del PDF original de Conexiones QGIS, ejercicio 1" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 6 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=6" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/1-pagina-6.png" alt="Página 6 del PDF original de Conexiones QGIS, ejercicio 1" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 6](../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=6){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 6](../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=6){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 2 · WFS en QGIS
 
@@ -304,9 +304,9 @@ ventana del Identificador aparecerá su información relacionada.
 
 </details>
 
-<details class="source-page"><summary>Ver página 10 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=10" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/1-pagina-10.png" alt="Página 10 del PDF original de Conexiones QGIS, ejercicio 2" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 10 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=10" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/1-pagina-10.png" alt="Página 10 del PDF original de Conexiones QGIS, ejercicio 2" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 10](../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=10){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 10](../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=10){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 3 · WCS en QGIS
 
@@ -531,11 +531,11 @@ aprecien las capas cargadas y pégala en la Plantilla de Resultados.
 
 </details>
 
-<details class="source-page"><summary>Ver página 20 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=20" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/1-pagina-20.png" alt="Página 20 del PDF original de Conexiones QGIS, ejercicio 3" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 20 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=20" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/1-pagina-20.png" alt="Página 20 del PDF original de Conexiones QGIS, ejercicio 3" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 20](../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=20){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 20](../materiales/Ejercicio_3_0_Conexiones_QGIS-v1.pdf#page=20){target="_blank" rel="nofollow noopener noreferrer"}
 
-**GeoServer:** [PDF original completo](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf){target="_blank" rel="noopener noreferrer"}.
+**GeoServer:** [PDF original completo](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf){target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Ejercicio 4 · Extensión WPS
 
@@ -991,9 +991,9 @@ enlace “Generador de consultas WPS”.
 
 </details>
 
-<details class="source-page"><summary>Ver página 21 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=21" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-21.png" alt="Página 21 del PDF original de GeoServer, ejercicio 4" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 21 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=21" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-21.png" alt="Página 21 del PDF original de GeoServer, ejercicio 4" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 21](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=21){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 21](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=21){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 5 · Página web en GeoServer
 
@@ -1094,9 +1094,9 @@ http://localhost:8080/geoserver/www/web.html en blanco, sin errores.
 
 </details>
 
-<details class="source-page"><summary>Ver página 23 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=23" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-23.png" alt="Página 23 del PDF original de GeoServer, ejercicio 5" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 23 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=23" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-23.png" alt="Página 23 del PDF original de GeoServer, ejercicio 5" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 23](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=23){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 23](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=23){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 6 · Publicar relieve
 
@@ -1452,9 +1452,9 @@ individuales y les asigna sus propiedades (nombre, SRID, etc).
 
 </details>
 
-<details class="source-page"><summary>Ver página 36 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=36" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-36.png" alt="Página 36 del PDF original de GeoServer, ejercicio 6" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 36 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=36" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-36.png" alt="Página 36 del PDF original de GeoServer, ejercicio 6" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 36](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=36){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 36](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=36){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 7 · Previsualizar countries
 
@@ -1578,9 +1578,9 @@ Ejercicio nº 7. Haz una captura de pantalla con la previsualización de la capa
 
 </details>
 
-<details class="source-page"><summary>Ver página 40 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=40" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-40.png" alt="Página 40 del PDF original de GeoServer, ejercicio 7" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 40 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=40" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-40.png" alt="Página 40 del PDF original de GeoServer, ejercicio 7" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 40](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=40){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 40](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=40){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 8 · Imagen de ciudades
 
@@ -1640,9 +1640,9 @@ ciudades.
 
 </details>
 
-<details class="source-page"><summary>Ver página 41 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=41" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-41.png" alt="Página 41 del PDF original de GeoServer, ejercicio 8" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 41 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=41" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-41.png" alt="Página 41 del PDF original de GeoServer, ejercicio 8" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 41](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=41){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 41](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=41){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 9 · Respuesta WFS
 
@@ -1722,9 +1722,9 @@ servicio WFS.
 
 </details>
 
-<details class="source-page"><summary>Ver página 42 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=42" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-42.png" alt="Página 42 del PDF original de GeoServer, ejercicio 9" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 42 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=42" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-42.png" alt="Página 42 del PDF original de GeoServer, ejercicio 9" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 42](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=42){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 42](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=42){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 10 · WMS de cities y countries
 
@@ -1808,9 +1808,9 @@ en QGIS.
 
 </details>
 
-<details class="source-page"><summary>Ver página 43 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=43" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-43.png" alt="Página 43 del PDF original de GeoServer, ejercicio 10" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 43 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=43" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-43.png" alt="Página 43 del PDF original de GeoServer, ejercicio 10" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 43](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=43){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 43](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=43){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 11 · WFS de cities
 
@@ -1854,9 +1854,9 @@ en QGIS.
 
 </details>
 
-<details class="source-page"><summary>Ver página 43 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=43" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-43.png" alt="Página 43 del PDF original de GeoServer, ejercicio 11" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 43 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=43" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-43.png" alt="Página 43 del PDF original de GeoServer, ejercicio 11" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 43](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=43){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 43](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=43){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 12 · WCS de relieve
 
@@ -1937,9 +1937,9 @@ SERVICE=WCS&VERSION=1.0.0&COVERAGE=relieve
 
 </details>
 
-<details class="source-page"><summary>Ver página 44 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=44" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-44.png" alt="Página 44 del PDF original de GeoServer, ejercicio 12" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 44 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=44" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-44.png" alt="Página 44 del PDF original de GeoServer, ejercicio 12" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 44](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=44){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 44](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=44){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 13 · Resultado del proceso
 
@@ -2041,9 +2041,9 @@ comprobar el resultado.
 
 </details>
 
-<details class="source-page"><summary>Ver página 47 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=47" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-47.png" alt="Página 47 del PDF original de GeoServer, ejercicio 13" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 47 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=47" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-47.png" alt="Página 47 del PDF original de GeoServer, ejercicio 13" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 47](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=47){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 47](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=47){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 14 · Grupo worldgroup
 
@@ -2196,9 +2196,9 @@ pégala en la plantilla de resultados.
 
 </details>
 
-<details class="source-page"><summary>Ver página 53 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=53" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-53.png" alt="Página 53 del PDF original de GeoServer, ejercicio 14" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 53 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=53" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-53.png" alt="Página 53 del PDF original de GeoServer, ejercicio 14" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 53](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=53){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 53](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=53){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 15 · Estilos de las capas
 
@@ -2362,9 +2362,9 @@ plantilla de resultados.
 
 </details>
 
-<details class="source-page"><summary>Ver página 58 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=58" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-58.png" alt="Página 58 del PDF original de GeoServer, ejercicio 15" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 58 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=58" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-58.png" alt="Página 58 del PDF original de GeoServer, ejercicio 15" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 58](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=58){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 58](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=58){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 16 · Nueva simbología
 
@@ -2790,9 +2790,9 @@ Ejercicio nº 17. Haz una captura de pantalla con la simbología cities_labels.
 
 </details>
 
-<details class="source-page"><summary>Ver página 71 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=71" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-71.png" alt="Página 71 del PDF original de GeoServer, ejercicio 16" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 71 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=71" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-71.png" alt="Página 71 del PDF original de GeoServer, ejercicio 16" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 71](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=71){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 71](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=71){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 17 · Etiquetas cities_labels
 
@@ -2842,9 +2842,9 @@ Ejercicio nº 17. Haz una captura de pantalla con la simbología cities_labels.
 
 </details>
 
-<details class="source-page"><summary>Ver página 71 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=71" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-71.png" alt="Página 71 del PDF original de GeoServer, ejercicio 17" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 71 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=71" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-71.png" alt="Página 71 del PDF original de GeoServer, ejercicio 17" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 71](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=71){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 71](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=71){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 18 · Activar teselas vectoriales
 
@@ -3014,7 +3014,7 @@ un cliente de mapas web como OpenLayers.
 
 </details>
 
-<details class="source-page"><summary>Ver página 75 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=75" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-75.png" alt="Página 75 del PDF original de GeoServer, ejercicio 18" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 75 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=75" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-3/2-pagina-75.png" alt="Página 75 del PDF original de GeoServer, ejercicio 18" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 75](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=75){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 75](../materiales/Ejercicio_3_1_GeoServer_2025-v7.pdf#page=75){target="_blank" rel="nofollow noopener noreferrer"}
 

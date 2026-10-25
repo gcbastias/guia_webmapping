@@ -19,7 +19,7 @@ La primera visita a un área no cacheada puede requerir dibujar el mapa. Las sig
 
 La caché reduce trabajo repetido; no sustituye la preparación de datos ni la configuración del servicio.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf" rel="nofollow">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
 ## 2. Una pirámide de cuadrículas
 
@@ -31,7 +31,7 @@ Al acercarte, el visor solicita piezas de un nivel más detallado. En el modelo 
 
 La petición identifica el nivel y la posición. WMTS y otros esquemas teselados permiten acceder a mapas organizados en cuadrículas. La práctica configura caché integrada con GeoServer.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf" rel="nofollow">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
 ## 3. Pregeneración y demanda
 
@@ -47,7 +47,7 @@ La petición identifica el nivel y la posición. WMTS y otros esquemas teselados
 
 El PDF propone combinar ambas estrategias. En las herramientas del curso, `seed`, `reseed` y `truncate` corresponden a creación, regeneración y eliminación de caché.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf" rel="nofollow">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
 ## 4. Zoom y almacenamiento
 
@@ -59,7 +59,7 @@ Para una cobertura completa del modelo de una tesela inicial y subdivisión por 
 
 Las cuotas ayudan a limitar el almacenamiento. La práctica pide anotar el tamaño real y comparar dos visores; esos resultados se obtienen con la configuración y los archivos originales.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf" rel="nofollow">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
 ## 5. Renovar y distinguir contenidos
 
@@ -71,7 +71,7 @@ Las **teselas ráster** contienen una representación dibujada. Las **vectoriale
 
 La práctica incluye teselas vectoriales y Google Earth. Se conserva íntegramente al final; aplicaciones y proveedores externos pueden haber cambiado desde la clase.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf" rel="nofollow">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
 ## Material y referencias
 
@@ -84,7 +84,7 @@ Ampliación técnica: [GeoWebCache integrado en GeoServer](https://docs.geoserve
 
 Enunciados y contexto de los PDF de MappingGIS. No se añaden actividades ni soluciones. Los paneles incluyen los pasos originales dentro de la unidad; el PDF conserva la maquetación completa.
 
-**Práctica:** [PDF original completo](../materiales/Ejercicio_4_GeoWebCache_2025.pdf){target="_blank" rel="noopener noreferrer"}.
+**Práctica:** [PDF original completo](../materiales/Ejercicio_4_GeoWebCache_2025.pdf){target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Ejercicio 1 · Tamaño de la caché
 
@@ -227,9 +227,9 @@ las teselas de worldgroup.
 
 </details>
 
-<details class="source-page"><summary>Ver página 7 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=7" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-7.png" alt="Página 7 del PDF original de Práctica, ejercicio 1" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 7 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=7" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-7.png" alt="Página 7 del PDF original de Práctica, ejercicio 1" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 7](../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=7){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 7](../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=7){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 2 · Comparar los dos mapas
 
@@ -314,9 +314,9 @@ de las teselas, y el formato de la imagen para el cache de cities.
 
 </details>
 
-<details class="source-page"><summary>Ver página 9 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=9" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-9.png" alt="Página 9 del PDF original de Práctica, ejercicio 2" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 9 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=9" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-9.png" alt="Página 9 del PDF original de Práctica, ejercicio 2" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 9](../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=9){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 9](../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=9){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 3 · Teselas vectoriales
 
@@ -401,9 +401,9 @@ cities con el formato de teselas vectoriales (EPSG:4326 / pbf).
 
 </details>
 
-<details class="source-page"><summary>Ver página 11 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=11" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-11.png" alt="Página 11 del PDF original de Práctica, ejercicio 3" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 11 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=11" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-11.png" alt="Página 11 del PDF original de Práctica, ejercicio 3" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 11](../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=11){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 11](../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=11){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 4 · Google Earth
 
@@ -480,7 +480,7 @@ resultados
 
 </details>
 
-<details class="source-page"><summary>Ver página 14 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=14" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-14.png" alt="Página 14 del PDF original de Práctica, ejercicio 4" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 14 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=14" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-14.png" alt="Página 14 del PDF original de Práctica, ejercicio 4" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 14](../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=14){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 14](../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=14){target="_blank" rel="nofollow noopener noreferrer"}
 

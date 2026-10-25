@@ -18,7 +18,7 @@ Síntesis visual de las clases, con diagramas originales para explicar los conce
 
 Un `id` identifica un elemento; una `class` agrupa estilos. CSS combina selector, propiedad y valor. La hoja CSS de la página y la simbología del servidor actúan en niveles distintos.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5_webmapping.pdf">MappingGIS · Unidad5_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content">MDN · estructura HTML</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5_webmapping.pdf" rel="nofollow">MappingGIS · Unidad5_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content">MDN · estructura HTML</a>.</p>
 
 ## 2. Del documento a L.map
 
@@ -35,7 +35,7 @@ El curso carga `leaflet.css` y `leaflet.js`. `L.map` crea la instancia, `setView
 
 La consola muestra errores y la pestaña de red permite revisar recursos. Sigue el primer error antes de cambiar varias partes. Sirve el visor mediante HTTP como indica la clase: abrir un archivo local no reproduce todos los comportamientos de un servidor.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf" rel="nofollow">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
 
 ## 3. Fondo, WMS y vectores
 
@@ -51,7 +51,7 @@ La consola muestra errores y la pestaña de red permite revisar recursos. Sigue 
 
 Marcadores, líneas, polígonos y grupos organizan el mapa. `addTo`, `addLayer` y `removeLayer` controlan su presencia. Conserva la atribución de los proveedores: los fondos tienen condiciones de uso propias.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf" rel="nofollow">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
 
 ## 4. Eventos, popups y controles
 
@@ -63,7 +63,7 @@ Los controles permiten manejar zoom, escala y capas. El control de capas disting
 
 Una función de estilo puede representar atributos con colores o tamaños. `onEachFeature` facilita asociar acciones a cada entidad GeoJSON. Los plugins añaden funciones como búsqueda; comprueba la compatibilidad con la versión utilizada.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf" rel="nofollow">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
 
 ## 5. Coordenadas, radio y depuración
 
@@ -75,7 +75,7 @@ En llamadas habituales de Leaflet que reciben `LatLng`, el orden es **latitud, l
 
 Si el mapa falla, revisa tamaño del contenedor, bibliotecas, ejecución, variables, coordenadas y respuestas de red. Se conservan dos prácticas diferenciadas: **9 ejercicios de HTML/CSS/JavaScript y 12 de Leaflet**, con numeración propia.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a> · <a href="https://datatracker.ietf.org/doc/html/rfc7946">IETF · RFC 7946 (GeoJSON)</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf" rel="nofollow">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a> · <a href="https://datatracker.ietf.org/doc/html/rfc7946">IETF · RFC 7946 (GeoJSON)</a>.</p>
 
 ## Material y referencias
 
@@ -89,7 +89,7 @@ Ampliación técnica: [Guía de Leaflet](https://leafletjs.com/examples/quick-st
 
 Enunciados y contexto de los PDF de MappingGIS. No se añaden actividades ni soluciones. Los paneles incluyen los pasos originales dentro de la unidad; el PDF conserva la maquetación completa.
 
-**HTML/CSS/JS:** [PDF original completo](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf){target="_blank" rel="noopener noreferrer"}.
+**HTML/CSS/JS:** [PDF original completo](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf){target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### HTML/CSS/JS · Ejercicio 1 · Editar título y cuerpo
 
@@ -301,9 +301,9 @@ Video: Visualiza el video correspondiente a esta sección
 
 </details>
 
-<details class="source-page"><summary>Ver página 8 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=8" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-8.png" alt="Página 8 del PDF original de HTML/CSS/JS, ejercicio 1" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 8 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=8" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-8.png" alt="Página 8 del PDF original de HTML/CSS/JS, ejercicio 1" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 8](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=8){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 8](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=8){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### HTML/CSS/JS · Ejercicio 2 · Lista de favoritos
 
@@ -474,9 +474,9 @@ mapping</title>
 
 </details>
 
-<details class="source-page"><summary>Ver página 11 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=11" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-11.png" alt="Página 11 del PDF original de HTML/CSS/JS, ejercicio 2" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 11 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=11" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-11.png" alt="Página 11 del PDF original de HTML/CSS/JS, ejercicio 2" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 11](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=11){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 11](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=11){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### HTML/CSS/JS · Ejercicio 3 · Comentarios HTML
 
@@ -580,9 +580,9 @@ Haz una captura de pantalla del código utilizado.
 
 </details>
 
-<details class="source-page"><summary>Ver página 12 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=12" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-12.png" alt="Página 12 del PDF original de HTML/CSS/JS, ejercicio 3" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 12 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=12" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-12.png" alt="Página 12 del PDF original de HTML/CSS/JS, ejercicio 3" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 12](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=12){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 12](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=12){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### HTML/CSS/JS · Ejercicio 4 · Estilo del párrafo
 
@@ -679,9 +679,9 @@ Haz una captura de pantalla y pégala en la hoja de resultados.
 
 </details>
 
-<details class="source-page"><summary>Ver página 13 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=13" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-13.png" alt="Página 13 del PDF original de HTML/CSS/JS, ejercicio 4" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 13 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=13" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-13.png" alt="Página 13 del PDF original de HTML/CSS/JS, ejercicio 4" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 13](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=13){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 13](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=13){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### HTML/CSS/JS · Ejercicio 5 · Propiedades CSS
 
@@ -896,9 +896,9 @@ CSS y sube el html a la plataforma de formación.
 
 </details>
 
-<details class="source-page"><summary>Ver página 18 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=18" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-18.png" alt="Página 18 del PDF original de HTML/CSS/JS, ejercicio 5" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 18 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=18" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-18.png" alt="Página 18 del PDF original de HTML/CSS/JS, ejercicio 5" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 18](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=18){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 18](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=18){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### HTML/CSS/JS · Ejercicio 6 · Encabezado y párrafos
 
@@ -1095,9 +1095,9 @@ a todas las instancias. En el ejemplo siguiente veremos cómo hacerlo.
 
 </details>
 
-<details class="source-page"><summary>Ver página 21 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=21" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-21.png" alt="Página 21 del PDF original de HTML/CSS/JS, ejercicio 6" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 21 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=21" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-21.png" alt="Página 21 del PDF original de HTML/CSS/JS, ejercicio 6" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 21](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=21){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 21](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=21){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### HTML/CSS/JS · Ejercicio 7 · Identificadores id
 
@@ -1198,9 +1198,9 @@ Haz una captura de pantalla y pégala en la plantilla de resultados.
 
 </details>
 
-<details class="source-page"><summary>Ver página 22 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=22" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-22.png" alt="Página 22 del PDF original de HTML/CSS/JS, ejercicio 7" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 22 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=22" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-22.png" alt="Página 22 del PDF original de HTML/CSS/JS, ejercicio 7" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 22](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=22){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 22](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=22){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### HTML/CSS/JS · Ejercicio 8 · Ejecutar JavaScript
 
@@ -1636,9 +1636,9 @@ describe en la hoja de resultados lo que sucede.
 
 </details>
 
-<details class="source-page"><summary>Ver página 32 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=32" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-32.png" alt="Página 32 del PDF original de HTML/CSS/JS, ejercicio 8" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 32 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=32" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-32.png" alt="Página 32 del PDF original de HTML/CSS/JS, ejercicio 8" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 32](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=32){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 32](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=32){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### HTML/CSS/JS · Ejercicio 9 · Depurar la página
 
@@ -1904,11 +1904,11 @@ denominada x
 
 </details>
 
-<details class="source-page"><summary>Ver página 41 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=41" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-41.png" alt="Página 41 del PDF original de HTML/CSS/JS, ejercicio 9" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 41 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=41" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/1-pagina-41.png" alt="Página 41 del PDF original de HTML/CSS/JS, ejercicio 9" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 41](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=41){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 41](../materiales/Ejercicio_5.0_HTML5_CSS_y_JavaScript._Depuraci%C3%B3n_de_errores_2024.pdf#page=41){target="_blank" rel="nofollow noopener noreferrer"}
 
-**Leaflet:** [PDF de clase (credenciales de ejemplo omitidas)](../materiales/Ejercicio_5-1_Leaflet-2025.pdf){target="_blank" rel="noopener noreferrer"}.
+**Leaflet:** [PDF de clase (credenciales de ejemplo omitidas)](../materiales/Ejercicio_5-1_Leaflet-2025.pdf){target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Leaflet · Ejercicio 1 · Primer mapa
 
@@ -2117,9 +2117,9 @@ Ejercicio nº 1.  Pega el resultado de tu primer mapa realizado con Leaflet
 
 </details>
 
-<details class="source-page"><summary>Ver página 7 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=7" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-7.png" alt="Página 7 del PDF original de Leaflet, ejercicio 1" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 7 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=7" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-7.png" alt="Página 7 del PDF original de Leaflet, ejercicio 1" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 7](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=7){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 7](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=7){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 2 · Capas WMS
 
@@ -2233,9 +2233,9 @@ con la transparencia de las capas.
 
 </details>
 
-<details class="source-page"><summary>Ver página 8 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=8" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-8.png" alt="Página 8 del PDF original de Leaflet, ejercicio 2" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 8 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=8" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-8.png" alt="Página 8 del PDF original de Leaflet, ejercicio 2" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 8](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=8){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 8](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=8){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 3 · Geometrías y circleMarker
 
@@ -2481,9 +2481,9 @@ grupo, que serán:
 
 </details>
 
-<details class="source-page"><summary>Ver página 14 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=14" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-14.png" alt="Página 14 del PDF original de Leaflet, ejercicio 3" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 14 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=14" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-14.png" alt="Página 14 del PDF original de Leaflet, ejercicio 3" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 14](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=14){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 14](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=14){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 4 · Ventana emergente
 
@@ -2577,9 +2577,9 @@ al hacer clic sobre un elemento.
 
 </details>
 
-<details class="source-page"><summary>Ver página 15 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=15" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-15.png" alt="Página 15 del PDF original de Leaflet, ejercicio 4" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 15 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=15" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-15.png" alt="Página 15 del PDF original de Leaflet, ejercicio 4" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 15](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=15){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 15](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=15){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 5 · Eventos
 
@@ -2673,9 +2673,9 @@ Las opciones irán siempre entre corchetes {}.
 
 </details>
 
-<details class="source-page"><summary>Ver página 16 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=16" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-16.png" alt="Página 16 del PDF original de Leaflet, ejercicio 5" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 16 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=16" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-16.png" alt="Página 16 del PDF original de Leaflet, ejercicio 5" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 16](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=16){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 16](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=16){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 6 · Escala
 
@@ -2799,9 +2799,9 @@ contributors',
 
 </details>
 
-<details class="source-page"><summary>Ver página 18 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=18" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-18.png" alt="Página 18 del PDF original de Leaflet, ejercicio 6" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 18 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=18" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-18.png" alt="Página 18 del PDF original de Leaflet, ejercicio 6" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 18](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=18){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 18](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=18){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 7 · Control de capas
 
@@ -2982,9 +2982,9 @@ scale=1.0, user-scalable=no" />
 
 </details>
 
-<details class="source-page"><summary>Ver página 21 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=21" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-21.png" alt="Página 21 del PDF original de Leaflet, ejercicio 7" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 21 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=21" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-21.png" alt="Página 21 del PDF original de Leaflet, ejercicio 7" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 21](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=21){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 21](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=21){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 8 · Título
 
@@ -3153,9 +3153,9 @@ de pantalla con el resultado.
 
 </details>
 
-<details class="source-page"><summary>Ver página 23 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=23" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-23.png" alt="Página 23 del PDF original de Leaflet, ejercicio 8" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 23 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=23" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-23.png" alt="Página 23 del PDF original de Leaflet, ejercicio 8" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 23](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=23){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 23](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=23){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 9 · Leyenda
 
@@ -3300,9 +3300,9 @@ mapa L_map9.html y haz una captura de pantalla con el resultado.
 
 </details>
 
-<details class="source-page"><summary>Ver página 25 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=25" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-25.png" alt="Página 25 del PDF original de Leaflet, ejercicio 9" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 25 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=25" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-25.png" alt="Página 25 del PDF original de Leaflet, ejercicio 9" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 25](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=25){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 25](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=25){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 10 · GeoJSON
 
@@ -3680,9 +3680,9 @@ nuestro GeoJSON:
 
 </details>
 
-<details class="source-page"><summary>Ver página 35 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=35" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-35.png" alt="Página 35 del PDF original de Leaflet, ejercicio 10" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 35 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=35" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-35.png" alt="Página 35 del PDF original de Leaflet, ejercicio 10" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 35](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=35){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 35](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=35){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 11 · WFS mediante AJAX
 
@@ -3784,9 +3784,9 @@ L_map11.html
 
 </details>
 
-<details class="source-page"><summary>Ver página 37 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=37" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-37.png" alt="Página 37 del PDF original de Leaflet, ejercicio 11" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 37 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=37" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-37.png" alt="Página 37 del PDF original de Leaflet, ejercicio 11" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 37](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=37){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 37](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=37){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Leaflet · Ejercicio 12 · Plugin de búsqueda
 
@@ -4065,7 +4065,7 @@ L_map12.html
 
 </details>
 
-<details class="source-page"><summary>Ver página 45 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=45" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-45.png" alt="Página 45 del PDF original de Leaflet, ejercicio 12" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 45 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=45" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-5/2-pagina-45.png" alt="Página 45 del PDF original de Leaflet, ejercicio 12" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 45](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=45){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 45](../materiales/Ejercicio_5-1_Leaflet-2025.pdf#page=45){target="_blank" rel="nofollow noopener noreferrer"}
 

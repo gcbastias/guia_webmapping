@@ -28,3 +28,9 @@ Las fuentes se indican junto a las explicaciones. Los diagramas propios se ampl�
 El flujo `.github/workflows/deploy.yml` genera y publica GitHub Pages al recibir cambios en `main`, usando la rama `gh-pages`.
 
 Antes de publicar el piloto se conserva la versión anterior mediante la etiqueta `respaldo-antes-piloto-visual-2026-10-24`. Para recuperarla, preparar un cambio de restauración desde esa etiqueta y publicarlo mediante el mismo flujo.
+
+## Indexación y acceso
+
+La plantilla `overrides/main.html` añade `noindex, nofollow, noimageindex` a todas las páginas HTML. Los enlaces a PDF incluyen la indicación `nofollow`.
+
+Estas indicaciones no restringen el acceso. No configuran un encabezado `X-Robots-Tag` para los PDF y no hacen privado el repositorio. Los PDF y sus capturas siguen siendo archivos públicos mientras se alojen aquí. Para excluir los PDF de búsquedas se requiere un alojamiento que permita enviar `X-Robots-Tag: noindex`; para restringir acceso se requiere autenticación y almacenamiento privado.

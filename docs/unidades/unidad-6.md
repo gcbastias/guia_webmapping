@@ -14,7 +14,7 @@ Una clase define propiedades y métodos; una instancia reúne valores y comporta
 
 El curso muestra biblioteca completa y módulos con npm. En el proyecto modular, las importaciones declaran clases y las herramientas sirven y preparan la aplicación. La notación global `ol.*` y las importaciones son formas de carga distintas.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf" rel="nofollow">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
 
 ## 2. Layer y Source
 
@@ -32,7 +32,7 @@ La **capa** controla presentación, orden, visibilidad y opacidad. La **fuente**
 
 WFS puede alimentar una fuente vectorial. GeoJSON es un formato de intercambio; MVT codifica teselas vectoriales. Teselado no significa necesariamente ráster.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf" rel="nofollow">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
 
 ## 3. Coordenadas y proyección
 
@@ -44,7 +44,7 @@ EPSG:3857 es la proyección habitual por defecto. Una coordenada de longitud y l
 
 Extensión, resolución y tamaño del mapa están relacionados. Un dato correcto puede quedar fuera de la ventana inicial. Revisa su extensión y transformación antes de concluir que no se ha cargado.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/faq.html">OpenLayers · proyecciones</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf" rel="nofollow">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/faq.html">OpenLayers · proyecciones</a>.</p>
 
 ## 4. Features, estilos y renderizado
 
@@ -56,7 +56,7 @@ Una **feature** reúne geometría y propiedades. El estilo decide relleno, trazo
 
 Canvas y WebGL están disponibles según capa y versión; no son opciones idénticas para todas las clases. El mapa de calor representa concentración o pesos y necesita interpretar esos valores.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf" rel="nofollow">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
 
 ## 5. Controles, selección y dibujo
 
@@ -68,7 +68,7 @@ Seleccionar trabaja con entidades; dibujar crea geometrías. Un cambio en el nav
 
 Las **16 prácticas originales** construyen progresivamente el visor. Las instrucciones de Git se conservan como apoyo, sin convertirlas en un ejercicio nuevo.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf" rel="nofollow">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
 
 ## Material y referencias
 
@@ -82,7 +82,7 @@ Ampliación técnica: [Inicio oficial de OpenLayers](https://openlayers.org/doc/
 
 Enunciados y contexto de los PDF de MappingGIS. No se añaden actividades ni soluciones. Los paneles incluyen los pasos originales dentro de la unidad; el PDF conserva la maquetación completa.
 
-**Práctica:** [PDF original completo](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf){target="_blank" rel="noopener noreferrer"}.
+**Práctica:** [PDF original completo](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf){target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Ejercicio 1 · Primer mapa
 
@@ -366,9 +366,9 @@ Ejercicio nº 1. Pega el resultado de tu primer mapa realizado con OpenLayers
 
 </details>
 
-<details class="source-page"><summary>Ver página 9 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=9" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-9.png" alt="Página 9 del PDF original de Práctica, ejercicio 1" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 9 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=9" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-9.png" alt="Página 9 del PDF original de Práctica, ejercicio 1" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 9](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=9){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 9](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=9){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 2 · Vista y rotación
 
@@ -909,9 +909,9 @@ plataforma de formación.
 
 </details>
 
-<details class="source-page"><summary>Ver página 29 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=29" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-29.png" alt="Página 29 del PDF original de Práctica, ejercicio 2" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 29 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=29" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-29.png" alt="Página 29 del PDF original de Práctica, ejercicio 2" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 29](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=29){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 29](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=29){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 3 · Capas cities y countries
 
@@ -1015,9 +1015,9 @@ tutorial de CQL y ECQL.
 
 </details>
 
-<details class="source-page"><summary>Ver página 31 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=31" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-31.png" alt="Página 31 del PDF original de Práctica, ejercicio 3" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 31 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=31" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-31.png" alt="Página 31 del PDF original de Práctica, ejercicio 3" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 31](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=31){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 31](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=31){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 4 · Filtros CQL
 
@@ -1100,9 +1100,9 @@ Haz una captura de pantalla que muestre las capas con sus filtros.
 
 </details>
 
-<details class="source-page"><summary>Ver página 32 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=32" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-32.png" alt="Página 32 del PDF original de Práctica, ejercicio 4" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 32 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=32" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-32.png" alt="Página 32 del PDF original de Práctica, ejercicio 4" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 32](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=32){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 32](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=32){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 5 · Imagen WMS y ortofoto
 
@@ -1191,9 +1191,9 @@ Haz una captura de pantalla que muestre las dos capas.
 
 </details>
 
-<details class="source-page"><summary>Ver página 34 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=34" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-34.png" alt="Página 34 del PDF original de Práctica, ejercicio 5" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 34 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=34" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-34.png" alt="Página 34 del PDF original de Práctica, ejercicio 5" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 34](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=34){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 34](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=34){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 6 · Mapas base
 
@@ -1326,9 +1326,9 @@ resultados con algunos mapas base.
 
 </details>
 
-<details class="source-page"><summary>Ver página 37 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=37" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-37.png" alt="Página 37 del PDF original de Práctica, ejercicio 6" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 37 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=37" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-37.png" alt="Página 37 del PDF original de Práctica, ejercicio 6" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 37](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=37){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 37](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=37){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 7 · Capa WFS
 
@@ -1493,9 +1493,9 @@ por el mapa web.
 
 </details>
 
-<details class="source-page"><summary>Ver página 40 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=40" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-40.png" alt="Página 40 del PDF original de Práctica, ejercicio 7" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 40 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=40" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-40.png" alt="Página 40 del PDF original de Práctica, ejercicio 7" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 40](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=40){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 40](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=40){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 8 · Teselas vectoriales
 
@@ -1612,9 +1612,9 @@ del siguiente modo:
 
 </details>
 
-<details class="source-page"><summary>Ver página 42 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=42" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-42.png" alt="Página 42 del PDF original de Práctica, ejercicio 8" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 42 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=42" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-42.png" alt="Página 42 del PDF original de Práctica, ejercicio 8" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 42](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=42){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 42](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=42){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 9 · Mapa de calor
 
@@ -1745,9 +1745,9 @@ una capa base de tu elección. Haz una captura de pantalla con el resultado.
 
 </details>
 
-<details class="source-page"><summary>Ver página 45 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=45" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-45.png" alt="Página 45 del PDF original de Práctica, ejercicio 9" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 45 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=45" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-45.png" alt="Página 45 del PDF original de Práctica, ejercicio 9" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 45](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=45){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 45](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=45){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 10 · Simbología vectorial
 
@@ -1887,9 +1887,9 @@ Crea la función antes de crear el objeto vectorial:
 
 </details>
 
-<details class="source-page"><summary>Ver página 48 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=48" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-48.png" alt="Página 48 del PDF original de Práctica, ejercicio 10" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 48 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=48" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-48.png" alt="Página 48 del PDF original de Práctica, ejercicio 10" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 48](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=48){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 48](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=48){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 11 · Etiquetas
 
@@ -2012,9 +2012,9 @@ Ejercicio nº 11. Pega el resultado de tu mapa (ol_map11.js)
 
 </details>
 
-<details class="source-page"><summary>Ver página 51 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=51" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-51.png" alt="Página 51 del PDF original de Práctica, ejercicio 11" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 51 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=51" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-51.png" alt="Página 51 del PDF original de Práctica, ejercicio 11" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 51](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=51){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 51](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=51){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 12 · Estilos por atributos
 
@@ -2134,9 +2134,9 @@ su estilo basado en atributos (ol_map12.js).
 
 </details>
 
-<details class="source-page"><summary>Ver página 54 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=54" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-54.png" alt="Página 54 del PDF original de Práctica, ejercicio 12" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 54 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=54" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-54.png" alt="Página 54 del PDF original de Práctica, ejercicio 12" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 54](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=54){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 54](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=54){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 13 · Controles
 
@@ -2245,9 +2245,9 @@ position:
 
 </details>
 
-<details class="source-page"><summary>Ver página 57 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=57" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-57.png" alt="Página 57 del PDF original de Práctica, ejercicio 13" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 57 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=57" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-57.png" alt="Página 57 del PDF original de Práctica, ejercicio 13" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 57](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=57){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 57](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=57){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 14 · Selector de capas
 
@@ -2504,9 +2504,9 @@ nuevo control de visibilidad de capas.
 
 </details>
 
-<details class="source-page"><summary>Ver página 63 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=63" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-63.png" alt="Página 63 del PDF original de Práctica, ejercicio 14" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 63 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=63" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-63.png" alt="Página 63 del PDF original de Práctica, ejercicio 14" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 63](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=63){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 63](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=63){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 15 · Selección
 
@@ -2598,9 +2598,9 @@ resultados.
 
 </details>
 
-<details class="source-page"><summary>Ver página 65 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=65" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-65.png" alt="Página 65 del PDF original de Práctica, ejercicio 15" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 65 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=65" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-65.png" alt="Página 65 del PDF original de Práctica, ejercicio 15" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 65](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=65){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 65](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=65){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 16 · Dibujo
 
@@ -2687,7 +2687,7 @@ en la plantilla de resultados.
 
 </details>
 
-<details class="source-page"><summary>Ver página 67 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=67" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-67.png" alt="Página 67 del PDF original de Práctica, ejercicio 16" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 67 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=67" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-6/1-pagina-67.png" alt="Página 67 del PDF original de Práctica, ejercicio 16" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 67](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=67){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 67](../materiales/Ejercicio_6_OpenLayers_2025-v3.pdf#page=67){target="_blank" rel="nofollow noopener noreferrer"}
 

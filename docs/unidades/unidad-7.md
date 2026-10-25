@@ -19,7 +19,7 @@ MapStore crea, gestiona y comparte recursos geográficos. Puede utilizarse como 
 
 La tabla de contenidos organiza capas. Opacidad, estilos, filtros y consultas dependen de versión, complementos, datos y permisos.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf" rel="nofollow">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
 ## 2. Diseñar un panel
 
@@ -31,7 +31,7 @@ Los widgets pueden incluir tablas, gráficos, contadores o textos. Revisa de qu�
 
 El gráfico es una maqueta sin valores reales. La práctica pide un panel con mapa, leyenda y texto o título: no se añaden requisitos a esa entrega.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf" rel="nofollow">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
 ## 3. Usuarios, roles y permisos
 
@@ -43,7 +43,7 @@ Compartir una URL no vuelve público un mapa restringido. Revisa acceso y contex
 
 Las capturas corresponden al entorno de clase. Este piloto no crea usuarios, modifica permisos ni expone tu servidor local.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf" rel="nofollow">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
 ## 4. Filtros, atributos y widgets
 
@@ -55,7 +55,7 @@ Ocultar una capa cambia la representación; filtrar sus entidades decide cuáles
 
 Las anotaciones incorporan puntos, textos o polígonos. La práctica exporta una anotación para usarla en Leaflet y conectar la composición visual con el desarrollo estudiado antes.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf" rel="nofollow">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
 ## 5. Contextos e historias
 
@@ -67,7 +67,7 @@ Una historia organiza texto, imágenes y mapas en secuencia; un panel favorece l
 
 Los **9 ejercicios originales** conservan sus tareas de usuarios, mapas, anotaciones, filtros, exportación, contexto y panel. No se añaden actividades al curso.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf" rel="nofollow">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
 ## Material y referencias
 
@@ -80,7 +80,7 @@ Ampliación técnica: [Guía oficial de MapStore](https://docs.mapstore.geosolut
 
 Enunciados y contexto de los PDF de MappingGIS. No se añaden actividades ni soluciones. Los paneles incluyen los pasos originales dentro de la unidad; el PDF conserva la maquetación completa.
 
-**Práctica:** [PDF original completo](../materiales/Ejercicio_7_MapStore-2025-v4.pdf){target="_blank" rel="noopener noreferrer"}.
+**Práctica:** [PDF original completo](../materiales/Ejercicio_7_MapStore-2025-v4.pdf){target="_blank" rel="nofollow noopener noreferrer"}.
 
 ### Ejercicio 1 · Iniciar como administrador
 
@@ -244,9 +244,9 @@ de ejercicios.
 
 </details>
 
-<details class="source-page"><summary>Ver página 9 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=9" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-9.png" alt="Página 9 del PDF original de Práctica, ejercicio 1" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 9 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=9" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-9.png" alt="Página 9 del PDF original de Práctica, ejercicio 1" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 9](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=9){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 9](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=9){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 2 · Crear usuario
 
@@ -361,9 +361,9 @@ que utilizar la herramienta de edición.
 
 </details>
 
-<details class="source-page"><summary>Ver página 13 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=13" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-13.png" alt="Página 13 del PDF original de Práctica, ejercicio 2" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 13 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=13" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-13.png" alt="Página 13 del PDF original de Práctica, ejercicio 2" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 13](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=13){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 13](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=13){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 3 · Mapa con servicios
 
@@ -629,9 +629,9 @@ pantalla del mapa y pégala en la hoja de ejercicios.
 
 </details>
 
-<details class="source-page"><summary>Ver página 25 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=25" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-25.png" alt="Página 25 del PDF original de Práctica, ejercicio 3" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 25 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=25" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-25.png" alt="Página 25 del PDF original de Práctica, ejercicio 3" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 25](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=25){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 25](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=25){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 4 · Anotación
 
@@ -721,9 +721,9 @@ mapa con la anotación y pégala en la hoja de ejercicios.
 
 </details>
 
-<details class="source-page"><summary>Ver página 28 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=28" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-28.png" alt="Página 28 del PDF original de Práctica, ejercicio 4" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 28 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=28" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-28.png" alt="Página 28 del PDF original de Práctica, ejercicio 4" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 28](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=28){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 28](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=28){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 5 · Importar GeoJSON
 
@@ -822,9 +822,9 @@ y haz una captura de pantalla de la nueva capa. Pégala en la hoja de ejercicios
 
 </details>
 
-<details class="source-page"><summary>Ver página 32 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=32" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-32.png" alt="Página 32 del PDF original de Práctica, ejercicio 5" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 32 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=32" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-32.png" alt="Página 32 del PDF original de Práctica, ejercicio 5" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 32](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=32){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 32](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=32){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 6 · Filtro y widget
 
@@ -1288,9 +1288,9 @@ ejercicios.
 
 </details>
 
-<details class="source-page"><summary>Ver página 55 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=55" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-55.png" alt="Página 55 del PDF original de Práctica, ejercicio 6" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 55 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=55" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-55.png" alt="Página 55 del PDF original de Práctica, ejercicio 6" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 55](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=55){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 55](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=55){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 7 · Exportar a Leaflet
 
@@ -1531,9 +1531,9 @@ O directamente desde la vista de mapas mediante el botón compartir.
 
 </details>
 
-<details class="source-page"><summary>Ver página 63 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=63" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-63.png" alt="Página 63 del PDF original de Práctica, ejercicio 7" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 63 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=63" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-63.png" alt="Página 63 del PDF original de Práctica, ejercicio 7" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 63](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=63){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 63](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=63){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 8 · Crear contexto
 
@@ -1741,9 +1741,9 @@ el nuevo contexto y la pegas en la hoja de ejercicios.
 
 </details>
 
-<details class="source-page"><summary>Ver página 71 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=71" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-71.png" alt="Página 71 del PDF original de Práctica, ejercicio 8" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 71 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=71" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-71.png" alt="Página 71 del PDF original de Práctica, ejercicio 8" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 71](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=71){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 71](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=71){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 9 · Panel de control
 
@@ -1908,7 +1908,7 @@ título. Haz una captura de pantalla y pégala en la hoja de ejercicios.
 
 </details>
 
-<details class="source-page"><summary>Ver página 78 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=78" target="_blank" rel="noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-78.png" alt="Página 78 del PDF original de Práctica, ejercicio 9" loading="lazy" /></a></details>
+<details class="source-page"><summary>Ver página 78 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=78" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-7/1-pagina-78.png" alt="Página 78 del PDF original de Práctica, ejercicio 9" loading="lazy" /></a></details>
 
-[Consultar en el PDF · página 78](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=78){target="_blank" rel="noopener noreferrer"}
+[Consultar en el PDF · página 78](../materiales/Ejercicio_7_MapStore-2025-v4.pdf#page=78){target="_blank" rel="nofollow noopener noreferrer"}
 

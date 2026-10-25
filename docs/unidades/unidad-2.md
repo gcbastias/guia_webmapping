@@ -34,7 +34,7 @@ Esta guía visual integra las tres clases de la unidad: introducción a PostGIS,
 | Cliente cartográfico | QGIS | Conectar, importar, exportar y visualizar capas |
 | Publicación web, más adelante | GeoServer → visor | Llevar las capas al navegador |
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf">MappingGIS · Unidad2_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/workshops/postgis-intro/indexing.html">PostGIS · índices espaciales</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/workshops/postgis-intro/indexing.html">PostGIS · índices espaciales</a>.</p>
 
 ## 2. Geometrías y formatos
 
@@ -78,7 +78,7 @@ Esta guía visual integra las tres clases de la unidad: introducción a PostGIS,
 
 **Precisión respecto de los apuntes históricos:** WKT y WKB tienen variantes que admiten dimensiones adicionales; no conviene afirmar que todos sus usos se limitan a 2D. El WKT convencional no incorpora por sí solo el SRID; EWKT puede expresarlo como `SRID=4326;POINT(...)`.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf">MappingGIS · Unidad2_webmapping.pdf</a> · <a href="../../materiales/Unidad2-1_webmapping.pdf">MappingGIS · Unidad2-1_webmapping.pdf</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2_webmapping.pdf</a> · <a href="../../materiales/Unidad2-1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-1_webmapping.pdf</a>.</p>
 
 ## 3. Coordenadas y medidas
 
@@ -122,7 +122,7 @@ No basta con que un sistema use metros para que cualquier medida sea adecuada: t
 
 **Metadatos que encontrarás:** `spatial_ref_sys` describe sistemas de referencia; `geometry_columns` y `geography_columns` permiten inspeccionar columnas espaciales. `ST_GeometryType`, `ST_NDims` y `ST_SRID` describen una geometría. Los estándares Simple Features y SQL/MM aportan tipos y operaciones comunes; no todas las extensiones de PostGIS pertenecen al mismo estándar.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-1_webmapping.pdf">MappingGIS · Unidad2-1_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/docs/ST_SetSRID.html">PostGIS · ST_SetSRID</a> · <a href="https://postgis.net/docs/ST_Transform.html">PostGIS · ST_Transform</a> · <a href="https://postgis.net/docs/ST_DWithin.html">PostGIS · ST_DWithin</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-1_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/docs/ST_SetSRID.html">PostGIS · ST_SetSRID</a> · <a href="https://postgis.net/docs/ST_Transform.html">PostGIS · ST_Transform</a> · <a href="https://postgis.net/docs/ST_DWithin.html">PostGIS · ST_DWithin</a>.</p>
 
 ## 4. Índices espaciales
 
@@ -138,7 +138,7 @@ Una caja delimitadora simplifica la extensión de una geometría. El índice pue
 
 `ST_Intersects` y `ST_DWithin` pueden aprovechar índices compatibles. `ST_Distance` calcula una distancia; para filtrar por radio suele resultar apropiado `ST_DWithin`. Es una explicación del mecanismo, no una promesa de un tiempo fijo de ejecución.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf">MappingGIS · Unidad2_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/workshops/postgis-intro/indexing.html">PostGIS · índices espaciales</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/workshops/postgis-intro/indexing.html">PostGIS · índices espaciales</a>.</p>
 
 ## 5. Flujo de una consulta SQL
 
@@ -166,7 +166,7 @@ CREATE EXTENSION postgis;
 SELECT postgis_full_version();
 ```
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-1_webmapping.pdf">MappingGIS · Unidad2-1_webmapping.pdf</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-1_webmapping.pdf</a>.</p>
 
 ## 6. Funciones y resultados
 
@@ -188,7 +188,7 @@ SELECT postgis_full_version();
 
 Otros accesores del material: `ST_ExteriorRing`, `ST_InteriorRingN`, `ST_GeometryN`, `ST_NumGeometries`, `ST_NPoints`, `ST_NRings`, `ST_StartPoint` y `ST_EndPoint`. Comprueba el tipo de geometría que admite cada función; por ejemplo, `ST_ExteriorRing` trabaja con polígonos, no directamente con multipolígonos.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf">MappingGIS · Unidad2_webmapping.pdf</a> · <a href="../../materiales/Unidad2-2_webmapping.pdf">MappingGIS · Unidad2-2_webmapping.pdf</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2_webmapping.pdf</a> · <a href="../../materiales/Unidad2-2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-2_webmapping.pdf</a>.</p>
 
 ## 7. Relaciones espaciales
 
@@ -217,7 +217,7 @@ Los esquemas muestran relaciones entre superficies; las definiciones también co
 
 **La frontera importa:** un punto situado solo sobre el borde de un polígono puede intersectarlo sin estar contenido según `ST_Contains`. **`ST_Intersects` devuelve un booleano; `ST_Intersection` devuelve una geometría.**
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-2_webmapping.pdf">MappingGIS · Unidad2-2_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/docs/ST_DWithin.html">PostGIS · ST_DWithin</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-2_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/docs/ST_DWithin.html">PostGIS · ST_DWithin</a>.</p>
 
 ## 8. Operaciones geométricas
 
@@ -256,7 +256,7 @@ Los esquemas muestran relaciones entre superficies; las definiciones también co
 
 Las consultas de la clase utilizan ejemplos de Nueva York para explicar relaciones y construcción. La práctica entregable de esta unidad utiliza las capas y ciudades indicadas en su PDF; se conserva esa distinción.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-2_webmapping.pdf">MappingGIS · Unidad2-2_webmapping.pdf</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-2_webmapping.pdf</a>.</p>
 
 ## 9. Síntesis y referencias
 
@@ -272,13 +272,13 @@ Base de la explicación: `Unidad2_webmapping.pdf`, `Unidad2-1_webmapping.pdf` y 
 
 Ampliaciones técnicas contrastadas con la documentación oficial: [índices espaciales](https://postgis.net/workshops/postgis-intro/indexing.html), [ST_DWithin y sus unidades](https://postgis.net/docs/ST_DWithin.html), [ST_SetSRID](https://postgis.net/docs/ST_SetSRID.html) y [ST_Transform](https://postgis.net/docs/ST_Transform.html). Para el resto de funciones, consulta el [manual de PostGIS](https://postgis.net/docs/).
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf">MappingGIS · Unidad2_webmapping.pdf</a> · <a href="../../materiales/Unidad2-1_webmapping.pdf">MappingGIS · Unidad2-1_webmapping.pdf</a> · <a href="../../materiales/Unidad2-2_webmapping.pdf">MappingGIS · Unidad2-2_webmapping.pdf</a>.</p>
+<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2_webmapping.pdf</a> · <a href="../../materiales/Unidad2-1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-1_webmapping.pdf</a> · <a href="../../materiales/Unidad2-2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-2_webmapping.pdf</a>.</p>
 
 ## Ejercicio Unidad 2 {#ejercicios-originales-del-curso}
 
 **Solo práctica original de MappingGIS.** Los siguientes ejercicios conservan la numeración 1–17 del PDF `Ejercicio_2_PostGIS_2025.pdf` (69 páginas). Cada ejercicio incluye su enunciado original y un panel desplegable con el texto de las páginas de contexto. El PDF conserva las capturas y la maquetación de la clase.
 
-[**Abrir el PDF original completo**](../materiales/Ejercicio_2_PostGIS_2025.pdf){target="_blank" rel="noopener noreferrer"}
+[**Abrir el PDF original completo**](../materiales/Ejercicio_2_PostGIS_2025.pdf){target="_blank" rel="nofollow noopener noreferrer"}
 
 <div class="visual-note"><strong>Cómo seguir la práctica.</strong> Empieza por la preparación del PDF y avanza en orden: los ejercicios dependen de los pasos anteriores. Conserva los nombres de tablas y las unidades indicadas. Las páginas enlazadas incluyen el enunciado; algunas instrucciones empiezan en páginas previas.</div>
 
@@ -321,7 +321,7 @@ escala 1:110m. Se trata de las capas de:
 
 <details class="source-page"><summary>Ver página 3 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-3.png" alt="Página 3 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 3](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=3){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 3](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=3){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 2 · Abrir pgAdmin 4
 
@@ -347,7 +347,7 @@ navegador.
 
 <details class="source-page"><summary>Ver página 20 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-20.png" alt="Página 20 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 20](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=20){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 20](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=20){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 3 · Conexión del cliente SIG a world
 
@@ -405,7 +405,7 @@ world y pega el resultado en la plantilla de resultados.
 
 <details class="source-page"><summary>Ver página 42 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-42.png" alt="Página 42 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 42](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=42){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 42](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=42){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 4 · Captura de las tres tablas importadas
 
@@ -470,7 +470,7 @@ para seleccionar esta tabla.
 
 <details class="source-page"><summary>Ver página 48 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-48.png" alt="Página 48 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 48](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=48){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 48](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=48){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 5 · Archivos exportados a GeoJSON y GeoPackage
 
@@ -514,7 +514,7 @@ pégala en la plantilla de resultados.
 
 <details class="source-page"><summary>Ver página 50 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-50.png" alt="Página 50 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 50](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=50){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 50](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=50){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 6 · Registro de la tabla lugares en geometry_columns
 
@@ -562,7 +562,7 @@ añadir datos mediante SQL, utilizamos los comandos:
 
 <details class="source-page"><summary>Ver página 56 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-56.png" alt="Página 56 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 56](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=56){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 56](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=56){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 7 · Nuevos registros y su información
 
@@ -637,7 +637,7 @@ WHERE gid = 2
 
 <details class="source-page"><summary>Ver página 58 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-58.png" alt="Página 58 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 58](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=58){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 58](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=58){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 8 · Eliminar una fila y capturar el resultado
 
@@ -681,7 +681,7 @@ WHERE gid = 2
 
 <details class="source-page"><summary>Ver página 58 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-58.png" alt="Página 58 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 58](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=58){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 58](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=58){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 9 · Actualizar el comentario y mostrar el resultado
 
@@ -736,7 +736,7 @@ sobre la fila e interactuando con la tabla.
 
 <details class="source-page"><summary>Ver página 59 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-59.png" alt="Página 59 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 59](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=59){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 59](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=59){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 10 · Nombre y población del país más poblado
 
@@ -788,7 +788,7 @@ en PostGIS.
 
 <details class="source-page"><summary>Ver página 65 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-65.png" alt="Página 65 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 65](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=65){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 65](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=65){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 11 · Países con más de 200 millones de habitantes
 
@@ -840,7 +840,7 @@ en PostGIS.
 
 <details class="source-page"><summary>Ver página 65 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-65.png" alt="Página 65 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 65](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=65){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 65](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=65){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 12 · Coordenadas geométricas de Madrid
 
@@ -887,7 +887,7 @@ elementos de la tabla countries. Limita el resultado a 5 países.
 
 <details class="source-page"><summary>Ver página 66 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-66.png" alt="Página 66 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 66](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=66){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 66](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=66){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 13 · Perímetro de cinco países
 
@@ -969,7 +969,7 @@ geom geometry (Point, 4326)
 
 <details class="source-page"><summary>Ver página 67 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-67.png" alt="Página 67 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 67](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=67){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 67](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=67){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 14 · Distancia en metros entre Phoenix y Madrid
 
@@ -1017,7 +1017,7 @@ geom geometry (Point, 4326)
 
 <details class="source-page"><summary>Ver página 67 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-67.png" alt="Página 67 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 67](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=67){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 67](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=67){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 15 · Países y centroides en un visor SIG
 
@@ -1093,7 +1093,7 @@ capa cities.
 
 <details class="source-page"><summary>Ver página 68 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-68.png" alt="Página 68 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 68](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=68){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 68](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=68){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 16 · Buffer de 2 grados sobre cities
 
@@ -1160,7 +1160,7 @@ para resolver la pregunta.
 
 <details class="source-page"><summary>Ver página 69 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-69.png" alt="Página 69 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 69](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=69){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 69](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=69){target="_blank" rel="nofollow noopener noreferrer"}
 
 ### Ejercicio 17 · País en el que se encuentra Sao Paulo
 
@@ -1199,6 +1199,6 @@ para resolver la pregunta.
 
 <details class="source-page"><summary>Ver página 69 del PDF original, con sus capturas</summary><img src="../../assets/ejercicios/unidad-2/pagina-69.png" alt="Página 69 del PDF original de PostGIS" loading="lazy" /></details>
 
-[Ver las instrucciones originales · PDF, página 69](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=69){target="_blank" rel="noopener noreferrer"}
+[Ver las instrucciones originales · PDF, página 69](../materiales/Ejercicio_2_PostGIS_2025.pdf#page=69){target="_blank" rel="nofollow noopener noreferrer"}
 
 Los resultados se incorporan a la plantilla indicada en la clase. No se han añadido preguntas, retos, soluciones ni autoevaluaciones nuevas.
