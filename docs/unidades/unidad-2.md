@@ -28,7 +28,7 @@ Al terminar podrás preparar una base espacial, cargar y visualizar capas y escr
 | El paquete `webmapping.zip` del curso | Tienes la carpeta `Capas` con países, lugares poblados y `ne_110_rivers_lake.gpkg` |
 | Una carpeta para guardar resultados | Puedes guardar capturas y archivos exportados |
 
-**Disponibilidad de datos.** El paquete `webmapping.zip` se obtiene desde la plataforma del curso. En tu carpeta de trabajo el paquete se llama `Unidad_2/Archivos_webmapping.zip` y también está extraído en `Unidad_2/Archivos_curso_webmapping`. Copia su contenido a la ruta de práctica si lo necesitas. El sitio publicado no incluye ese paquete: los PDF por sí solos no contienen las capas. Si no lo conservas, debes recuperarlo antes de realizar las importaciones y los ejercicios que dependen de él. Los ejemplos con geometrías escritas en SQL de esta página sí funcionan sin ese paquete, una vez activado PostGIS.
+**Disponibilidad de datos.** El paquete `webmapping.zip` se obtiene desde la plataforma del curso. En tu carpeta de trabajo el paquete se llama `Unidad_2/Archivos_webmapping.zip` y también está extraído en `Unidad_2/Archivos_curso_webmapping`. Copia su contenido a la ruta de práctica si lo necesitas. El sitio publicado no incluye ese paquete: los PDF por sí solos no contienen las capas. Si no lo conservas, debes recuperarlo antes de realizar las importaciones y los ejercicios que dependen de él. La creación de `lugares` y sus tres registros escritos en SQL funciona sin ese paquete, una vez activado PostGIS; las consultas sobre las capas importadas requieren los archivos del curso.
 
 **Versiones y nombres de menú.** El curso utiliza PostgreSQL 17 y PostGIS 3.5. Las rutas siguientes describen ese flujo en Windows; los nombres de algunos botones pueden variar con la versión o el idioma. Anota tus versiones para poder interpretar diferencias.
 
@@ -201,11 +201,7 @@ Es una ayuda para comprender la consulta; el orden escrito habitual comienza por
 
 En el curso se crea la base `world`, se activa la extensión, se importan capas, se conecta QGIS y se trabaja con `lugares`, `countries` y `cities`.
 
-```sql
--- Comandos de preparación que aparecen en la práctica original.
-CREATE EXTENSION postgis;
-SELECT postgis_full_version();
-```
+La preparación se desarrolla en [Conectar y crear la base world](#crear-world): primero crea o selecciona `world` y después activa PostGIS en esa base. Continúa con la importación y las consultas sobre las tablas originales siguiendo las secciones 9–11.
 
 
 ## 6. Funciones y resultados
@@ -296,23 +292,7 @@ Los esquemas muestran relaciones entre superficies; las definiciones también co
 Las consultas de la clase utilizan ejemplos de Nueva York para explicar relaciones y construcción. La práctica entregable de esta unidad utiliza las capas y ciudades indicadas en su PDF; se conserva esa distinción.
 
 
-## 9. Síntesis y referencias
-
-<div class="visual-grid">
-<div class="visual-card"><b>Guardar</b>Tabla + atributos + geometría + SRID.</div>
-<div class="visual-card"><b>Preguntar</b>SQL + función adecuada + unidades compatibles.</div>
-<div class="visual-card"><b>Interpretar</b>Booleano, medida o geometría: son resultados distintos.</div>
-</div>
-
-### Material y referencias
-
-Base de la explicación: material del curso de MappingGIS. Síntesis e ilustraciones originales para estudio. Los ejercicios originales y sus paneles de contexto se conservan al final de esta página; el PDF queda como respaldo.
-
-Ampliaciones técnicas contrastadas con la documentación oficial: [índices espaciales](https://postgis.net/workshops/postgis-intro/indexing.html), [ST_DWithin y sus unidades](https://postgis.net/docs/ST_DWithin.html), [ST_SetSRID](https://postgis.net/docs/ST_SetSRID.html) y [ST_Transform](https://postgis.net/docs/ST_Transform.html). Para el resto de funciones, consulta el [manual de PostGIS](https://postgis.net/docs/).
-
-
-
-## 10. Conectar y crear la base world {#crear-world}
+## 9. Conectar y crear la base world {#crear-world}
 
 ### Registrar el servidor en pgAdmin
 
@@ -356,7 +336,7 @@ SELECT 2 + 3 AS comprobacion;
 
 <p class="content-source"><strong>Referencia:</strong> <a href="https://www.pgadmin.org/docs/pgadmin4/latest/query_tool.html">pgAdmin · editor de consultas y paneles de resultados</a>.</p>
 
-## 11. Importar, visualizar y exportar {#importar-datos}
+## 10. Importar, visualizar y exportar {#importar-datos}
 
 ### Dos shapefiles con el importador de PostGIS
 
@@ -418,117 +398,146 @@ SELECT 'rivers', count(*) FROM public.rivers;
 
 <p class="content-source"><strong>Referencia:</strong> <a href="https://docs.qgis.org/3.44/en/docs/user_manual/plugins/core_plugins/plugins_db_manager.html">QGIS · importación, exportación y visualización de tablas</a>. Nombres de capas y parámetros de carga: práctica original de MappingGIS, páginas 32–50.</p>
 
-## 12. Aprender SQL con ejemplos ejecutables {#ejemplos-sql}
+## 11. SQL guiado con las tablas del curso {#ejemplos-sql}
 
-Los ejemplos siguientes enseñan la mecánica con datos independientes. **Son demostraciones explicadas, no ejercicios nuevos ni respuestas a las actividades originales.** Ejecútalos en el editor de `world`. Las tablas temporales viven solamente en esa sesión: mantén abierta la misma pestaña; si la cierras, vuelve a ejecutar su creación.
+Trabaja en el editor de consultas de **world**, con `countries`, `cities` y `rivers` ya importadas. A continuación se prepara `lugares` con la estructura y los registros originales. Los ejemplos explican las herramientas que necesitarás; las actividades que debes resolver y documentar están al final.
 
-### Crear, insertar y leer
+### Crear lugares y comprobar su estructura
+
+Primero revisa si la tabla existe:
 
 ```sql
-CREATE TEMP TABLE demo_paradas (
-  id integer PRIMARY KEY,
-  nombre text,
-  sector text,
-  visitas integer,
+SELECT to_regclass('public.lugares') AS tabla_existente;
+```
+
+Si devuelve `null`, ejecuta el bloque de creación del curso. Si devuelve `lugares`, no la crees otra vez: revisa su estructura y sus datos antes de continuar.
+
+```sql
+CREATE TABLE public.lugares (
+  gid serial PRIMARY KEY,
+  nombre varchar(50),
+  comentario varchar(255),
+  "año" numeric,
   geom geometry(Point, 4326)
 );
-
-INSERT INTO demo_paradas VALUES
-  (1, 'Biblioteca', 'Centro', 120,
-   ST_GeomFromText('POINT(-70.65 -33.44)', 4326)),
-  (2, 'Museo', 'Centro', 80,
-   ST_GeomFromText('POINT(-70.64 -33.44)', 4326)),
-  (3, 'Parque', 'Norte', 60,
-   ST_GeomFromText('POINT(-70.65 -33.42)', 4326));
-
-SELECT id, nombre, sector, visitas, ST_AsText(geom) AS coordenadas
-FROM demo_paradas
-ORDER BY id;
 ```
 
-**Debes ver:** tres filas, con visitas `120`, `80` y `60`. Las ubicaciones son ilustrativas. En `POINT(x y)`, para este sistema `x` es longitud e `y` latitud. `ST_GeomFromText` construye la geometría y `ST_AsText` permite leerla. Ejecuta la creación e inserción una sola vez por sesión; volver a insertarlas produciría claves duplicadas.
-
-### Filtrar, ordenar y resumir
+`gid` identifica cada registro y se genera automáticamente; `geom` admite puntos en EPSG:4326. El campo `año` lleva comillas para conservar su nombre exacto.
 
 ```sql
-SELECT nombre, visitas
-FROM demo_paradas
-WHERE visitas >= 80
-ORDER BY visitas DESC, nombre;
-
-SELECT sector, count(*) AS paradas, sum(visitas) AS total_visitas
-FROM demo_paradas
-GROUP BY sector
-ORDER BY sector;
-
-SELECT nombre, visitas
-FROM demo_paradas
-WHERE visitas = (SELECT max(visitas) FROM demo_paradas);
+SELECT f_table_name, f_geometry_column, type, srid
+FROM geometry_columns
+WHERE f_table_schema = 'public' AND f_table_name = 'lugares';
 ```
 
-**Comprueba:** el primer resultado incluye Biblioteca y Museo; el segundo resume Centro en dos paradas y `200` visitas, y Norte en una y `60`. La subconsulta calcula el máximo y la consulta exterior recupera las filas que lo alcanzan; si hay empates, devolverá más de una. `LIMIT 5` al final restringe la salida a cinco filas: añade `ORDER BY` si necesitas que su selección sea reproducible.
+**Comprueba:** una fila para `lugares`, columna `geom`, tipo `POINT` y SRID `4326`. Esta vista se actualiza a partir de la definición de la tabla; no debes insertar manualmente una fila de metadatos.
 
-### Modificar datos y comprobar antes de confirmar
+### Insertar los tres lugares originales
+
+Antes de insertar, ejecuta `SELECT gid, nombre FROM public.lugares ORDER BY gid;`. Si la tabla está vacía, incorpora los registros del curso:
 
 ```sql
-BEGIN;
-UPDATE demo_paradas SET visitas = 90 WHERE id = 2;
-DELETE FROM demo_paradas WHERE id = 3;
-SELECT id, nombre, visitas FROM demo_paradas ORDER BY id;
-ROLLBACK;
+INSERT INTO public.lugares (geom, nombre, comentario) VALUES
+  (ST_GeomFromText('POINT(-3.683352 40.400026)', 4326),
+   'Madrid', 'Capital de Espana'),
+  (ST_GeomFromText('POINT(-112.069992 33.53998)', 4326),
+   'Phoenix', 'Ciudad americana'),
+  (ST_GeomFromText('POINT(139.751407 35.685017)', 4326),
+   'Tokyo', 'Capital de Japon');
 
-SELECT count(*) AS paradas, sum(visitas) AS total FROM demo_paradas;
+SELECT gid, nombre, comentario, ST_AsText(geom) AS coordenadas
+FROM public.lugares
+ORDER BY gid;
 ```
 
-Durante la transacción verás dos filas y Museo con `90` visitas. Tras `ROLLBACK` vuelven las tres filas y el total `260`. Para observar cada estado, ejecuta hasta el primer `SELECT`, después `ROLLBACK` y finalmente el segundo `SELECT`. Una operación sin `WHERE` afecta a todas las filas. Si decides conservar cambios en una práctica real, `COMMIT` confirma en lugar de deshacer; aquí utilizamos `ROLLBACK` para mantener la demostración inicial.
+**Comprueba:** los tres nombres y sus puntos. Ejecuta las inserciones una sola vez: `nombre` no tiene una restricción de unicidad y repetir el bloque duplicaría ciudades con nuevos identificadores. Si ya hay datos, compáralos antes de insertar de nuevo.
 
-### Medir en las unidades correctas
+Para verlos en el mapa, actualiza la conexión de QGIS, abre `public` y arrastra `lugares` al lienzo. También puedes consultar `SELECT * FROM public.lugares;` en pgAdmin y abrir su visor en la columna geométrica. Una salida convertida únicamente a WKT es texto, no una columna geométrica para ese visor.
+
+### Leer, filtrar y ordenar countries
 
 ```sql
-SELECT a.nombre AS origen, b.nombre AS destino,
-       round(ST_Distance(a.geom::geography, b.geom::geography)::numeric, 1)
-         AS distancia_m
-FROM demo_paradas AS a
-CROSS JOIN demo_paradas AS b
-WHERE a.id = 1 AND b.id = 2;
+SELECT name, type
+FROM public.countries
+WHERE type = 'Disputed'
+ORDER BY name;
+
+SELECT name, type
+FROM public.countries
+ORDER BY name
+LIMIT 5;
 ```
 
-**Debes ver:** una fila de Biblioteca a Museo con una distancia de aproximadamente `930` metros. `a` y `b` son dos alias de la misma tabla. Los filtros eligen una fila de cada una; `::geography` convierte el tipo para medir sobre la Tierra en metros. Sin esa conversión, las geometrías en `4326` producirían una distancia plana en grados.
+La primera consulta reproduce el ejemplo de filtro del material original. `WHERE` limita las filas; `ORDER BY` ordena la salida. La segunda muestra hasta cinco países por nombre. La cantidad de países clasificados como `Disputed` depende de la edición de los datos: un resultado vacío no implica por sí solo un error de SQL.
 
-### Construir e interpretar geometrías
+Si no reconoces un campo, revisa la tabla de atributos en QGIS o consulta:
 
 ```sql
-WITH figuras AS (
-  SELECT ST_GeomFromText('POLYGON((0 0,4 0,4 4,0 4,0 0))', 4326) AS zona,
-         ST_GeomFromText('POINT(2 2)', 4326) AS punto
-)
-SELECT ST_Intersects(zona, punto) AS comparten_espacio,
-       ST_AsText(ST_Centroid(zona)) AS centro,
-       ST_Perimeter(zona) AS perimetro_grados,
-       ST_GeometryType(ST_Buffer(punto, 0.25)) AS tipo_buffer
-FROM figuras;
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_schema = 'public' AND table_name = 'countries'
+ORDER BY ordinal_position;
 ```
 
-**Debes ver:** `true`, `POINT(2 2)`, perímetro `16` y tipo `ST_Polygon`. Este cuadrado es una geometría didáctica en coordenadas angulares: sus medidas no representan metros. Una consulta puede devolver un booleano, texto, un número o una geometría; comprueba qué salida requiere tu tarea.
-
-### Guardar una geometría calculada
+### Resumir y agrupar
 
 ```sql
-CREATE TEMP TABLE demo_zonas AS
-SELECT id, nombre, ST_Buffer(geom::geography, 300)::geometry AS geom
-FROM demo_paradas;
-
-SELECT count(*) AS zonas, min(ST_SRID(geom)) AS srid
-FROM demo_zonas;
+SELECT type, count(*) AS cantidad,
+       avg(char_length(name)) AS longitud_media_nombre
+FROM public.countries
+GROUP BY type
+ORDER BY type;
 ```
 
-**Resultado esperado:** tres zonas con SRID `4326`. Aquí el radio es **300 metros** porque el buffer se calcula sobre `geography`. En el ejercicio original se piden **2 grados** sobre `cities`: conserva esa consigna y elige el tipo geométrico acorde. La demostración enseña el patrón `CREATE TABLE … AS SELECT`; el contexto original del ejercicio utiliza crear la tabla y después `INSERT … SELECT`.
+**Interpreta:** cada fila corresponde a un tipo de país; `count` cuenta sus registros y `avg` promedia la longitud de sus nombres. Una columna que aparece junto a agregaciones debe estar agrupada o formar parte de una agregación. Para las tareas de población, revisa el campo `pop_est`: `max` obtiene un valor máximo, mientras que recuperar el nombre asociado requiere relacionar ese valor con las filas de origen.
 
-Las tablas temporales no se verán desde otra conexión de QGIS. Para visualizar las capas permanentes de la práctica, actualiza **world local → public**, arrástralas al mapa y compara su distribución con la capa de origen. En pgAdmin, un resultado que incluya una columna geométrica puede ofrecer un visor de geometrías; una salida convertida únicamente a WKT es texto.
+### Actualizar y eliminar sin perder el control
 
-<p class="content-source"><strong>Referencias:</strong> <a href="https://www.postgresql.org/docs/current/tutorial-sql.html">PostgreSQL · introducción a SQL</a> · <a href="https://www.postgresql.org/docs/current/tutorial-transactions.html">PostgreSQL · transacciones</a> · <a href="https://postgis.net/docs/ST_Distance.html">PostGIS · ST_Distance</a> · <a href="https://postgis.net/docs/ST_Buffer.html">PostGIS · ST_Buffer</a>. Ejemplos didácticos originales de esta guía.</p>
+Las actividades 8 y 9 trabajan sobre los registros originales de `lugares`. Antes de ejecutar sus sentencias, consulta:
 
-## 13. Del procedimiento al ejercicio {#preparar-ejercicios}
+```sql
+SELECT gid, nombre, comentario
+FROM public.lugares
+ORDER BY gid;
+```
+
+Compara los identificadores actuales con los que aparecen en las instrucciones originales. Una secuencia `serial` no vuelve a empezar al borrar una fila: si repetiste la práctica, `gid = 3` puede no identificar la misma ciudad.
+
+Para revisar una modificación antes de conservarla, puedes ejecutarla dentro de una transacción: escribe `BEGIN;`, ejecuta la sentencia del ejercicio y comprueba la tabla con `SELECT`. Después ejecuta **una** de estas opciones: `COMMIT;` para conservarla o `ROLLBACK;` para deshacerla. No ejecutes ambas. Si un error deja la transacción abortada, ejecuta `ROLLBACK;` antes de intentarlo otra vez.
+
+`UPDATE … SET … WHERE …` cambia los registros seleccionados; `DELETE FROM … WHERE …` los elimina. Sin `WHERE`, afectan a todas las filas. En el ejercicio 8 también debes volver a insertar el lugar eliminado antes de continuar, tal como indica su contexto original.
+
+### Elegir la función y comprobar sus unidades
+
+| Tarea sobre los datos originales | Herramienta que necesitas | Comprobación previa |
+|---|---|---|
+| Leer coordenadas de `lugares` | `ST_AsText`, `ST_X`, `ST_Y` | El campo es un punto y conoces su SRID |
+| Medir límites de `countries` | `ST_Perimeter` | El sistema de referencia determina las unidades |
+| Medir entre dos ciudades de `lugares` en metros | `ST_Distance` con valores `geography` | Seleccionas una sola fila por ciudad y ambas tienen SRID correcto |
+| Generar puntos desde `countries` | `ST_Centroid` | El centroide puede quedar fuera del polígono |
+| Construir una zona alrededor de `cities` | `ST_Buffer` | La consigna original pide **2 grados**, no metros |
+| Relacionar una ciudad con `countries` | `ST_Intersects` | Ambas geometrías están en el mismo sistema |
+
+La conversión `geom::geography` permite que `ST_Distance` devuelva metros para estas geometrías WGS 84. Un cálculo directo sobre `geometry` en 4326 produce distancia plana en grados. Antes de combinar tablas, revisa sus nombres y atributos; los alias permiten distinguir dos referencias a una misma tabla.
+
+### Guardar y visualizar una geometría calculada
+
+El patrón del curso es **crear una tabla con identificador y columna geométrica → insertar el resultado de una consulta con `INSERT … SELECT` → abrir la tabla en QGIS**. El tipo y el SRID de la columna de destino deben admitir las geometrías calculadas.
+
+Consulta la distribución y el SRID de tus datos antes de aplicar ese patrón:
+
+```sql
+SELECT ST_SRID(geom) AS srid, ST_GeometryType(geom) AS tipo,
+       count(*) AS filas
+FROM public.countries
+GROUP BY ST_SRID(geom), ST_GeometryType(geom);
+```
+
+**Comprueba:** SRID `4326` y geometrías de países. Para ver una nueva tabla permanente, actualiza la conexión de QGIS y arrástrala al mapa junto con su capa de origen. Las actividades finales conservan las instrucciones originales para `centroides`, `buffer` y la relación espacial con Sao Paulo.
+
+<p class="content-source"><strong>Fuentes:</strong> preparación de <code>lugares</code> y ejemplos sobre <code>countries</code> del ejercicio original de MappingGIS, páginas 56–64. Explicaciones complementarias: <a href="https://www.postgresql.org/docs/current/tutorial-sql.html">PostgreSQL · SQL</a>, <a href="https://www.postgresql.org/docs/current/tutorial-transactions.html">transacciones</a>, <a href="https://postgis.net/docs/ST_Distance.html">PostGIS · ST_Distance</a> y <a href="https://postgis.net/docs/ST_Buffer.html">ST_Buffer</a>.</p>
+
+## 12. Del procedimiento al ejercicio {#preparar-ejercicios}
 
 Antes de resolver una actividad, identifica **qué objetos necesita**, **qué transformación solicita** y **qué evidencia debes guardar**. Los enunciados originales aparecen a continuación; esta tabla señala dónde prepararte.
 
@@ -536,12 +545,12 @@ Antes de resolver una actividad, identifica **qué objetos necesita**, **qué tr
 |---|---|---|
 | 1–2 · archivos y pgAdmin | [Antes de comenzar](#antes-de-comenzar) | Datos extraídos y aplicación abierta |
 | 3–5 · conexión, importación y exportación | [Importar, visualizar y exportar](#importar-datos) | Tres tablas, capas visibles y dos archivos exportados |
-| 6–9 · crear y editar lugares | [SQL ejecutable](#ejemplos-sql) y contexto de cada actividad | Estructura, registros y modificaciones solicitadas |
+| 6–9 · crear y editar lugares | [SQL con las tablas del curso](#ejemplos-sql) y contexto de cada actividad | Estructura, registros y modificaciones solicitadas |
 | 10–11 · consultas sobre países | Filtrar, ordenar y resumir | Campos, condiciones y filas que solicita el enunciado |
 | 12–14 · conversiones y medidas | Geometrías y formatos; coordenadas y medidas; ejemplos SQL | Formato de salida y unidades correctos |
 | 15–17 · generación y relaciones | Operaciones geométricas; ejemplos SQL | Nuevas capas y comparación espacial solicitada |
 
-**Para las actividades sobre `lugares`:** el bloque de creación está en el contexto del ejercicio 6, y los tres registros originales en el del 7. Ejecuta esos bloques en ese orden antes de continuar con el 8 y el 9. No los reemplaces por `demo_paradas`. Si ya habías insertado datos, consulta `SELECT gid, nombre FROM lugares ORDER BY gid;`: los identificadores no vuelven a empezar al borrar una fila y no debes suponer que coinciden con los de una instalación nueva.
+**Para las actividades sobre `lugares`:** el bloque de creación y los tres registros originales están explicados en la sección SQL guiado y también conservados en el contexto de los ejercicios 6 y 7. Si ya los ejecutaste durante la preparación, no los repitas: revisa los resultados y documenta cada actividad antes de continuar con el 8 y el 9. Si ya habías insertado datos, consulta `SELECT gid, nombre FROM lugares ORDER BY gid;`: los identificadores no vuelven a empezar al borrar una fila y no debes suponer que coinciden con los de una instalación nueva.
 
 ### Errores frecuentes y cómo resolverlos
 
@@ -559,6 +568,22 @@ Antes de resolver una actividad, identifica **qué objetos necesita**, **qué tr
 | Current transaction is aborted | Una sentencia anterior falló dentro de una transacción | Ejecuta `ROLLBACK`, corrige el error y repite el bloque |
 
 **Control antes de pasar a la unidad 3:** conserva la base `world`, las capas importadas y los archivos originales. GeoServer utilizará ese trabajo más adelante. Guarda las consultas útiles en archivos `.sql` y registra las versiones empleadas.
+
+## 13. Síntesis y referencias
+
+<div class="visual-grid">
+<div class="visual-card"><b>Guardar</b>Tabla + atributos + geometría + SRID.</div>
+<div class="visual-card"><b>Preguntar</b>SQL + función adecuada + unidades compatibles.</div>
+<div class="visual-card"><b>Interpretar</b>Booleano, medida o geometría: son resultados distintos.</div>
+</div>
+
+### Material y referencias
+
+Base de la explicación: material del curso de MappingGIS. Síntesis e ilustraciones originales para estudio. Los ejercicios originales y sus paneles de contexto se conservan al final de esta página; el PDF queda como respaldo.
+
+Ampliaciones técnicas contrastadas con la documentación oficial: [índices espaciales](https://postgis.net/workshops/postgis-intro/indexing.html), [ST_DWithin y sus unidades](https://postgis.net/docs/ST_DWithin.html), [ST_SetSRID](https://postgis.net/docs/ST_SetSRID.html) y [ST_Transform](https://postgis.net/docs/ST_Transform.html). Para el resto de funciones, consulta el [manual de PostGIS](https://postgis.net/docs/).
+
+
 
 ## Ejercicio Unidad 2 {#ejercicios-originales-del-curso}
 
