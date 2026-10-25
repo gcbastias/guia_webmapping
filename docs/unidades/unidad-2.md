@@ -23,25 +23,6 @@ Esta guía visual integra las tres clases de la unidad: introducción a PostGIS,
 
 **Versiones y nombres de menú.** El curso utiliza PostgreSQL 17 y PostGIS 3.5. Las rutas siguientes describen ese flujo en Windows; los nombres de algunos botones pueden variar con la versión o el idioma. Anota tus versiones para poder interpretar diferencias.
 
-### Preparar los archivos
-
-1. Descarga `webmapping.zip` desde tu cuenta del curso y extrae **todo** su contenido en una ruta sin espacios, por ejemplo `C:\webmapping`.
-2. Abre `C:\webmapping\Capas`. Localiza `ne_110m_admin_0_countries.shp`, `ne_110m_populated_places.shp` y `ne_110_rivers_lake.gpkg`.
-3. Mantén cada shapefile junto a sus archivos auxiliares: `.dbf` contiene atributos, `.shx` el índice y `.prj` la referencia espacial. No copies solamente el `.shp`.
-4. Guarda una captura de la carpeta para el ejercicio 1. Si conservas la plantilla de resultados del curso, úsala; para estudio personal puedes guardar capturas numeradas en tu carpeta de resultados.
-
-### Instalar y abrir las herramientas
-
-1. Si ya tienes PostgreSQL y PostGIS operativos, pasa a la conexión. Si no, descarga el instalador desde [PostgreSQL para Windows](https://www.postgresql.org/download/windows/).
-2. En el instalador incluye **PostgreSQL Server**, **pgAdmin 4**, **Command Line Tools** y **Stack Builder**. Conserva las rutas predeterminadas y anota el puerto; el habitual es `5432`. Define y guarda tu propia contraseña del usuario `postgres`.
-3. Abre **Stack Builder**, selecciona la instalación y el puerto anteriores y busca **Spatial Extensions → PostGIS**. Instala la edición compatible con esa instalación de PostgreSQL. El curso muestra PostgreSQL 17 con PostGIS 3.5; no mezcles paquetes de distintas versiones mayores de PostgreSQL.
-4. Abre **pgAdmin 4** desde Inicio. Su interfaz puede abrirse en una ventana de escritorio o en el navegador. Esta es la aplicación que debes capturar en el ejercicio 2.
-5. Abre QGIS. Si falta el Administrador de BBDD, revisa **Complementos → Administrar e instalar complementos** y activa **DB Manager / Administrador de BBDD**.
-
-**Comprueba:** PostgreSQL debe estar ejecutándose como servicio de Windows. Abrir pgAdmin no inicia por sí solo un servidor detenido.
-
-<p class="content-source"><strong>Referencias:</strong> <a href="https://postgis.net/documentation/getting_started/install_windows/">PostGIS · instalación en Windows</a> · <a href="https://docs.qgis.org/3.44/en/docs/user_manual/plugins/core_plugins/plugins_db_manager.html">QGIS · Administrador de BBDD</a>. Secuencia adaptada a la práctica original de MappingGIS.</p>
-
 ## 1. Arquitectura y datos
 
 ### Del archivo a PostGIS
@@ -282,6 +263,25 @@ Los esquemas muestran relaciones entre superficies; las definiciones también co
 
 Las consultas de la clase utilizan ejemplos de Nueva York para explicar relaciones y construcción. La práctica entregable de esta unidad utiliza las capas y ciudades indicadas en su PDF; se conserva esa distinción.
 
+
+### Preparar los archivos
+
+1. Descarga `webmapping.zip` desde tu cuenta del curso y extrae **todo** su contenido en una ruta sin espacios, por ejemplo `C:\webmapping`.
+2. Abre `C:\webmapping\Capas`. Localiza `ne_110m_admin_0_countries.shp`, `ne_110m_populated_places.shp` y `ne_110_rivers_lake.gpkg`.
+3. Mantén cada shapefile junto a sus archivos auxiliares: `.dbf` contiene atributos, `.shx` el índice y `.prj` la referencia espacial. No copies solamente el `.shp`.
+4. Guarda una captura de la carpeta para el ejercicio 1. Si conservas la plantilla de resultados del curso, úsala; para estudio personal puedes guardar capturas numeradas en tu carpeta de resultados.
+
+### Instalar y abrir las herramientas
+
+1. Si ya tienes PostgreSQL y PostGIS operativos, pasa a la conexión. Si no, descarga el instalador desde [PostgreSQL para Windows](https://www.postgresql.org/download/windows/).
+2. En el instalador incluye **PostgreSQL Server**, **pgAdmin 4**, **Command Line Tools** y **Stack Builder**. Conserva las rutas predeterminadas y anota el puerto; el habitual es `5432`. Define y guarda tu propia contraseña del usuario `postgres`.
+3. Abre **Stack Builder**, selecciona la instalación y el puerto anteriores y busca **Spatial Extensions → PostGIS**. Instala la edición compatible con esa instalación de PostgreSQL. El curso muestra PostgreSQL 17 con PostGIS 3.5; no mezcles paquetes de distintas versiones mayores de PostgreSQL.
+4. Abre **pgAdmin 4** desde Inicio. Su interfaz puede abrirse en una ventana de escritorio o en el navegador. Esta es la aplicación que debes capturar en el ejercicio 2.
+5. Abre QGIS. Si falta el Administrador de BBDD, revisa **Complementos → Administrar e instalar complementos** y activa **DB Manager / Administrador de BBDD**.
+
+**Comprueba:** PostgreSQL debe estar ejecutándose como servicio de Windows. Abrir pgAdmin no inicia por sí solo un servidor detenido.
+
+<p class="content-source"><strong>Referencias:</strong> <a href="https://postgis.net/documentation/getting_started/install_windows/">PostGIS · instalación en Windows</a> · <a href="https://docs.qgis.org/3.44/en/docs/user_manual/plugins/core_plugins/plugins_db_manager.html">QGIS · Administrador de BBDD</a>. Secuencia adaptada a la práctica original de MappingGIS.</p>
 
 ## 9. Conectar y crear la base world {#crear-world}
 
