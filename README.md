@@ -34,3 +34,5 @@ Antes de publicar el piloto se conserva la versión anterior mediante la etiquet
 La plantilla `overrides/main.html` añade `noindex, nofollow, noimageindex` a todas las páginas HTML. Los enlaces a PDF incluyen la indicación `nofollow`.
 
 Estas indicaciones no restringen el acceso. No configuran un encabezado `X-Robots-Tag` para los PDF y no hacen privado el repositorio. Los PDF y sus capturas siguen siendo archivos públicos mientras se alojen aquí. Para excluir los PDF de búsquedas se requiere un alojamiento que permita enviar `X-Robots-Tag: noindex`; para restringir acceso se requiere autenticación y almacenamiento privado.
+
+Desarrollado con asistencia de Codex.
