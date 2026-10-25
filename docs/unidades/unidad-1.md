@@ -28,7 +28,6 @@ Una aplicación de webmapping permite explorar información geográfica desde el
 <div class="visual-card"><span class="visual-number">03</span><b>Interacción</b>¿Qué puede hacer la persona? Mover, acercar, filtrar o consultar.</div>
 </div>
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad1_webmapping.pdf</a>.</p>
 
 ## 2. El recorrido de una petición
 
@@ -59,7 +58,7 @@ Imagina un visor de bibliotecas: al mover el mapa, la aplicación puede solicita
 
 WMS también puede ofrecer consultas de información con `GetFeatureInfo`; eso no lo convierte en un servicio de descarga vectorial. Referencias: [OGC WMS](https://www.ogc.org/standards/wms/) y [OGC WFS](https://www.ogc.org/standards/wfs/).
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad1_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a> · <a href="https://www.ogc.org/standards/wfs/">OGC · WFS</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a> · <a href="https://www.ogc.org/standards/wfs/">OGC · WFS</a>.</p>
 
 ## 3. Elegir cómo guardar y entregar los datos
 
@@ -102,7 +101,7 @@ WMS también puede ofrecer consultas de información con `GetFeatureInfo`; eso n
 
 Ejemplo ficticio. En GeoJSON conforme a RFC 7946, las coordenadas se expresan como **longitud, latitud** en grados. La geometría responde «dónde» y `properties` responde «qué sabemos». Consulta [RFC 7946](https://datatracker.ietf.org/doc/html/rfc7946) y la [especificación MBTiles](https://github.com/mapbox/mbtiles-spec).
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad1_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://datatracker.ietf.org/doc/html/rfc7946">IETF · RFC 7946 (GeoJSON)</a> · <a href="https://github.com/mapbox/mbtiles-spec">MBTiles · especificación</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://datatracker.ietf.org/doc/html/rfc7946">IETF · RFC 7946 (GeoJSON)</a> · <a href="https://github.com/mapbox/mbtiles-spec">MBTiles · especificación</a>.</p>
 
 ## 4. Cómo llegamos hasta aqué
 
@@ -115,7 +114,6 @@ Ejemplo ficticio. En GeoJSON conforme a RFC 7946, las coordenadas se expresan co
 
 Esta es una síntesis conceptual de la evolución presentada en el curso, no una cronología exhaustiva de lanzamientos.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad1_webmapping.pdf</a>.</p>
 
 ## 5. Construir por componentes o usar una plataforma
 
@@ -129,7 +127,7 @@ El software libre permite inspeccionar y adaptar el código, pero sigue requirie
 
 **Lista de requisitos para un proyecto:** formatos y proyecciones, leyendas, consultas, edición cuando se necesite, autenticación, permisos, accesibilidad y estándares. Leaflet es una biblioteca del visor, no una plataforma completa: [documentación oficial](https://leafletjs.com/).
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad1_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
 
 ## 6. Tu mapa mental de la unidad
 
@@ -141,7 +139,6 @@ El software libre permite inspeccionar y adaptar el código, pero sigue requirie
 
 **Recuerda:** formato no es servicio; biblioteca no es servidor; publicar no es lo mismo que analizar.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad1_webmapping.pdf</a>.</p>
 
 ## Fuentes y alcance
 

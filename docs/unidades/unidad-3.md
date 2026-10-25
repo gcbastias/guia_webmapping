@@ -21,7 +21,7 @@ GeoServer recibe peticiones, accede a un origen y prepara una respuesta geográf
 
 HTTP admite imágenes, XML y otros contenidos: no se limita a páginas HTML.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3_Est%C3%A1ndares%20abiertos%20e%20interoperables%20del%20OGC.pdf" rel="nofollow">MappingGIS · Unidad3_Estándares abiertos e interoperables del OGC.pdf</a> · <a href="../../materiales/Unidad3.1_Servidores%20de%20datos%20espaciales.%20Geoserver.pdf" rel="nofollow">MappingGIS · Unidad3.1_Servidores de datos espaciales. Geoserver.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
 
 ## 2. Workspace, store, layer y style
 
@@ -33,7 +33,7 @@ En la práctica se utiliza el espacio `earth` y la base `world`. El nombre `eart
 
 Un **layer group** combina capas en un orden de dibujo. Comprueba fondo, transparencia y límites. El directorio de datos conserva la configuración; los binarios y los datos del proyecto tienen ciclos de mantenimiento distintos.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3.1_Servidores%20de%20datos%20espaciales.%20Geoserver.pdf" rel="nofollow">MappingGIS · Unidad3.1_Servidores de datos espaciales. Geoserver.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
 
 ## 3. Elegir el servicio OGC
 
@@ -50,7 +50,7 @@ Para elegir un servicio, empieza por el resultado que necesitas.
 
 `GetCapabilities` anuncia las capacidades del servicio. WMS puede permitir consultar una posición; eso no sustituye el acceso a entidades de WFS. WCS conserva el sentido de los valores de una cobertura, mientras una imagen puede representarlos mediante colores. SLD describe estilos; no es otro servicio de descarga.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3_Est%C3%A1ndares%20abiertos%20e%20interoperables%20del%20OGC.pdf" rel="nofollow">MappingGIS · Unidad3_Estándares abiertos e interoperables del OGC.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a> · <a href="https://www.ogc.org/standards/wfs/">OGC · WFS</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a> · <a href="https://www.ogc.org/standards/wfs/">OGC · WFS</a>.</p>
 
 ## 4. Leer una petición de mapa
 
@@ -62,7 +62,7 @@ La URL combina un punto de acceso con parámetros. Capa, estilo, referencia, enc
 
 El servidor puede reproyectar al vuelo cuando su configuración lo permite, sin modificar necesariamente los datos almacenados. La práctica conecta los servicios con QGIS antes de consumirlos en un visor.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3_Est%C3%A1ndares%20abiertos%20e%20interoperables%20del%20OGC.pdf" rel="nofollow">MappingGIS · Unidad3_Estándares abiertos e interoperables del OGC.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a>.</p>
 
 ## 5. Simbología, etiquetas y escala
 
@@ -79,12 +79,10 @@ El estilo convierte atributos y geometrías en símbolos. Sus reglas controlan c
 
 Una vista general necesita menos detalle que una cercana. Las comparaciones de versiones del PDF describen el contexto de las clases; revisa la compatibilidad para la versión instalada.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad3.1_Servidores%20de%20datos%20espaciales.%20Geoserver.pdf" rel="nofollow">MappingGIS · Unidad3.1_Servidores de datos espaciales. Geoserver.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/data/webadmin/index.html">GeoServer · organización de datos</a>.</p>
 
 ## Material y referencias
 
-- [Unidad3.1_Servidores de datos espaciales. Geoserver.pdf](../materiales/Unidad3.1_Servidores%20de%20datos%20espaciales.%20Geoserver.pdf) · material original.
-- [Unidad3_Estándares abiertos e interoperables del OGC.pdf](../materiales/Unidad3_Est%C3%A1ndares%20abiertos%20e%20interoperables%20del%20OGC.pdf) · material original.
 
 Ampliación técnica: [Organización de datos en GeoServer](https://docs.geoserver.org/stable/en/user/data/webadmin/index.html) · [OGC WMS](https://www.ogc.org/standards/wms/) · [OGC WFS](https://www.ogc.org/standards/wfs/). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 

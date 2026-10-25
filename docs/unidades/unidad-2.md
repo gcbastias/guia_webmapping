@@ -34,7 +34,7 @@ Esta guía visual integra las tres clases de la unidad: introducción a PostGIS,
 | Cliente cartográfico | QGIS | Conectar, importar, exportar y visualizar capas |
 | Publicación web, más adelante | GeoServer → visor | Llevar las capas al navegador |
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/workshops/postgis-intro/indexing.html">PostGIS · índices espaciales</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://postgis.net/workshops/postgis-intro/indexing.html">PostGIS · índices espaciales</a>.</p>
 
 ## 2. Geometrías y formatos
 
@@ -78,7 +78,6 @@ Esta guía visual integra las tres clases de la unidad: introducción a PostGIS,
 
 **Precisión respecto de los apuntes históricos:** WKT y WKB tienen variantes que admiten dimensiones adicionales; no conviene afirmar que todos sus usos se limitan a 2D. El WKT convencional no incorpora por sí solo el SRID; EWKT puede expresarlo como `SRID=4326;POINT(...)`.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2_webmapping.pdf</a> · <a href="../../materiales/Unidad2-1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-1_webmapping.pdf</a>.</p>
 
 ## 3. Coordenadas y medidas
 
@@ -122,7 +121,7 @@ No basta con que un sistema use metros para que cualquier medida sea adecuada: t
 
 **Metadatos que encontrarás:** `spatial_ref_sys` describe sistemas de referencia; `geometry_columns` y `geography_columns` permiten inspeccionar columnas espaciales. `ST_GeometryType`, `ST_NDims` y `ST_SRID` describen una geometría. Los estándares Simple Features y SQL/MM aportan tipos y operaciones comunes; no todas las extensiones de PostGIS pertenecen al mismo estándar.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-1_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/docs/ST_SetSRID.html">PostGIS · ST_SetSRID</a> · <a href="https://postgis.net/docs/ST_Transform.html">PostGIS · ST_Transform</a> · <a href="https://postgis.net/docs/ST_DWithin.html">PostGIS · ST_DWithin</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://postgis.net/docs/ST_SetSRID.html">PostGIS · ST_SetSRID</a> · <a href="https://postgis.net/docs/ST_Transform.html">PostGIS · ST_Transform</a> · <a href="https://postgis.net/docs/ST_DWithin.html">PostGIS · ST_DWithin</a>.</p>
 
 ## 4. Índices espaciales
 
@@ -138,7 +137,7 @@ Una caja delimitadora simplifica la extensión de una geometría. El índice pue
 
 `ST_Intersects` y `ST_DWithin` pueden aprovechar índices compatibles. `ST_Distance` calcula una distancia; para filtrar por radio suele resultar apropiado `ST_DWithin`. Es una explicación del mecanismo, no una promesa de un tiempo fijo de ejecución.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/workshops/postgis-intro/indexing.html">PostGIS · índices espaciales</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://postgis.net/workshops/postgis-intro/indexing.html">PostGIS · índices espaciales</a>.</p>
 
 ## 5. Flujo de una consulta SQL
 
@@ -166,7 +165,6 @@ CREATE EXTENSION postgis;
 SELECT postgis_full_version();
 ```
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-1_webmapping.pdf</a>.</p>
 
 ## 6. Funciones y resultados
 
@@ -188,7 +186,6 @@ SELECT postgis_full_version();
 
 Otros accesores del material: `ST_ExteriorRing`, `ST_InteriorRingN`, `ST_GeometryN`, `ST_NumGeometries`, `ST_NPoints`, `ST_NRings`, `ST_StartPoint` y `ST_EndPoint`. Comprueba el tipo de geometría que admite cada función; por ejemplo, `ST_ExteriorRing` trabaja con polígonos, no directamente con multipolígonos.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2_webmapping.pdf</a> · <a href="../../materiales/Unidad2-2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-2_webmapping.pdf</a>.</p>
 
 ## 7. Relaciones espaciales
 
@@ -217,7 +214,7 @@ Los esquemas muestran relaciones entre superficies; las definiciones también co
 
 **La frontera importa:** un punto situado solo sobre el borde de un polígono puede intersectarlo sin estar contenido según `ST_Contains`. **`ST_Intersects` devuelve un booleano; `ST_Intersection` devuelve una geometría.**
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-2_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://postgis.net/docs/ST_DWithin.html">PostGIS · ST_DWithin</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://postgis.net/docs/ST_DWithin.html">PostGIS · ST_DWithin</a>.</p>
 
 ## 8. Operaciones geométricas
 
@@ -256,7 +253,6 @@ Los esquemas muestran relaciones entre superficies; las definiciones también co
 
 Las consultas de la clase utilizan ejemplos de Nueva York para explicar relaciones y construcción. La práctica entregable de esta unidad utiliza las capas y ciudades indicadas en su PDF; se conserva esa distinción.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2-2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-2_webmapping.pdf</a>.</p>
 
 ## 9. Síntesis y referencias
 
@@ -268,11 +264,10 @@ Las consultas de la clase utilizan ejemplos de Nueva York para explicar relacion
 
 ### Material y referencias
 
-Base de la explicación: `Unidad2_webmapping.pdf`, `Unidad2-1_webmapping.pdf` y `Unidad2-2_webmapping.pdf` de MappingGIS. Síntesis e ilustraciones originales para estudio. La práctica se conserva en el documento original, con sus capturas y pasos completos.
+Base de la explicación: material del curso de MappingGIS. Síntesis e ilustraciones originales para estudio. La práctica se conserva en el documento original, con sus capturas y pasos completos.
 
 Ampliaciones técnicas contrastadas con la documentación oficial: [índices espaciales](https://postgis.net/workshops/postgis-intro/indexing.html), [ST_DWithin y sus unidades](https://postgis.net/docs/ST_DWithin.html), [ST_SetSRID](https://postgis.net/docs/ST_SetSRID.html) y [ST_Transform](https://postgis.net/docs/ST_Transform.html). Para el resto de funciones, consulta el [manual de PostGIS](https://postgis.net/docs/).
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2_webmapping.pdf</a> · <a href="../../materiales/Unidad2-1_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-1_webmapping.pdf</a> · <a href="../../materiales/Unidad2-2_webmapping.pdf" rel="nofollow">MappingGIS · Unidad2-2_webmapping.pdf</a>.</p>
 
 ## Ejercicio Unidad 2 {#ejercicios-originales-del-curso}
 

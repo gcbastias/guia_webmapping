@@ -14,7 +14,7 @@ Una clase define propiedades y métodos; una instancia reúne valores y comporta
 
 El curso muestra biblioteca completa y módulos con npm. En el proyecto modular, las importaciones declaran clases y las herramientas sirven y preparan la aplicación. La notación global `ol.*` y las importaciones son formas de carga distintas.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf" rel="nofollow">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
 
 ## 2. Layer y Source
 
@@ -32,7 +32,7 @@ La **capa** controla presentación, orden, visibilidad y opacidad. La **fuente**
 
 WFS puede alimentar una fuente vectorial. GeoJSON es un formato de intercambio; MVT codifica teselas vectoriales. Teselado no significa necesariamente ráster.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf" rel="nofollow">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
 
 ## 3. Coordenadas y proyección
 
@@ -44,7 +44,7 @@ EPSG:3857 es la proyección habitual por defecto. Una coordenada de longitud y l
 
 Extensión, resolución y tamaño del mapa están relacionados. Un dato correcto puede quedar fuera de la ventana inicial. Revisa su extensión y transformación antes de concluir que no se ha cargado.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf" rel="nofollow">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/faq.html">OpenLayers · proyecciones</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://openlayers.org/doc/faq.html">OpenLayers · proyecciones</a>.</p>
 
 ## 4. Features, estilos y renderizado
 
@@ -56,7 +56,7 @@ Una **feature** reúne geometría y propiedades. El estilo decide relleno, trazo
 
 Canvas y WebGL están disponibles según capa y versión; no son opciones idénticas para todas las clases. El mapa de calor representa concentración o pesos y necesita interpretar esos valores.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf" rel="nofollow">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
 
 ## 5. Controles, selección y dibujo
 
@@ -66,14 +66,12 @@ Un **control** es un elemento visible, como escala o pantalla completa. Una **in
 
 Seleccionar trabaja con entidades; dibujar crea geometrías. Un cambio en el navegador no se guarda automáticamente en una base de datos: necesita un mecanismo compatible del servidor.
 
-Las **16 prácticas originales** construyen progresivamente el visor. Las instrucciones de Git se conservan como apoyo, sin convertirlas en un ejercicio nuevo.
+Las **16 prácticas originales** construyen progresivamente el visor.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad6_webmapping_openlayers-v1.pdf" rel="nofollow">MappingGIS · Unidad6_webmapping_openlayers-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://openlayers.org/doc/quickstart.html">OpenLayers · guía de inicio</a>.</p>
 
 ## Material y referencias
 
-- [Instalar_GIT.pdf](../materiales/Instalar_GIT.pdf) · material original.
-- [Unidad6_webmapping_openlayers-v1.pdf](../materiales/Unidad6_webmapping_openlayers-v1.pdf) · material original.
 
 Ampliación técnica: [Inicio oficial de OpenLayers](https://openlayers.org/doc/quickstart.html) · [Proyecciones y preguntas frecuentes](https://openlayers.org/doc/faq.html). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 

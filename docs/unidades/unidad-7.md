@@ -19,7 +19,7 @@ MapStore crea, gestiona y comparte recursos geográficos. Puede utilizarse como 
 
 La tabla de contenidos organiza capas. Opacidad, estilos, filtros y consultas dependen de versión, complementos, datos y permisos.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf" rel="nofollow">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
 ## 2. Diseñar un panel
 
@@ -31,7 +31,7 @@ Los widgets pueden incluir tablas, gráficos, contadores o textos. Revisa de qu�
 
 El gráfico es una maqueta sin valores reales. La práctica pide un panel con mapa, leyenda y texto o título: no se añaden requisitos a esa entrega.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf" rel="nofollow">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
 ## 3. Usuarios, roles y permisos
 
@@ -43,7 +43,7 @@ Compartir una URL no vuelve público un mapa restringido. Revisa acceso y contex
 
 Las capturas corresponden al entorno de clase. Este piloto no crea usuarios, modifica permisos ni expone tu servidor local.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf" rel="nofollow">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
 ## 4. Filtros, atributos y widgets
 
@@ -55,7 +55,7 @@ Ocultar una capa cambia la representación; filtrar sus entidades decide cuáles
 
 Las anotaciones incorporan puntos, textos o polígonos. La práctica exporta una anotación para usarla en Leaflet y conectar la composición visual con el desarrollo estudiado antes.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf" rel="nofollow">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
 ## 5. Contextos e historias
 
@@ -67,11 +67,10 @@ Una historia organiza texto, imágenes y mapas en secuencia; un panel favorece l
 
 Los **9 ejercicios originales** conservan sus tareas de usuarios, mapas, anotaciones, filtros, exportación, contexto y panel. No se añaden actividades al curso.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad7_webmapping.pdf" rel="nofollow">MappingGIS · Unidad7_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/">MapStore · guía de usuario</a>.</p>
 
 ## Material y referencias
 
-- [Unidad7_webmapping.pdf](../materiales/Unidad7_webmapping.pdf) · material original.
 
 Ampliación técnica: [Guía oficial de MapStore](https://docs.mapstore.geosolutionsgroup.com/en/latest/user-guide/home-page/). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 

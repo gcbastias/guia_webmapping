@@ -14,7 +14,6 @@ La infraestructura debe responder al volumen, consultas y mantenimiento. Un aloj
 
 La interoperabilidad permite combinar componentes compatibles. Cambiar herramientas exige revisar funciones, formatos y configuración; no toda sustitución es automática.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad8_webmapping.pdf" rel="nofollow">MappingGIS · Unidad8_webmapping.pdf</a>.</p>
 
 ## 2. Arquitectura del proyecto
 
@@ -32,7 +31,7 @@ El proyecto solicita Leaflet. Demarcación y ríos se incorporan a PostGIS y Geo
 
 El esquema sintetiza el enunciado, sin añadir entregables. Las instrucciones completas aparecen al final.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Ejercicio_8_Proyecto%20final.pdf" target="_blank" rel="nofollow noopener noreferrer">MappingGIS · Ejercicio_8_Proyecto final.pdf</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="../../materiales/Ejercicio_8_Proyecto%20final.pdf" target="_blank" rel="nofollow noopener noreferrer">MappingGIS · Ejercicio_8_Proyecto final.pdf</a>.</p>
 
 ## 3. Diseñar para comprender
 
@@ -44,7 +43,7 @@ Usa símbolos coherentes, leyenda cuando haga falta y etiquetas que no saturen l
 
 La maqueta no representa la geografía real del Duero. Permite estudiar bordes, líneas y puntos antes de aplicar estilos a las capas del curso.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad8_webmapping.pdf" rel="nofollow">MappingGIS · Unidad8_webmapping.pdf</a> · <a href="../../materiales/Ejercicio_8_Proyecto%20final.pdf" target="_blank" rel="nofollow noopener noreferrer">MappingGIS · Ejercicio_8_Proyecto final.pdf</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="../../materiales/Ejercicio_8_Proyecto%20final.pdf" target="_blank" rel="nofollow noopener noreferrer">MappingGIS · Ejercicio_8_Proyecto final.pdf</a>.</p>
 
 ## 4. Pruebas y mantenimiento
 
@@ -56,7 +55,6 @@ Comprueba carga, capas, referencia, leyendas, consultas, controles y pantalla. R
 
 Caché, volumen y peticiones influyen en rendimiento. Documentar origen, fecha y configuración facilita mantener el visor cuando cambian datos o servicios.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad8_webmapping.pdf" rel="nofollow">MappingGIS · Unidad8_webmapping.pdf</a>.</p>
 
 ## 5. Evaluación original
 
@@ -68,11 +66,10 @@ La entrega utiliza una plantilla con capturas de los pasos y del visor en las es
 
 Estos criterios pertenecen al curso: no son una evaluación nueva del piloto. El proyecto original, con ayuda y puntuación, se conserva a continuación.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Ejercicio_8_Proyecto%20final.pdf" target="_blank" rel="nofollow noopener noreferrer">MappingGIS · Ejercicio_8_Proyecto final.pdf</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="../../materiales/Ejercicio_8_Proyecto%20final.pdf" target="_blank" rel="nofollow noopener noreferrer">MappingGIS · Ejercicio_8_Proyecto final.pdf</a>.</p>
 
 ## Material y referencias
 
-- [Unidad8_webmapping.pdf](../materiales/Unidad8_webmapping.pdf) · material original.
 
 Ampliación técnica: [Publicación con GeoServer](https://docs.geoserver.org/stable/en/user/data/webadmin/index.html) · [Visor Leaflet](https://leafletjs.com/examples/quick-start/). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 

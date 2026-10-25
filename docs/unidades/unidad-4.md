@@ -19,7 +19,7 @@ La primera visita a un área no cacheada puede requerir dibujar el mapa. Las sig
 
 La caché reduce trabajo repetido; no sustituye la preparación de datos ni la configuración del servicio.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf" rel="nofollow">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
 ## 2. Una pirámide de cuadrículas
 
@@ -31,7 +31,7 @@ Al acercarte, el visor solicita piezas de un nivel más detallado. En el modelo 
 
 La petición identifica el nivel y la posición. WMTS y otros esquemas teselados permiten acceder a mapas organizados en cuadrículas. La práctica configura caché integrada con GeoServer.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf" rel="nofollow">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
 ## 3. Pregeneración y demanda
 
@@ -47,7 +47,7 @@ La petición identifica el nivel y la posición. WMTS y otros esquemas teselados
 
 El PDF propone combinar ambas estrategias. En las herramientas del curso, `seed`, `reseed` y `truncate` corresponden a creación, regeneración y eliminación de caché.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf" rel="nofollow">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
 ## 4. Zoom y almacenamiento
 
@@ -59,7 +59,7 @@ Para una cobertura completa del modelo de una tesela inicial y subdivisión por 
 
 Las cuotas ayudan a limitar el almacenamiento. La práctica pide anotar el tamaño real y comparar dos visores; esos resultados se obtienen con la configuración y los archivos originales.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf" rel="nofollow">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
 ## 5. Renovar y distinguir contenidos
 
@@ -71,11 +71,10 @@ Las **teselas ráster** contienen una representación dibujada. Las **vectoriale
 
 La práctica incluye teselas vectoriales y Google Earth. Se conserva íntegramente al final; aplicaciones y proveedores externos pueden haber cambiado desde la clase.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad4_webmapping.pdf" rel="nofollow">MappingGIS · Unidad4_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
 
 ## Material y referencias
 
-- [Unidad4_webmapping.pdf](../materiales/Unidad4_webmapping.pdf) · material original.
 
 Ampliación técnica: [GeoWebCache integrado en GeoServer](https://docs.geoserver.org/stable/en/user/geowebcache/index.html). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 

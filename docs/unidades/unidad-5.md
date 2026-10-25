@@ -18,7 +18,7 @@ Síntesis visual de las clases, con diagramas originales para explicar los conce
 
 Un `id` identifica un elemento; una `class` agrupa estilos. CSS combina selector, propiedad y valor. La hoja CSS de la página y la simbología del servidor actúan en niveles distintos.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5_webmapping.pdf" rel="nofollow">MappingGIS · Unidad5_webmapping.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content">MDN · estructura HTML</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content">MDN · estructura HTML</a>.</p>
 
 ## 2. Del documento a L.map
 
@@ -35,7 +35,7 @@ El curso carga `leaflet.css` y `leaflet.js`. `L.map` crea la instancia, `setView
 
 La consola muestra errores y la pestaña de red permite revisar recursos. Sigue el primer error antes de cambiar varias partes. Sirve el visor mediante HTTP como indica la clase: abrir un archivo local no reproduce todos los comportamientos de un servidor.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf" rel="nofollow">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
 
 ## 3. Fondo, WMS y vectores
 
@@ -51,7 +51,7 @@ La consola muestra errores y la pestaña de red permite revisar recursos. Sigue 
 
 Marcadores, líneas, polígonos y grupos organizan el mapa. `addTo`, `addLayer` y `removeLayer` controlan su presencia. Conserva la atribución de los proveedores: los fondos tienen condiciones de uso propias.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf" rel="nofollow">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
 
 ## 4. Eventos, popups y controles
 
@@ -63,7 +63,7 @@ Los controles permiten manejar zoom, escala y capas. El control de capas disting
 
 Una función de estilo puede representar atributos con colores o tamaños. `onEachFeature` facilita asociar acciones a cada entidad GeoJSON. Los plugins añaden funciones como búsqueda; comprueba la compatibilidad con la versión utilizada.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf" rel="nofollow">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
 
 ## 5. Coordenadas, radio y depuración
 
@@ -75,12 +75,10 @@ En llamadas habituales de Leaflet que reciben `LatLng`, el orden es **latitud, l
 
 Si el mapa falla, revisa tamaño del contenedor, bibliotecas, ejecución, variables, coordenadas y respuestas de red. Se conservan dos prácticas diferenciadas: **9 ejercicios de HTML/CSS/JavaScript y 12 de Leaflet**, con numeración propia.
 
-<p class="content-source"><strong>Fuente del apartado:</strong> <a href="../../materiales/Unidad5-1_webmapping_leaflet-v1.pdf" rel="nofollow">MappingGIS · Unidad5-1_webmapping_leaflet-v1.pdf</a><br><strong>Ampliación y precisión técnica:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a> · <a href="https://datatracker.ietf.org/doc/html/rfc7946">IETF · RFC 7946 (GeoJSON)</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a> · <a href="https://datatracker.ietf.org/doc/html/rfc7946">IETF · RFC 7946 (GeoJSON)</a>.</p>
 
 ## Material y referencias
 
-- [Unidad5-1_webmapping_leaflet-v1.pdf](../materiales/Unidad5-1_webmapping_leaflet-v1.pdf) · material original.
-- [Unidad5_webmapping.pdf](../materiales/Unidad5_webmapping.pdf) · material original.
 
 Ampliación técnica: [Guía de Leaflet](https://leafletjs.com/examples/quick-start/) · [HTML en MDN](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Structuring_content). Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.
 

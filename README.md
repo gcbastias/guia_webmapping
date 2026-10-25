@@ -17,7 +17,7 @@ Editar `docs/`, `mkdocs.yml` y las plantillas de `overrides/`. La carpeta `site/
 - `docs/index.md`: portada con los paneles de unidades.
 - `docs/unidades/`: contenido, referencias y práctica original.
 - `docs/assets/`: diagramas SVG y páginas de referencia de los ejercicios.
-- `docs/materiales/`: PDF originales enlazados en el contenido.
+- `docs/materiales/`: PDF de ejercicios enlazados en el contenido. La versión actual omite los PDF teóricos; los archivos originales locales se conservan. Las versiones anteriores pueden permanecer en el historial de Git.
 - `docs/stylesheets/`: estilos del sitio.
 - `overrides/partials/`: navegación personalizada.
 
