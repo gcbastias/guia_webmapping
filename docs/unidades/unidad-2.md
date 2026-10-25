@@ -9,6 +9,48 @@
 
 Esta guía visual integra las tres clases de la unidad: introducción a PostGIS, gestión de datos y análisis espacial. Las ilustraciones son explicativas; la práctica al final corresponde exclusivamente al PDF original de MappingGIS.
 
+
+## Antes de comenzar {#antes-de-comenzar}
+
+Al terminar podrás preparar una base espacial, cargar y visualizar capas y escribir consultas que devuelvan atributos, medidas o geometrías. El recorrido guiado prepara las herramientas; los **17 ejercicios originales se mantienen al final**.
+
+<div class="visual-flow">
+<div class="visual-card"><b>1 · Preparar</b>Datos y programas disponibles.</div><span class="arrow" aria-hidden="true">→</span>
+<div class="visual-card"><b>2 · Conectar</b>PostGIS, pgAdmin y QGIS.</div><span class="arrow" aria-hidden="true">→</span>
+<div class="visual-card"><b>3 · Comprender</b>Geometrías, SQL y unidades.</div><span class="arrow" aria-hidden="true">→</span>
+<div class="visual-card"><b>4 · Practicar</b>Procedimientos, comprobaciones y ejercicios.</div>
+</div>
+
+| Necesitas | Cómo saber si está listo |
+|---|---|
+| PostgreSQL con PostGIS y pgAdmin 4 | Puedes conectarte al servidor y ejecutar `SELECT version();` |
+| QGIS con el Administrador de bases de datos | Encuentras el menú **Base de datos → Administrador de BBDD** |
+| El paquete `webmapping.zip` del curso | Tienes la carpeta `Capas` con países, lugares poblados y `ne_110_rivers_lake.gpkg` |
+| Una carpeta para guardar resultados | Puedes guardar capturas y archivos exportados |
+
+**Disponibilidad de datos.** El paquete `webmapping.zip` se obtiene desde la plataforma del curso. En tu carpeta de trabajo el paquete se llama `Unidad_2/Archivos_webmapping.zip` y también está extraído en `Unidad_2/Archivos_curso_webmapping`. Copia su contenido a la ruta de práctica si lo necesitas. El sitio publicado no incluye ese paquete: los PDF por sí solos no contienen las capas. Si no lo conservas, debes recuperarlo antes de realizar las importaciones y los ejercicios que dependen de él. Los ejemplos con geometrías escritas en SQL de esta página sí funcionan sin ese paquete, una vez activado PostGIS.
+
+**Versiones y nombres de menú.** El curso utiliza PostgreSQL 17 y PostGIS 3.5. Las rutas siguientes describen ese flujo en Windows; los nombres de algunos botones pueden variar con la versión o el idioma. Anota tus versiones para poder interpretar diferencias.
+
+### Preparar los archivos
+
+1. Descarga `webmapping.zip` desde tu cuenta del curso y extrae **todo** su contenido en una ruta sin espacios, por ejemplo `C:\webmapping`.
+2. Abre `C:\webmapping\Capas`. Localiza `ne_110m_admin_0_countries.shp`, `ne_110m_populated_places.shp` y `ne_110_rivers_lake.gpkg`.
+3. Mantén cada shapefile junto a sus archivos auxiliares: `.dbf` contiene atributos, `.shx` el índice y `.prj` la referencia espacial. No copies solamente el `.shp`.
+4. Guarda una captura de la carpeta para el ejercicio 1. Si conservas la plantilla de resultados del curso, úsala; para estudio personal puedes guardar capturas numeradas en tu carpeta de resultados.
+
+### Instalar y abrir las herramientas
+
+1. Si ya tienes PostgreSQL y PostGIS operativos, pasa a la conexión. Si no, descarga el instalador desde [PostgreSQL para Windows](https://www.postgresql.org/download/windows/).
+2. En el instalador incluye **PostgreSQL Server**, **pgAdmin 4**, **Command Line Tools** y **Stack Builder**. Conserva las rutas predeterminadas y anota el puerto; el habitual es `5432`. Define y guarda tu propia contraseña del usuario `postgres`.
+3. Abre **Stack Builder**, selecciona la instalación y el puerto anteriores y busca **Spatial Extensions → PostGIS**. Instala la edición compatible con esa instalación de PostgreSQL. El curso muestra PostgreSQL 17 con PostGIS 3.5; no mezcles paquetes de distintas versiones mayores de PostgreSQL.
+4. Abre **pgAdmin 4** desde Inicio. Su interfaz puede abrirse en una ventana de escritorio o en el navegador. Esta es la aplicación que debes capturar en el ejercicio 2.
+5. Abre QGIS. Si falta el Administrador de BBDD, revisa **Complementos → Administrar e instalar complementos** y activa **DB Manager / Administrador de BBDD**.
+
+**Comprueba:** PostgreSQL debe estar ejecutándose como servicio de Windows. Abrir pgAdmin no inicia por sí solo un servidor detenido.
+
+<p class="content-source"><strong>Referencias:</strong> <a href="https://postgis.net/documentation/getting_started/install_windows/">PostGIS · instalación en Windows</a> · <a href="https://docs.qgis.org/3.44/en/docs/user_manual/plugins/core_plugins/plugins_db_manager.html">QGIS · Administrador de BBDD</a>. Secuencia adaptada a la práctica original de MappingGIS.</p>
+
 ## 1. Arquitectura y datos
 
 ### Del archivo a PostGIS
@@ -264,10 +306,259 @@ Las consultas de la clase utilizan ejemplos de Nueva York para explicar relacion
 
 ### Material y referencias
 
-Base de la explicación: material del curso de MappingGIS. Síntesis e ilustraciones originales para estudio. La práctica se conserva en el documento original, con sus capturas y pasos completos.
+Base de la explicación: material del curso de MappingGIS. Síntesis e ilustraciones originales para estudio. Los ejercicios originales y sus paneles de contexto se conservan al final de esta página; el PDF queda como respaldo.
 
 Ampliaciones técnicas contrastadas con la documentación oficial: [índices espaciales](https://postgis.net/workshops/postgis-intro/indexing.html), [ST_DWithin y sus unidades](https://postgis.net/docs/ST_DWithin.html), [ST_SetSRID](https://postgis.net/docs/ST_SetSRID.html) y [ST_Transform](https://postgis.net/docs/ST_Transform.html). Para el resto de funciones, consulta el [manual de PostGIS](https://postgis.net/docs/).
 
+
+
+## 10. Conectar y crear la base world {#crear-world}
+
+### Registrar el servidor en pgAdmin
+
+1. En el árbol de pgAdmin despliega **Servers / Servidores**. Si ya aparece tu PostgreSQL local, abre esa conexión.
+2. Si no aparece, pulsa el botón derecho en **Servers → Register → Server**. En versiones anteriores puede llamarse **Create → Server**.
+3. En **General**, escribe un nombre identificativo, por ejemplo `PostgreSQL local`. En **Connection**, utiliza estos valores:
+
+| Parámetro | Valor |
+|---|---|
+| Host name/address | `localhost` |
+| Port | `5432`, o el que anotaste al instalar |
+| Maintenance database | `postgres` |
+| Username | `postgres` |
+| Password | Tu contraseña de instalación |
+
+4. Guarda la conexión. Debe desplegarse el nodo **Databases**. La contraseña maestra de pgAdmin, si la solicita, protege sus contraseñas guardadas; es distinta de la contraseña del servidor.
+
+### Crear world y activar PostGIS
+
+1. Pulsa el botón derecho en **Databases → Create → Database**.
+2. Escribe `world` como nombre y deja `postgres` como propietario. Guarda. Si `world` ya existe por una práctica previa, úsala y revisa sus tablas antes de crear o importar objetos.
+3. Selecciona **world** y abre **Tools → Query Tool**, o su opción en el menú contextual. Confirma en la conexión del editor que estás en `world`.
+4. Pega y ejecuta este bloque con el botón **Execute**:
+
+```sql
+CREATE EXTENSION IF NOT EXISTS postgis;
+SELECT current_database() AS base, postgis_full_version() AS version_postgis;
+```
+
+**Resultado esperado:** una fila cuyo campo `base` sea `world` y cuyo segundo campo contenga la versión de PostGIS. Si devuelve otra base, cambia la conexión antes de continuar. La extensión se activa **en cada base**, no una sola vez para todo el servidor.
+
+### Ejecutar y leer consultas
+
+Pega un bloque cada vez. Si seleccionas texto, comprueba qué sentencia ejecuta el botón de tu versión; evita dejar seleccionada una consulta anterior. Los `SELECT` devuelven filas en **Data Output**; las operaciones de creación y modificación informan en **Messages**. El árbol de objetos puede necesitar **Refresh / Actualizar** después de crear una tabla.
+
+```sql
+SELECT 2 + 3 AS comprobacion;
+```
+
+**Debes ver:** una columna `comprobacion` con el valor `5`. Este pequeño control separa los problemas de conexión de los problemas de datos.
+
+<p class="content-source"><strong>Referencia:</strong> <a href="https://www.pgadmin.org/docs/pgadmin4/latest/query_tool.html">pgAdmin · editor de consultas y paneles de resultados</a>.</p>
+
+## 11. Importar, visualizar y exportar {#importar-datos}
+
+### Dos shapefiles con el importador de PostGIS
+
+La práctica original pide importar dos tablas con la interfaz de PostGIS y una tercera desde QGIS. Sigue las dos rutas para conservar esa distinción.
+
+1. En Inicio busca **PostGIS Shapefile and DBF Loader / Shapefile Import/Export Manager** de tu instalación.
+2. Abre **View connection details** y configura `localhost`, tu puerto, la base `world`, el usuario `postgres` y tu contraseña. Acepta y comprueba la conexión.
+3. En la pestaña **Import**, pulsa **Add File** y abre `ne_110m_populated_places.shp` desde `Capas`.
+4. Configura la tabla de destino como `cities`, esquema `public`, columna geométrica `geom`, modo **Create** y SRID `4326`, tras comprobar que el `.prj` identifica WGS 84. En **Options**, la práctica usa `LATIN1`, carga con **COPY** y deja desmarcada la opción **Load into GEOGRAPHY column**.
+5. Pulsa **Import** y revisa el mensaje final. Repite con `ne_110m_admin_0_countries.shp`, nombrando la tabla `countries` y conservando los demás parámetros.
+6. Actualiza **world → Schemas → public → Tables** en pgAdmin. Deben aparecer `cities` y `countries`.
+
+**Si el importador no está disponible:** puedes cargar esas capas con el procedimiento de QGIS que sigue. Obtendrás tablas para continuar, aunque la captura del ejercicio 4 ya no acreditará las dos vías originales. Si el importador no arranca por dependencias, comprueba que utilizas el instalado junto a tu PostgreSQL; el PDF original también describe añadir su carpeta `bin` al `PATH`.
+
+### Conectar QGIS a world
+
+1. En QGIS abre el panel **Navegador**; si no está visible, actívalo desde **Ver → Paneles → Navegador**.
+2. Pulsa el botón derecho en **PostgreSQL → Nueva conexión**. Nómbrala `world local`.
+3. Indica host `localhost`, puerto de tu instalación y base `world`. Introduce el usuario y la contraseña mediante el mecanismo de autenticación de QGIS.
+4. Pulsa **Probar conexión**. Guarda cuando la prueba sea correcta.
+5. Despliega la conexión y el esquema `public`. Arrastra `countries` y `cities` al lienzo.
+
+**Comprueba:** debes ver polígonos de países y puntos de ciudades. Abre sus tablas de atributos y confirma que contienen registros. Esta conexión es la que documentarás en el ejercicio 3.
+
+### Importar rivers desde QGIS
+
+1. Añade `ne_110_rivers_lake.gpkg` a QGIS arrastrándolo al lienzo. Si contiene varias capas, selecciona la capa de datos correspondiente.
+2. Abre **Base de datos → Administrador de BBDD**. Conecta a **PostGIS → world local** y selecciona el esquema `public`.
+3. Abre **Importar capa/archivo**. Escoge la capa de ríos como entrada, esquema `public` y tabla `rivers`. Usa codificación `UTF-8` y `id` como clave primaria. Utiliza `geom` como columna de geometría; elige o crea una clave primaria única según las opciones del importador.
+4. Revisa el CRS de origen. Conserva `EPSG:4326` como destino si es el sistema del paquete del curso; si el origen es otro, configura la transformación, sin cambiar solamente su etiqueta.
+5. Activa la creación de índice espacial si está disponible e importa. No marques sobrescribir una tabla existente sin revisar si contiene trabajo previo.
+6. Actualiza la conexión. Debes tener `cities`, `countries` y `rivers`: guarda su captura para el ejercicio 4.
+
+### Comprobar nombres, geometrías y SRID
+
+Ejecuta en pgAdmin, conectado a `world`:
+
+```sql
+SELECT f_table_schema, f_table_name, f_geometry_column, type, srid
+FROM geometry_columns
+WHERE f_table_schema = 'public'
+ORDER BY f_table_name;
+
+SELECT 'countries' AS tabla, count(*) AS filas FROM public.countries
+UNION ALL
+SELECT 'cities', count(*) FROM public.cities
+UNION ALL
+SELECT 'rivers', count(*) FROM public.rivers;
+```
+
+**Resultado esperado:** las tres tablas registradas, SRID `4326` para las capas del paquete y recuentos mayores que cero. La cantidad exacta de países o ciudades puede variar con la edición de los datos. Si aparecen otras columnas geométricas, utiliza sus nombres reales en las consultas siguientes o corrige la importación para seguir la nomenclatura del curso.
+
+### Exportar sin perder la tabla original
+
+1. En el Administrador de BBDD selecciona la tabla `cities`, como indica la práctica original, y abre **Tabla → Exportar a archivo**. También puedes añadirla al mapa y usar **Exportar → Guardar objetos como** en su menú contextual.
+2. Elige **GeoJSON**, una ruta de salida y `EPSG:4326`. Guarda.
+3. Repite con **GeoPackage** y un nombre distinto. Si el archivo ya existe, revisa si añadirás una capa o reemplazarás una existente.
+4. Abre ambos archivos en QGIS y compara su número de objetos con la tabla de origen. Guarda la captura de los dos archivos para el ejercicio 5.
+
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.qgis.org/3.44/en/docs/user_manual/plugins/core_plugins/plugins_db_manager.html">QGIS · importación, exportación y visualización de tablas</a>. Nombres de capas y parámetros de carga: práctica original de MappingGIS, páginas 32–50.</p>
+
+## 12. Aprender SQL con ejemplos ejecutables {#ejemplos-sql}
+
+Los ejemplos siguientes enseñan la mecánica con datos independientes. **Son demostraciones explicadas, no ejercicios nuevos ni respuestas a las actividades originales.** Ejecútalos en el editor de `world`. Las tablas temporales viven solamente en esa sesión: mantén abierta la misma pestaña; si la cierras, vuelve a ejecutar su creación.
+
+### Crear, insertar y leer
+
+```sql
+CREATE TEMP TABLE demo_paradas (
+  id integer PRIMARY KEY,
+  nombre text,
+  sector text,
+  visitas integer,
+  geom geometry(Point, 4326)
+);
+
+INSERT INTO demo_paradas VALUES
+  (1, 'Biblioteca', 'Centro', 120,
+   ST_GeomFromText('POINT(-70.65 -33.44)', 4326)),
+  (2, 'Museo', 'Centro', 80,
+   ST_GeomFromText('POINT(-70.64 -33.44)', 4326)),
+  (3, 'Parque', 'Norte', 60,
+   ST_GeomFromText('POINT(-70.65 -33.42)', 4326));
+
+SELECT id, nombre, sector, visitas, ST_AsText(geom) AS coordenadas
+FROM demo_paradas
+ORDER BY id;
+```
+
+**Debes ver:** tres filas, con visitas `120`, `80` y `60`. Las ubicaciones son ilustrativas. En `POINT(x y)`, para este sistema `x` es longitud e `y` latitud. `ST_GeomFromText` construye la geometría y `ST_AsText` permite leerla. Ejecuta la creación e inserción una sola vez por sesión; volver a insertarlas produciría claves duplicadas.
+
+### Filtrar, ordenar y resumir
+
+```sql
+SELECT nombre, visitas
+FROM demo_paradas
+WHERE visitas >= 80
+ORDER BY visitas DESC, nombre;
+
+SELECT sector, count(*) AS paradas, sum(visitas) AS total_visitas
+FROM demo_paradas
+GROUP BY sector
+ORDER BY sector;
+
+SELECT nombre, visitas
+FROM demo_paradas
+WHERE visitas = (SELECT max(visitas) FROM demo_paradas);
+```
+
+**Comprueba:** el primer resultado incluye Biblioteca y Museo; el segundo resume Centro en dos paradas y `200` visitas, y Norte en una y `60`. La subconsulta calcula el máximo y la consulta exterior recupera las filas que lo alcanzan; si hay empates, devolverá más de una. `LIMIT 5` al final restringe la salida a cinco filas: añade `ORDER BY` si necesitas que su selección sea reproducible.
+
+### Modificar datos y comprobar antes de confirmar
+
+```sql
+BEGIN;
+UPDATE demo_paradas SET visitas = 90 WHERE id = 2;
+DELETE FROM demo_paradas WHERE id = 3;
+SELECT id, nombre, visitas FROM demo_paradas ORDER BY id;
+ROLLBACK;
+
+SELECT count(*) AS paradas, sum(visitas) AS total FROM demo_paradas;
+```
+
+Durante la transacción verás dos filas y Museo con `90` visitas. Tras `ROLLBACK` vuelven las tres filas y el total `260`. Para observar cada estado, ejecuta hasta el primer `SELECT`, después `ROLLBACK` y finalmente el segundo `SELECT`. Una operación sin `WHERE` afecta a todas las filas. Si decides conservar cambios en una práctica real, `COMMIT` confirma en lugar de deshacer; aquí utilizamos `ROLLBACK` para mantener la demostración inicial.
+
+### Medir en las unidades correctas
+
+```sql
+SELECT a.nombre AS origen, b.nombre AS destino,
+       round(ST_Distance(a.geom::geography, b.geom::geography)::numeric, 1)
+         AS distancia_m
+FROM demo_paradas AS a
+CROSS JOIN demo_paradas AS b
+WHERE a.id = 1 AND b.id = 2;
+```
+
+**Debes ver:** una fila de Biblioteca a Museo con una distancia de aproximadamente `930` metros. `a` y `b` son dos alias de la misma tabla. Los filtros eligen una fila de cada una; `::geography` convierte el tipo para medir sobre la Tierra en metros. Sin esa conversión, las geometrías en `4326` producirían una distancia plana en grados.
+
+### Construir e interpretar geometrías
+
+```sql
+WITH figuras AS (
+  SELECT ST_GeomFromText('POLYGON((0 0,4 0,4 4,0 4,0 0))', 4326) AS zona,
+         ST_GeomFromText('POINT(2 2)', 4326) AS punto
+)
+SELECT ST_Intersects(zona, punto) AS comparten_espacio,
+       ST_AsText(ST_Centroid(zona)) AS centro,
+       ST_Perimeter(zona) AS perimetro_grados,
+       ST_GeometryType(ST_Buffer(punto, 0.25)) AS tipo_buffer
+FROM figuras;
+```
+
+**Debes ver:** `true`, `POINT(2 2)`, perímetro `16` y tipo `ST_Polygon`. Este cuadrado es una geometría didáctica en coordenadas angulares: sus medidas no representan metros. Una consulta puede devolver un booleano, texto, un número o una geometría; comprueba qué salida requiere tu tarea.
+
+### Guardar una geometría calculada
+
+```sql
+CREATE TEMP TABLE demo_zonas AS
+SELECT id, nombre, ST_Buffer(geom::geography, 300)::geometry AS geom
+FROM demo_paradas;
+
+SELECT count(*) AS zonas, min(ST_SRID(geom)) AS srid
+FROM demo_zonas;
+```
+
+**Resultado esperado:** tres zonas con SRID `4326`. Aquí el radio es **300 metros** porque el buffer se calcula sobre `geography`. En el ejercicio original se piden **2 grados** sobre `cities`: conserva esa consigna y elige el tipo geométrico acorde. La demostración enseña el patrón `CREATE TABLE … AS SELECT`; el contexto original del ejercicio utiliza crear la tabla y después `INSERT … SELECT`.
+
+Las tablas temporales no se verán desde otra conexión de QGIS. Para visualizar las capas permanentes de la práctica, actualiza **world local → public**, arrástralas al mapa y compara su distribución con la capa de origen. En pgAdmin, un resultado que incluya una columna geométrica puede ofrecer un visor de geometrías; una salida convertida únicamente a WKT es texto.
+
+<p class="content-source"><strong>Referencias:</strong> <a href="https://www.postgresql.org/docs/current/tutorial-sql.html">PostgreSQL · introducción a SQL</a> · <a href="https://www.postgresql.org/docs/current/tutorial-transactions.html">PostgreSQL · transacciones</a> · <a href="https://postgis.net/docs/ST_Distance.html">PostGIS · ST_Distance</a> · <a href="https://postgis.net/docs/ST_Buffer.html">PostGIS · ST_Buffer</a>. Ejemplos didácticos originales de esta guía.</p>
+
+## 13. Del procedimiento al ejercicio {#preparar-ejercicios}
+
+Antes de resolver una actividad, identifica **qué objetos necesita**, **qué transformación solicita** y **qué evidencia debes guardar**. Los enunciados originales aparecen a continuación; esta tabla señala dónde prepararte.
+
+| Ejercicios originales | Preparación en esta página | Qué debes poder comprobar |
+|---|---|---|
+| 1–2 · archivos y pgAdmin | [Antes de comenzar](#antes-de-comenzar) | Datos extraídos y aplicación abierta |
+| 3–5 · conexión, importación y exportación | [Importar, visualizar y exportar](#importar-datos) | Tres tablas, capas visibles y dos archivos exportados |
+| 6–9 · crear y editar lugares | [SQL ejecutable](#ejemplos-sql) y contexto de cada actividad | Estructura, registros y modificaciones solicitadas |
+| 10–11 · consultas sobre países | Filtrar, ordenar y resumir | Campos, condiciones y filas que solicita el enunciado |
+| 12–14 · conversiones y medidas | Geometrías y formatos; coordenadas y medidas; ejemplos SQL | Formato de salida y unidades correctos |
+| 15–17 · generación y relaciones | Operaciones geométricas; ejemplos SQL | Nuevas capas y comparación espacial solicitada |
+
+**Para las actividades sobre `lugares`:** el bloque de creación está en el contexto del ejercicio 6, y los tres registros originales en el del 7. Ejecuta esos bloques en ese orden antes de continuar con el 8 y el 9. No los reemplaces por `demo_paradas`. Si ya habías insertado datos, consulta `SELECT gid, nombre FROM lugares ORDER BY gid;`: los identificadores no vuelven a empezar al borrar una fila y no debes suponer que coinciden con los de una instalación nueva.
+
+### Errores frecuentes y cómo resolverlos
+
+| Qué observas | Qué revisar | Cómo comprobar la corrección |
+|---|---|---|
+| Connection refused | Servicio PostgreSQL iniciado, host y puerto de la instalación | Prueba la conexión en pgAdmin y QGIS |
+| Password authentication failed | Usuario y contraseña del servidor, no la clave maestra de pgAdmin | Reconecta con las credenciales correctas |
+| Extension postgis is not available | PostGIS instalado para esa versión de PostgreSQL | Activa la extensión en `world` y consulta su versión |
+| Relation does not exist | Base activa, esquema y nombre exacto de la tabla | Consulta `current_database()` y actualiza `public → Tables` |
+| Column does not exist | Nombres reales de atributos y geometría | Revisa la pestaña de columnas o la tabla de atributos |
+| SRID 0 o SRID incompatibles | CRS real del archivo y parámetros de importación | Revisa `geometry_columns`; reimporta correctamente si es necesario |
+| Medidas enormes o diminutas | `geometry` frente a `geography`, grados frente a metros | Lee las unidades antes de interpretar el número |
+| La capa no aparece | Recuento de filas, extensión del mapa y CRS | Acércate a la capa y abre su tabla de atributos |
+| La tabla ya existe o hay claves duplicadas | Si ejecutaste de nuevo la creación o las inserciones | Inspecciona lo existente antes de repetir o modificar datos |
+| Current transaction is aborted | Una sentencia anterior falló dentro de una transacción | Ejecuta `ROLLBACK`, corrige el error y repite el bloque |
+
+**Control antes de pasar a la unidad 3:** conserva la base `world`, las capas importadas y los archivos originales. GeoServer utilizará ese trabajo más adelante. Guarda las consultas útiles en archivos `.sql` y registra las versiones empleadas.
 
 ## Ejercicio Unidad 2 {#ejercicios-originales-del-curso}
 
@@ -275,7 +566,7 @@ Ampliaciones técnicas contrastadas con la documentación oficial: [índices esp
 
 [**Abrir el PDF original completo**](../materiales/Ejercicio_2_PostGIS_2025.pdf){target="_blank" rel="nofollow noopener noreferrer"}
 
-<div class="visual-note"><strong>Cómo seguir la práctica.</strong> Empieza por la preparación del PDF y avanza en orden: los ejercicios dependen de los pasos anteriores. Conserva los nombres de tablas y las unidades indicadas. Las páginas enlazadas incluyen el enunciado; algunas instrucciones empiezan en páginas previas.</div>
+<div class="visual-note"><strong>Cómo seguir la práctica.</strong> Completa la preparación de esta página y avanza en orden: los ejercicios dependen de los pasos anteriores. Conserva los nombres de tablas y las unidades indicadas. Abre los paneles de contexto para leer los pasos originales sin salir de la unidad. El PDF queda como respaldo de la maquetación y las capturas.</div>
 
 ### Ejercicio 1 · Datos extraídos en un directorio sin espacios
 
