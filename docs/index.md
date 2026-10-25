@@ -1,30 +1,14 @@
-# Guía de estudio — Desarrollo de Aplicaciones Webmapping
+<h1 class="course-home-title"><span>Guía visual de</span>Webmapping</h1>
 
-Bienvenida a tu guía personal del curso **Desarrollo de Aplicaciones Webmapping** (MappingGIS). Este sitio reúne el resumen estructurado, los ejercicios prácticos y el glosario acumulativo de las 8 unidades del curso, organizados para que puedas navegar y buscar cualquier concepto, comando o ejemplo de código en segundos.
+Conceptos, esquemas y ejercicios originales del curso, organizados en ocho unidades.
 
-## Cómo está organizado este sitio
-
-- **[Plan de estudio](plan-de-estudio.md)**: tu ruta de aprendizaje completa, adaptada a tu perfil (aprendizaje kinestésico-visual) y a tu ritmo disponible.
-- **Unidades**: una página por unidad, con el resumen teórico y, cuando corresponde, la sección de ejercicios prácticos al final de la misma página.
-- **[Glosario](glosario.md)**: todos los términos técnicos del curso en una sola tabla buscable, acumulados unidad a unidad.
-
-## Cómo usar la búsqueda
-
-Usa la lupa 🔍 en la parte superior para buscar cualquier función SQL (`ST_Buffer`), clase de OpenLayers (`ol.layer.Vector`), comando o concepto. La búsqueda indexa todo el contenido, incluidos los bloques de código.
-
-## Unidades del curso
-
-| Unidad | Tema | Ejercicios prácticos |
-|---|---|---|
-| 1 | Introducción a la cartografía web | — (unidad conceptual) |
-| 2 | PostGIS: bases de datos espaciales | Instalación + primer uso de PostGIS |
-| 3 | GeoServer y estándares OGC (WMS/WFS/WCS/WPS) | Instalación GeoServer, estilos SLD/CSS, conexiones QGIS |
-| 4 | GeoWebCache | Teselas raster y vectoriales, Google Earth |
-| 5 | HTML/CSS/JS y Leaflet | 9 + 12 ejercicios progresivos |
-| 6 | OpenLayers | 16 ejercicios progresivos |
-| 7 | MapStore | Instalación, usuarios, capas, widgets, contextos, dashboards |
-| 8 | Recomendaciones finales | Proyecto final (PostGIS + GeoServer + Leaflet) |
-
----
-
-*Contenido generado a partir de los materiales del curso de MappingGIS (CC BY-NC-ND MappingGIS), organizado como guía de estudio personal.*
+<div class="course-grid">
+<a class="course-card" href="unidades/unidad-1/"><img src="assets/unidad-1/cliente-servidor.svg" alt="Vista conceptual de la Unidad 1" loading="lazy" /><div><span class="eyebrow">Unidad 01</span><b>Del dato al mapa web</b><p>Arquitectura, formatos y decisiones.</p><small>Unidad conceptual, sin ejercicios originales.</small></div></a>
+<a class="course-card" href="unidades/unidad-2/"><img src="assets/unidad-2/recorrido.svg" alt="Vista conceptual de la Unidad 2" loading="lazy" /><div><span class="eyebrow">Unidad 02</span><b>Pensar espacialmente con PostGIS</b><p>Geometrías, referencias, índices y análisis.</p><small>17 ejercicios originales.</small></div></a>
+<a class="course-card" href="unidades/unidad-3/"><img src="assets/unidad-3/publicacion.svg" alt="Vista conceptual de la Unidad 3" loading="lazy" /><div><span class="eyebrow">Unidad 03</span><b>Publicar mapas con GeoServer</b><p>Servicios OGC, recursos y simbología.</p><small>18 ejercicios originales.</small></div></a>
+<a class="course-card" href="unidades/unidad-4/"><img src="assets/unidad-4/piramide.svg" alt="Vista conceptual de la Unidad 4" loading="lazy" /><div><span class="eyebrow">Unidad 04</span><b>GeoWebCache y las teselas</b><p>Caché, cuadrículas, estrategias y actualización.</p><small>4 ejercicios originales.</small></div></a>
+<a class="course-card" href="unidades/unidad-5/"><img src="assets/unidad-5/tres-lenguajes.svg" alt="Vista conceptual de la Unidad 5" loading="lazy" /><div><span class="eyebrow">Unidad 05</span><b>Construir un visor con Leaflet</b><p>HTML, CSS, JavaScript, capas y eventos.</p><small>9 ejercicios web + 12 de Leaflet.</small></div></a>
+<a class="course-card" href="unidades/unidad-6/"><img src="assets/unidad-6/objetos.svg" alt="Vista conceptual de la Unidad 6" loading="lazy" /><div><span class="eyebrow">Unidad 06</span><b>OpenLayers por componentes</b><p>Mapa, vista, fuentes, estilos e interacción.</p><small>16 ejercicios originales.</small></div></a>
+<a class="course-card" href="unidades/unidad-7/"><img src="assets/unidad-7/dashboard.svg" alt="Vista conceptual de la Unidad 7" loading="lazy" /><div><span class="eyebrow">Unidad 07</span><b>Componer recursos con MapStore</b><p>Mapas, filtros, paneles y contextos.</p><small>9 ejercicios originales.</small></div></a>
+<a class="course-card" href="unidades/unidad-8/"><img src="assets/unidad-8/proyecto.svg" alt="Vista conceptual de la Unidad 8" loading="lazy" /><div><span class="eyebrow">Unidad 08</span><b>Integrar y publicar el proyecto</b><p>Arquitectura, diseño, pruebas y entrega.</p><small>Proyecto final original.</small></div></a>
+</div>
