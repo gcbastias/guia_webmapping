@@ -1,0 +1,1404 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Resumen estructurado, ejercicios prácticos y glosario del curso de Desarrollo de Aplicaciones Webmapping (MappingGIS)">
+      
+      
+        <meta name="author" content="Gabriela">
+      
+      
+        <link rel="canonical" href="https://gcbastias.github.io/guia_webmapping/unidades/unidad-1/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../unidad-2/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Unidad 1. Del dato al mapa web - Guía visual de Webmapping</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/piloto.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <meta name="robots" content="noindex, nofollow, noimageindex">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-1-del-dato-al-mapa-web" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guía visual de Webmapping" class="md-header__button md-logo" aria-label="Guía visual de Webmapping" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guía visual de Webmapping
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unidad 1. Del dato al mapa web
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gcbastias/guia_webmapping" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guia_webmapping
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <div class="md-nav__title">
+    <a href="../.." title="Guía visual de Webmapping" class="md-nav__button md-logo" aria-label="Guía visual de Webmapping" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <a class="sidebar-home" href="../.." aria-label="Ir al inicio">Guía visual de Webmapping</a>
+  </div>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gcbastias/guia_webmapping" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guia_webmapping
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 1. Del dato al mapa web
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 1. Del dato al mapa web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-la-idea-en-una-imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. La idea en una imagen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-el-recorrido-de-una-peticion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. El recorrido de una petición
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. El recorrido de una petición">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pedir-una-imagen-o-pedir-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Pedir una imagen o pedir objetos?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-elegir-como-guardar-y-entregar-los-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Elegir cómo guardar y entregar los datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Elegir cómo guardar y entregar los datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-y-raster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector y ráster
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elegir-segun-la-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elegir según la tarea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leer-un-punto-en-geojson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leer un punto en GeoJSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-como-llegamos-hasta-aque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cómo llegamos hasta aqué
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-construir-por-componentes-o-usar-una-plataforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Construir por componentes o usar una plataforma
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tu-mapa-mental-de-la-unidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tu mapa mental de la unidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparacion-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Preparación para las unidades prácticas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes-y-alcance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes y alcance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ejercicios-de-la-unidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio Unidad 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+      
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 2. PostGIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-2/#ejercicios-originales-del-curso">Ejercicio Unidad 2</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 3. GeoServer y OGC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-3/#ejercicios-originales-del-curso">Ejercicio Unidad 3</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 4. GeoWebCache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-4/#ejercicios-originales-del-curso">Ejercicio Unidad 4</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 5. Web y Leaflet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-5/#ejercicios-originales-del-curso">Ejercicio Unidad 5</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 6. OpenLayers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-6/#ejercicios-originales-del-curso">Ejercicio Unidad 6</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 7. MapStore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-7/#ejercicios-originales-del-curso">Ejercicio Unidad 7</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 8. Proyecto y publicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-8/#ejercicios-originales-del-curso">Ejercicio Unidad 8</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+      
+  
+
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-la-idea-en-una-imagen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. La idea en una imagen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-el-recorrido-de-una-peticion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. El recorrido de una petición
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. El recorrido de una petición">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pedir-una-imagen-o-pedir-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Pedir una imagen o pedir objetos?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-elegir-como-guardar-y-entregar-los-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Elegir cómo guardar y entregar los datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Elegir cómo guardar y entregar los datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vector-y-raster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vector y ráster
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elegir-segun-la-tarea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Elegir según la tarea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leer-un-punto-en-geojson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leer un punto en GeoJSON
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-como-llegamos-hasta-aque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Cómo llegamos hasta aqué
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-construir-por-componentes-o-usar-una-plataforma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Construir por componentes o usar una plataforma
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-tu-mapa-mental-de-la-unidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Tu mapa mental de la unidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparacion-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Preparación para las unidades prácticas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fuentes-y-alcance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fuentes y alcance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ejercicios-de-la-unidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio Unidad 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="unidad-1-del-dato-al-mapa-web">Unidad 1 · Del dato al mapa web</h1>
+<div class="visual-hero">
+<div class="eyebrow">Laboratorio visual / Unidad 01</div>
+<h2>Un mapa es la parte visible.<br>Descubre lo que hay detrás.</h2>
+<p>Aprende a conectar datos, servicios y una interfaz para convertir información geográfica en una experiencia que se puede explorar.</p>
+<p>Ruta: comprender → visualizar → elegir → aplicar.</p>
+</div>
+
+<p>Esta muestra reorganiza los temas del material de MappingGIS y añade explicaciones originales. <strong>Meta:</strong> poder dibujar una arquitectura sencilla y justificar cómo publicar tus datos.</p>
+<h2 id="1-la-idea-en-una-imagen">1. La idea en una imagen</h2>
+<p>Una aplicación de webmapping permite explorar información geográfica desde el navegador. Puede combinar un mapa base, capas temáticas, controles y fichas de información.</p>
+<p><svg class="visual-map" viewBox="0 0 900 320" role="img" aria-labelledby="map-title map-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="map-title">Capas de un visor de equipamientos</title><desc id="map-desc">Mapa esquemático con calles, un río, tres puntos de equipamiento y una ficha de atributos. No representa una ubicación real.</desc>
+<path d="M0 80L560 290M80 0L690 300M290 0L90 320M520 0L330 320M0 220L620 90" stroke="white" stroke-width="22" fill="none"/>
+<path d="M480 0Q360 110 470 180T500 320" stroke="#9eced9" stroke-width="38" fill="none"/>
+<g fill="#da763d" stroke="white" stroke-width="5"><circle cx="170" cy="115" r="14"/><circle cx="330" cy="205" r="14"/><circle cx="395" cy="72" r="14"/></g>
+<path d="M345 200L625 130" stroke="#176c72" stroke-width="3" stroke-dasharray="7 5"/>
+<rect x="600" y="45" width="275" height="230" rx="16" fill="#123b46"/>
+<g fill="white" font-family="sans-serif"><text x="625" y="82" font-size="15">CAPA · EQUIPAMIENTOS</text><text x="625" y="125" font-size="24">Biblioteca del barrio</text><text x="625" y="164" font-size="17">Geometría: punto</text><text x="625" y="196" font-size="17">Atributo: nombre</text><text x="625" y="242" font-size="15">Clic → consultar información</text></g>
+</svg></p>
+<div class="visual-grid">
+<div class="visual-card"><span class="visual-number">01</span><b>Datos</b>¿Dónde está y qué sabemos del lugar? Geometría y atributos.</div>
+<div class="visual-card"><span class="visual-number">02</span><b>Representación</b>¿Cómo lo mostramos? Símbolos, colores, etiquetas y escalas.</div>
+<div class="visual-card"><span class="visual-number">03</span><b>Interacción</b>¿Qué puede hacer la persona? Mover, acercar, filtrar o consultar.</div>
+</div>
+
+<h2 id="2-el-recorrido-de-una-peticion">2. El recorrido de una petición</h2>
+<figure class="lesson-figure"><a href="../../assets/unidad-1/cliente-servidor.svg" target="_blank" rel="noopener"><img src="../../assets/unidad-1/cliente-servidor.svg" alt="Visor, servidor y almacenamiento" loading="lazy" /></a></figure>
+
+<p>Imagina un visor de bibliotecas: al mover el mapa, la aplicación puede solicitar información para la zona visible.</p>
+<div class="visual-flow">
+<div class="visual-card"><b>Navegador</b>Leaflet / OpenLayers<br>Presenta el mapa y recibe acciones.</div><span class="arrow" aria-hidden="true">⇄</span>
+<div class="visual-card"><b>Servidor de mapas</b>GeoServer / MapServer<br>Recibe peticiones y publica capas.</div><span class="arrow" aria-hidden="true">⇄</span>
+<div class="visual-card"><b>Almacenamiento</b>PostGIS / archivos<br>Conserva geometrías y atributos.</div>
+</div>
+
+<ol>
+<li>El visor solicita una capa o una zona.</li>
+<li>El servidor obtiene los datos necesarios.</li>
+<li>Devuelve imágenes de mapa o entidades geográficas, según el servicio.</li>
+<li>El navegador muestra el resultado y permite interactuar.</li>
+</ol>
+<div class="visual-note"><strong>Una arquitectura, varias posibilidades.</strong> Un visor pequeño puede cargar un GeoJSON directamente: no siempre necesitas GeoServer ni una base de datos. QGIS es un cliente de escritorio; Leaflet y OpenLayers son bibliotecas para el navegador. GeoWebCache añade caché de teselas para reutilizar resultados.</div>
+
+<h3 id="pedir-una-imagen-o-pedir-objetos">¿Pedir una imagen o pedir objetos?</h3>
+<table>
+<thead>
+<tr>
+<th>Necesidad</th>
+<th>Servicio</th>
+<th>Qué recibes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mostrar cartografía con el estilo del servidor</td>
+<td>WMS</td>
+<td>Imágenes georreferenciadas del mapa</td>
+</tr>
+<tr>
+<td>Obtener geometrías y atributos para trabajar con entidades</td>
+<td>WFS</td>
+<td>Entidades geográficas; formatos según el servidor</td>
+</tr>
+</tbody>
+</table>
+<p>WMS también puede ofrecer consultas de información con <code>GetFeatureInfo</code>; eso no lo convierte en un servicio de descarga vectorial. Referencias: <a href="https://www.ogc.org/standards/wms/">OGC WMS</a> y <a href="https://www.ogc.org/standards/wfs/">OGC WFS</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://www.ogc.org/standards/wms/">OGC · WMS</a> · <a href="https://www.ogc.org/standards/wfs/">OGC · WFS</a>.</p>
+
+<h2 id="3-elegir-como-guardar-y-entregar-los-datos">3. Elegir cómo guardar y entregar los datos</h2>
+<h3 id="vector-y-raster">Vector y ráster</h3>
+<figure class="lesson-figure"><a href="../../assets/unidad-1/vector-raster.svg" target="_blank" rel="noopener"><img src="../../assets/unidad-1/vector-raster.svg" alt="Formas vectoriales y celdas ráster" loading="lazy" /></a></figure>
+
+<h3 id="elegir-segun-la-tarea">Elegir según la tarea</h3>
+<figure class="lesson-figure"><a href="../../assets/unidad-1/elegir-datos.svg" target="_blank" rel="noopener"><img src="../../assets/unidad-1/elegir-datos.svg" alt="Intercambiar, consultar o visualizar" loading="lazy" /></a></figure>
+
+<p><strong>Vector:</strong> objetos con geometría (puntos, líneas, polígonos). <strong>Ráster:</strong> celdas o píxeles (imágenes, elevación). Antes de elegir, pregunta: ¿quiero analizar, intercambiar o visualizar?</p>
+<div class="visual-grid">
+<div class="visual-card"><b>Intercambiar pocos objetos</b>GeoJSON<br>Texto fácil de inspeccionar; útil para capas vectoriales pequeñas.</div>
+<div class="visual-card"><b>Consultar y analizar</b>PostGIS / GeoPackage<br>PostGIS: base de datos espacial cliente-servidor. GeoPackage: contenedor en un archivo SQLite.</div>
+<div class="visual-card"><b>Distribuir teselas</b>MBTiles<br>Contenedor SQLite para teselas ráster o vectoriales; requiere un mecanismo de publicación compatible.</div>
+</div>
+
+<table>
+<thead>
+<tr>
+<th>Caso</th>
+<th>Punto de partida</th>
+<th>Pregunta que falta resolver</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>30 bibliotecas con nombre y horario</td>
+<td>GeoJSON</td>
+<td>¿Cuánto pesa la descarga?</td>
+</tr>
+<tr>
+<td>Millones de registros que varias personas consultan</td>
+<td>PostGIS</td>
+<td>¿Qué índices, filtros y permisos necesitas?</td>
+</tr>
+<tr>
+<td>Datos portátiles para trabajo local</td>
+<td>GeoPackage</td>
+<td>¿Qué herramientas lo van a leer?</td>
+</tr>
+<tr>
+<td>Ortofotos para explorar rápidamente</td>
+<td>Teselas ráster, eventualmente MBTiles</td>
+<td>¿Necesitas visualizar o analizar los píxeles originales?</td>
+</tr>
+<tr>
+<td>Mapa base con estilo en el cliente</td>
+<td>Teselas vectoriales</td>
+<td>¿Cómo gestionarás el estilo y la distribución?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Matices útiles:</strong> un archivo binario también se puede transmitir por la web. GeoJSON se puede filtrar después de cargarlo; el formato por sí solo no ofrece un servidor de consultas. Las teselas vectoriales necesitan un estilo para representarse. Para analizar imágenes originales puede convenir conservar GeoTIFF, en lugar de trabajar únicamente con teselas.</p>
+<h3 id="leer-un-punto-en-geojson">Leer un punto en GeoJSON</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Feature"</span><span class="p">,</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">"geometry"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Point"</span><span class="p">,</span><span class="w"> </span><span class="nt">"coordinates"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mf">-70.65</span><span class="p">,</span><span class="w"> </span><span class="mf">-33.45</span><span class="p">]},</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">"properties"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">"nombre"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Biblioteca de ejemplo"</span><span class="p">}</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
+</code></pre></div>
+<p>Ejemplo ficticio. En GeoJSON conforme a RFC 7946, las coordenadas se expresan como <strong>longitud, latitud</strong> en grados. La geometría responde «dónde» y <code>properties</code> responde «qué sabemos». Consulta <a href="https://datatracker.ietf.org/doc/html/rfc7946">RFC 7946</a> y la <a href="https://github.com/mapbox/mbtiles-spec">especificación MBTiles</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://datatracker.ietf.org/doc/html/rfc7946">IETF · RFC 7946 (GeoJSON)</a> · <a href="https://github.com/mapbox/mbtiles-spec">MBTiles · especificación</a>.</p>
+
+<h2 id="4-como-llegamos-hasta-aque">4. Cómo llegamos hasta aqué</h2>
+<table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Cambio que ayuda a entender el curso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Redes e informática geográfica</td>
+<td>Se desarrollan las bases de la comunicación y del SIG digital. Internet y la Web son conceptos distintos.</td>
+</tr>
+<tr>
+<td>Web y primeros visores</td>
+<td>La cartografía llega al navegador y se consolida el modelo cliente-servidor.</td>
+</tr>
+<tr>
+<td>Mapas interactivos y móviles</td>
+<td>Las teselas, los gestos y las bibliotecas facilitan explorar mapas.</td>
+</tr>
+<tr>
+<td>Aplicaciones y paneles</td>
+<td>El mapa se combina con filtros, indicadores y otras vistas de los datos.</td>
+</tr>
+</tbody>
+</table>
+<p>Esta es una síntesis conceptual de la evolución presentada en el curso, no una cronología exhaustiva de lanzamientos.</p>
+<h2 id="5-construir-por-componentes-o-usar-una-plataforma">5. Construir por componentes o usar una plataforma</h2>
+<table>
+<thead>
+<tr>
+<th>Enfoque</th>
+<th>Qué te aporta</th>
+<th>Qué debes evaluar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Componentes independientes</td>
+<td>Control sobre visor, servidor y almacenamiento</td>
+<td>Instalación, integración y mantenimiento</td>
+</tr>
+<tr>
+<td>Paquete integrado / IDE</td>
+<td>Componentes coordinados para publicar y compartir</td>
+<td>Actualizaciones, documentación y compatibilidad</td>
+</tr>
+<tr>
+<td>Plataforma alojada</td>
+<td>Infraestructura gestionada para publicar</td>
+<td>Costos, límites, portabilidad y condiciones de uso</td>
+</tr>
+</tbody>
+</table>
+<p>El software libre permite inspeccionar y adaptar el código, pero sigue requiriendo recursos de operación. No hay un ganador universal de rendimiento: depende de los datos, las consultas y la configuración. El navegador amplía el acceso; el SIG de escritorio conserva su papel en edición y análisis especializado.</p>
+<p><strong>Lista de requisitos para un proyecto:</strong> formatos y proyecciones, leyendas, consultas, edición cuando se necesite, autenticación, permisos, accesibilidad y estándares. Leaflet es una biblioteca del visor, no una plataforma completa: <a href="https://leafletjs.com/">documentación oficial</a>.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://leafletjs.com/examples/quick-start/">Leaflet · guía oficial</a>.</p>
+
+<h2 id="6-tu-mapa-mental-de-la-unidad">6. Tu mapa mental de la unidad</h2>
+<div class="visual-grid">
+<div class="visual-card"><b>Qué publicas</b>Datos → geometría + atributos → vector o ráster.</div>
+<div class="visual-card"><b>Cómo lo entregas</b>Archivo / servicio / teselas → intercambio, consulta o visualización.</div>
+<div class="visual-card"><b>Cómo se usa</b>Visor → símbolos + controles + interacción → una pregunta resuelta.</div>
+</div>
+
+<p><strong>Recuerda:</strong> formato no es servicio; biblioteca no es servidor; publicar no es lo mismo que analizar.</p>
+<h2 id="preparacion-practica">7. Preparación para las unidades prácticas</h2>
+<p>Esta unidad establece los conceptos; la práctica original comienza en la Unidad 2. No necesitas instalar un servidor para comprender el recorrido dato → servicio → visor.</p>
+<p>Al pasar a la Unidad 2, conserva el paquete de archivos del curso y prepara PostgreSQL/PostGIS, pgAdmin y QGIS siguiendo sus instrucciones. La base <code>world</code> y sus capas se reutilizan en las unidades siguientes.</p>
+<table>
+<thead>
+<tr>
+<th>Componente del curso</th>
+<th>Se prepara en</th>
+<th>Se reutiliza en</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base <code>world</code>, países, ciudades y ríos</td>
+<td>Unidad 2</td>
+<td>GeoServer y visores</td>
+</tr>
+<tr>
+<td>Espacio <code>earth</code> y servicios de mapas</td>
+<td>Unidad 3</td>
+<td>Caché, Leaflet, OpenLayers y MapStore</td>
+</tr>
+<tr>
+<td>Grupo <code>worldgroup</code> y teselas</td>
+<td>Unidades 3–4</td>
+<td>Visores web</td>
+</tr>
+<tr>
+<td>HTML, CSS y JavaScript</td>
+<td>Unidad 5</td>
+<td>OpenLayers y proyecto final</td>
+</tr>
+</tbody>
+</table>
+<p>Un archivo GeoJSON no es una conexión WFS; un WMS dibuja datos que permanecen en el servidor. Esa distinción permite reconocer qué estás configurando en cada paso posterior.</p>
+<h2 id="fuentes-y-alcance">Fuentes y alcance</h2>
+<ul>
+<li>Base temática: material de la Unidad 1 de MappingGIS, consultado localmente. Las explicaciones, la ilustración de esta propuesta son originales; no se reproducen diapositivas.</li>
+<li>Ampliación técnica: <a href="https://www.ogc.org/standards/wms/">OGC WMS</a>, <a href="https://www.ogc.org/standards/wfs/">OGC WFS</a>, <a href="https://datatracker.ietf.org/doc/html/rfc7946">RFC 7946</a>, <a href="https://github.com/mapbox/mbtiles-spec">MBTiles</a> y <a href="https://leafletjs.com/">Leaflet</a>. Consultadas el 24 de octubre de 2026.</li>
+</ul>
+<h2 id="7-ejercicios-de-la-unidad">Ejercicio Unidad 1</h2>
+<p>El PDF de la Unidad 1 no contiene ejercicios prácticos propios. La práctica original comienza en la Unidad 2.</p>
+<p><a href="../unidad-2/">Continuar a la Unidad 2: PostGIS</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

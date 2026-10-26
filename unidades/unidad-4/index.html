@@ -1,0 +1,1775 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Resumen estructurado, ejercicios prácticos y glosario del curso de Desarrollo de Aplicaciones Webmapping (MappingGIS)">
+      
+      
+        <meta name="author" content="Gabriela">
+      
+      
+        <link rel="canonical" href="https://gcbastias.github.io/guia_webmapping/unidades/unidad-4/">
+      
+      
+        <link rel="prev" href="../unidad-3/">
+      
+      
+        <link rel="next" href="../unidad-5/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Unidad 4. GeoWebCache - Guía visual de Webmapping</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/piloto.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <meta name="robots" content="noindex, nofollow, noimageindex">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unidad-4-geowebcache-y-las-teselas" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Guía visual de Webmapping" class="md-header__button md-logo" aria-label="Guía visual de Webmapping" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guía visual de Webmapping
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unidad 4. GeoWebCache
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gcbastias/guia_webmapping" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guia_webmapping
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <div class="md-nav__title">
+    <a href="../.." title="Guía visual de Webmapping" class="md-nav__button md-logo" aria-label="Guía visual de Webmapping" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <a class="sidebar-home" href="../.." aria-label="Ir al inicio">Guía visual de Webmapping</a>
+  </div>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gcbastias/guia_webmapping" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guia_webmapping
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 1. Del dato al mapa web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 2. PostGIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-2/#ejercicios-originales-del-curso">Ejercicio Unidad 2</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 3. GeoServer y OGC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-3/#ejercicios-originales-del-curso">Ejercicio Unidad 3</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 4. GeoWebCache
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 4. GeoWebCache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-acierto-o-fallo-de-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Acierto o fallo de caché
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-una-piramide-de-cuadriculas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Una pirámide de cuadrículas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pregeneracion-y-demanda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Pregeneración y demanda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-zoom-y-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Zoom y almacenamiento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-renovar-y-distinguir-contenidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Renovar y distinguir contenidos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparacion-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Preparar el entorno de caché
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedimientos-guiados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Configurar, generar y comprobar teselas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Configurar, generar y comprobar teselas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generar-la-cache-de-worldgroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generar la caché de worldgroup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparar-bajo-demanda-y-pregeneracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparar bajo demanda y pregeneración
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#habilitar-teselas-vectoriales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habilitar teselas vectoriales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revisar-google-earth-y-mantener-la-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revisar Google Earth y mantener la caché
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-y-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material y referencias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antes-de-ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes de resolver las actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-originales-del-curso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio Unidad 4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio Unidad 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1-tamano-de-la-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 1 · Tamaño de la caché
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2-comparar-los-dos-mapas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 2 · Comparar los dos mapas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-3-teselas-vectoriales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 3 · Teselas vectoriales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-4-google-earth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 4 · Google Earth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="./#ejercicios-originales-del-curso">Ejercicio Unidad 4</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 5. Web y Leaflet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-5/#ejercicios-originales-del-curso">Ejercicio Unidad 5</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 6. OpenLayers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-6/#ejercicios-originales-del-curso">Ejercicio Unidad 6</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 7. MapStore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-7/#ejercicios-originales-del-curso">Ejercicio Unidad 7</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidad-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 8. Proyecto y publicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidad-8/#ejercicios-originales-del-curso">Ejercicio Unidad 8</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+      
+  
+
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-acierto-o-fallo-de-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Acierto o fallo de caché
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-una-piramide-de-cuadriculas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Una pirámide de cuadrículas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pregeneracion-y-demanda" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Pregeneración y demanda
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-zoom-y-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Zoom y almacenamiento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-renovar-y-distinguir-contenidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Renovar y distinguir contenidos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparacion-practica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Preparar el entorno de caché
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#procedimientos-guiados" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Configurar, generar y comprobar teselas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Configurar, generar y comprobar teselas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generar-la-cache-de-worldgroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Generar la caché de worldgroup
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparar-bajo-demanda-y-pregeneracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparar bajo demanda y pregeneración
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#habilitar-teselas-vectoriales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Habilitar teselas vectoriales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revisar-google-earth-y-mantener-la-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revisar Google Earth y mantener la caché
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#material-y-referencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Material y referencias
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antes-de-ejercicios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes de resolver las actividades
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejercicios-originales-del-curso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio Unidad 4
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejercicio Unidad 4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-1-tamano-de-la-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 1 · Tamaño de la caché
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-2-comparar-los-dos-mapas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 2 · Comparar los dos mapas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-3-teselas-vectoriales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 3 · Teselas vectoriales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejercicio-4-google-earth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejercicio 4 · Google Earth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="unidad-4-geowebcache-y-las-teselas">Unidad 4 · GeoWebCache y las teselas</h1>
+<div class="visual-hero"><div class="eyebrow">Unidad 04 / Piloto visual</div><h2>Dibujar una vez.<br>Reutilizar muchas veces.</h2><p>Comprende cómo la caché se interpone entre el visor y el servidor, qué cambia al aumentar el zoom y cómo decidir qué conviene guardar.</p><p>Petición → caché → teselas → estrategia → actualización</p></div>
+
+<p>Síntesis visual de las clases, con diagramas originales para explicar los conceptos. La práctica se conserva al final de esta misma unidad.</p>
+<h2 id="1-acierto-o-fallo-de-cache">1. Acierto o fallo de caché</h2>
+<figure class="lesson-figure"><a href="../../assets/unidad-4/hit-miss.svg" target="_blank" rel="noopener"><img src="../../assets/unidad-4/hit-miss.svg" alt="Dos caminos de una petición" loading="lazy" /></a></figure>
+
+<p>GeoWebCache puede actuar entre un cliente y un servidor WMS. Busca una copia compatible con la petición: si existe, la entrega; si falta, obtiene una nueva, la almacena y la devuelve.</p>
+<p>La primera visita a un área no cacheada puede requerir dibujar el mapa. Las siguientes pueden reutilizarlo. La mejora depende de la configuración, las peticiones y los recursos: no hay un tiempo universal de respuesta.</p>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th>Trabajo necesario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tesela disponible</td>
+<td>Leer y entregar la copia</td>
+</tr>
+<tr>
+<td>Tesela ausente</td>
+<td>Generar, guardar y entregar</td>
+</tr>
+</tbody>
+</table>
+<p>La caché reduce trabajo repetido; no sustituye la preparación de datos ni la configuración del servicio.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+
+<h2 id="2-una-piramide-de-cuadriculas">2. Una pirámide de cuadrículas</h2>
+<figure class="lesson-figure"><a href="../../assets/unidad-4/piramide.svg" target="_blank" rel="noopener"><img src="../../assets/unidad-4/piramide.svg" alt="Subdivisión por niveles" loading="lazy" /></a></figure>
+
+<p>El visor construye una vista con piezas pequeñas. Un <strong>grid set</strong> define referencia, extensión, resoluciones y dimensiones de tesela.</p>
+<p>Al acercarte, el visor solicita piezas de un nivel más detallado. En el modelo ideal mostrado, cada pieza se divide en cuatro. Otras cuadrículas pueden tener configuraciones diferentes.</p>
+<p>La petición identifica el nivel y la posición. WMTS y otros esquemas teselados permiten acceder a mapas organizados en cuadrículas. La práctica configura caché integrada con GeoServer.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+
+<h2 id="3-pregeneracion-y-demanda">3. Pregeneración y demanda</h2>
+<figure class="lesson-figure"><a href="../../assets/unidad-4/estrategias.svg" target="_blank" rel="noopener"><img src="../../assets/unidad-4/estrategias.svg" alt="Orden de generación y primera visita" loading="lazy" /></a></figure>
+
+<p><strong>Pregenerar</strong> prepara teselas antes de las visitas. <strong>Bajo demanda</strong> las crea conforme se explora el mapa.</p>
+<table>
+<thead>
+<tr>
+<th>Estrategia</th>
+<th>Beneficio</th>
+<th>Coste o límite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pregeneración</td>
+<td>Áreas previstas preparadas</td>
+<td>Cómputo y disco por adelantado</td>
+</tr>
+<tr>
+<td>Demanda</td>
+<td>Genera zonas solicitadas</td>
+<td>Primera petición potencialmente más lenta</td>
+</tr>
+<tr>
+<td>Combinación</td>
+<td>Prioriza zonas frecuentes</td>
+<td>Requiere decidir extensión y zoom</td>
+</tr>
+</tbody>
+</table>
+<p>El PDF propone combinar ambas estrategias. En las herramientas del curso, <code>seed</code>, <code>reseed</code> y <code>truncate</code> corresponden a creación, regeneración y eliminación de caché.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+
+<h2 id="4-zoom-y-almacenamiento">4. Zoom y almacenamiento</h2>
+<figure class="lesson-figure"><a href="../../assets/unidad-4/coste.svg" target="_blank" rel="noopener"><img src="../../assets/unidad-4/coste.svg" alt="Crecimiento teórico de teselas" loading="lazy" /></a></figure>
+
+<p>Para una cobertura completa del modelo de una tesela inicial y subdivisión por cuatro, los niveles contienen 1, 4, 16 y 64 piezas. La suma hasta un nivel incluye los anteriores.</p>
+<p><strong>Estimación:</strong> tamaño total ≈ número de teselas × tamaño medio. El resultado real depende de cobertura, niveles, compresión, formato, estilos y variantes de petición. Las barras muestran un modelo, no tu instalación.</p>
+<p>Las cuotas ayudan a limitar el almacenamiento. La práctica pide anotar el tamaño real y comparar dos visores; esos resultados se obtienen con la configuración y los archivos originales.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+
+<h2 id="5-renovar-y-distinguir-contenidos">5. Renovar y distinguir contenidos</h2>
+<figure class="lesson-figure"><a href="../../assets/unidad-4/actualizar.svg" target="_blank" rel="noopener"><img src="../../assets/unidad-4/actualizar.svg" alt="Ciclo de actualización de caché" loading="lazy" /></a></figure>
+
+<p>Si cambian datos o estilos, una copia anterior puede seguir mostrando la versión antigua. Define qué área y qué niveles necesitan invalidación o regeneración; después comprueba el visor.</p>
+<p>Las <strong>teselas ráster</strong> contienen una representación dibujada. Las <strong>vectoriales</strong> transmiten geometrías y atributos codificados para que un cliente compatible las represente. Vector no equivale a PNG.</p>
+<p>La práctica incluye teselas vectoriales y Google Earth. Se conserva íntegramente al final; aplicaciones y proveedores externos pueden haber cambiado desde la clase.</p>
+<p class="content-source"><strong>Referencia:</strong> <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache</a>.</p>
+
+<h2 id="preparacion-practica">6. Preparar el entorno de caché</h2>
+<p>Continúa con GeoServer de la Unidad 3, el espacio <code>earth</code>, el grupo <code>worldgroup</code> y la capa <code>cities</code>. Comprueba primero su previsualización WMS: una caché no corrige una capa mal publicada. Necesitas también el HTML comparativo de la carpeta <code>web</code> del paquete del curso y Google Earth para la última actividad.</p>
+<ol>
+<li>Inicia GeoServer y abre <code>http://localhost:8080/geoserver/gwc</code>.</li>
+<li>Entra en la lista de capas y demostraciones automáticas. Localiza <code>earth:worldgroup</code> y <code>earth:cities</code>.</li>
+<li>Si no aparecen, revisa en GeoServer sus opciones de cacheado y guarda. Conserva el CRS y los nombres que utilice la práctica.</li>
+</ol>
+<h2 id="procedimientos-guiados">7. Configurar, generar y comprobar teselas</h2>
+<h3 id="generar-la-cache-de-worldgroup">Generar la caché de worldgroup</h3>
+<ol>
+<li>Abre la configuración de teselas de <code>worldgroup</code>. Comprueba la cuadrícula y el formato que pide el contexto original; la cuadrícula define CRS, niveles y extensión.</li>
+<li>Abre <strong>Seed/Truncate</strong> desde las herramientas de GeoWebCache. Selecciona el grupo, la cuadrícula, el formato, la extensión y el rango de niveles indicados en la práctica.</li>
+<li>Elige <strong>Seed</strong> y ejecuta la tarea. Revisa su estado hasta que termine. No amplíes los niveles por intuición: cada nivel adicional puede multiplicar el trabajo y el espacio.</li>
+<li>Consulta el directorio de caché configurado en esa instalación; puede estar dentro del directorio de datos o en otra ubicación definida por el administrador. Mide su tamaño en disco con el explorador de Windows para la actividad 1.</li>
+</ol>
+<p><strong>Comprueba:</strong> la tarea ha terminado sin errores y la demostración del grupo carga teselas. No hay un tamaño universal correcto: registra lo que ocupa tu generación concreta.</p>
+<h3 id="comparar-bajo-demanda-y-pregeneracion">Comparar bajo demanda y pregeneración</h3>
+<ol>
+<li>Localiza el archivo con los dos visores de la carpeta <code>web</code> del paquete original. Colócalo en el <code>www</code> del directorio de datos de GeoServer, conservando sus dependencias.</li>
+<li>Revisa sus URL para que apunten a tu puerto y al grupo <code>earth:worldgroup</code>. Ábrelo mediante <code>http://localhost:8080/geoserver/www/</code> seguido del nombre real del archivo, no con doble clic como <code>file://</code>.</li>
+<li>Compara los mapas en la misma extensión y zoom. Desplázate hacia áreas aún no visitadas y repite la navegación.</li>
+<li>Distingue la caché del servidor de la del navegador. Si registras tiempos, observa las peticiones en <strong>Red / Network</strong> de las herramientas de desarrollo; una sensación de rapidez aislada no identifica por sí sola el origen de la mejora.</li>
+</ol>
+<h3 id="habilitar-teselas-vectoriales">Habilitar teselas vectoriales</h3>
+<ol>
+<li>Revisa si la instalación ofrece el módulo de teselas vectoriales. Si falta, instala la extensión compatible con tu versión y reinicia GeoServer.</li>
+<li>En el cacheado de <code>cities</code>, habilita el formato <code>application/vnd.mapbox-vector-tile</code> y la cuadrícula indicada por la práctica.</li>
+<li>Vuelve a la lista de demostraciones y abre la salida PBF de <code>earth:cities</code> en <code>EPSG:4326</code>, como pide la actividad.</li>
+<li>Comprueba los puntos en un cliente compatible. PBF es contenido binario: abrir su descarga como texto no debe producir una imagen PNG.</li>
+</ol>
+<h3 id="revisar-google-earth-y-mantener-la-cache">Revisar Google Earth y mantener la caché</h3>
+<p>Utiliza la salida KML o el enlace de red generado por GeoServer que describe el contexto original. Guarda o abre ese enlace en Google Earth y comprueba que apunta a tu servidor activo. Un enlace con <code>localhost</code> funciona en el equipo del servidor, no en otro ordenador sin cambiar la dirección y el acceso.</p>
+<table>
+<thead>
+<tr>
+<th>Situación</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cambiaste el estilo pero ves lo anterior</td>
+<td>Revisa el área y niveles afectados y regenera la caché correspondiente</td>
+</tr>
+<tr>
+<td>Quieres completar teselas ausentes</td>
+<td>Usa <code>seed</code> con el alcance previsto</td>
+</tr>
+<tr>
+<td>Necesitas regenerar teselas existentes</td>
+<td>Revisa <code>reseed</code> y su alcance</td>
+</tr>
+<tr>
+<td>Necesitas retirar una caché</td>
+<td>Revisa <code>truncate</code>; elimina las teselas seleccionadas</td>
+</tr>
+<tr>
+<td>No aparece PBF</td>
+<td>Comprueba extensión y formatos habilitados</td>
+</tr>
+<tr>
+<td>Google Earth no carga</td>
+<td>Revisa URL, servidor iniciado y compatibilidad del enlace</td>
+</tr>
+</tbody>
+</table>
+<p>Antes de ejecutar una tarea comprueba capa, extensión, niveles y formato: <code>truncate</code> no equivale a generar. Conserva el servidor y sus capas para las unidades siguientes.</p>
+<p class="content-source"><strong>Fuentes:</strong> práctica original de MappingGIS · <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoServer · GeoWebCache integrado</a>.</p>
+
+<h2 id="material-y-referencias">Material y referencias</h2>
+<p>Ampliación técnica: <a href="https://docs.geoserver.org/stable/en/user/geowebcache/index.html">GeoWebCache integrado en GeoServer</a>. Las versiones e interfaces del PDF corresponden al entorno de las clases; los diagramas muestran conceptos.</p>
+<h2 id="antes-de-ejercicios">Antes de resolver las actividades</h2>
+<p>Completa la preparación y los procedimientos anteriores. Después avanza por los ejercicios en su orden original: varias actividades utilizan archivos, capas o cambios de las anteriores. Cada actividad conserva su enunciado y sus paneles de instrucciones y capturas dentro de la página; el PDF queda como respaldo.</p>
+<p>Si una consigna menciona «el código anterior» o «la imagen anterior», abre su panel de contexto antes de trabajar. Comprueba qué archivo o recurso debes modificar, guarda el cambio y verifica el resultado antes de tomar la captura. No ejecutes de nuevo una creación o importación si ya existe el objeto correspondiente.</p>
+<h2 id="ejercicios-originales-del-curso">Ejercicio Unidad 4</h2>
+<p>Enunciados y contexto de los PDF de MappingGIS. No se añaden actividades ni soluciones. Los paneles incluyen los pasos originales dentro de la unidad; el PDF conserva la maquetación completa.</p>
+<p><strong>Práctica:</strong> <a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf" rel="nofollow noopener noreferrer" target="_blank">PDF original completo</a>.</p>
+<h3 id="ejercicio-1-tamano-de-la-cache">Ejercicio 1 · Tamaño de la caché</h3>
+<div class="original-statement"><span class="eyebrow">Enunciado original · Práctica</span><p>Anota en la plantilla de resultados el tamaño que ocupa n en disco las teselas de worldgroup.</p></div>
+
+<details class="original-exercise">
+<summary>Pasos y contexto originales de la clase</summary>
+<p><strong>Página 3</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>                                                                                                   3 
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Creación de un caché de teselas raster 
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Hay dos pasos en la creación pro-activa de una cache de teselas: 
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>1. Configuración de las propiedades del almacenamiento en caché, y 
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>2. La creación de teselas 
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Vamos a establecer las propiedades de la caché de nuestro esquema de teselas 
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>para nuestro mapa base worldgroup. 
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>1. Para comenzar abre GeoWebCache introduciendo en el navegador la url:  
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>http://localhost:8080/geoserver/gwc 
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>2. Pincha en el enlace A list of all the layers and automatic demos para ver todos 
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>los elementos actualmente servidos por GeoServer.  
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>3. Verás como la capa cities tiene habilitada, a diferencia del resto de capas, 
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>la salida en formato de teselas vectoriales : pbf (protobuf). Puedes hacer 
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>clic en alguno de estos enlaces para ver el aspecto y fijarte en la url que se 
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>genera, que será de este estilo: 
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>http://localhost:8080/geoserver/gwc/demo/earth:cities?gridSet=EPSG:4326
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>&amp;format=application/vnd.mapbox-vector-tile
+</code></pre></div>
+<p><strong>Página 4</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                                                                                                   4 
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>4. Busca el grupo de capas worldgroup en la lista y haz clic en la vista previa 
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>con OpenLayers [png] 
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>5. Vuelve a la página principal GeoWebCache. 
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>6. Busca el grupo de capas worldgroup y haz clic en Seed this layer: 
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Otra manera de acceder a las opciones de cacheado de imágenes es desde 
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>GeoServer. 
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>Accede al panel de la izquierda al grupo Cacheado de teselas → Capas en caché. 
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>A continuación, seleccionamos el grupo de capas worldgroup y pinchamos en la 
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>opción Seed/truncate. También podemos eliminar todas las teselas, haciendo clic 
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>en Empty. 
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>7. Crearemos una tarea nueva, que incluye los niveles  de la escala, los límites 
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>de las teselas, y el formato de la imagen para el cache de worldgroup.
+</code></pre></div>
+<p><strong>Página 5</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>                                                                                                   5 
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>8. Procura que los valores sean como los que se indican a continuación: 
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a> Number of tasks to use: Esto se refiere a la gestión de procesador 
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>para la tarea. La regla de oro es establecer este valor en dos veces 
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>(2x) el número de núcleos de tu sistema. Si trabajas a nivel local, deja 
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>el número en 2. 
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a> Type of operation: Selecciona Reseed. 
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>o Reseed, genera todos los tiles. 
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>o Seeds, llena los huecos donde no existen tiles. 
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>o Truncate, vacía la memoria caché. 
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a> SRS: Tienes que elegir el SRS en el que se renderizarán las teselas. Lo 
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>vamos a hacer en EPSG:4326 
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a> Format: Este valor determina que formato de salida de imagen 
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>usará el serv icio de mapas cuando se creen la s teselas. Esto  
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>determina: 
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>o El tamaño en el disco de las teselas 
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>o La calidad de imagen, y 
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>o La capacidad de hacer el fondo de las teselas transparente. 
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>Esto se puede dejar como image/png. 
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a> Zoom start : El nivel de zoom superior, en general suele ser una 
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>buena idea crear las teselas desde el nivel de zoom más alto hacia 
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>abajo. Deja esto en 00. 
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a> Zoom stop: El nivel de zoom más bajo. Cuanto más alto, el proceso 
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>llevará más tiempo. Deja esto en 8. 
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a> Bounding box: Como se señaló anteriormente, se puede elegir pre -
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>crear solo una porción  del área total. Vamos a generar el cache de 
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>toda la zona, así que deja estos campos en blanco. 
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>Las propiedades quedan así:
+</code></pre></div>
+<p><strong>Página 6</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>                                                                                                   6 
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Number of tasks to use: 2 
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Type of operation: Reseed 
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Grid Set: EPSG:  4326 
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Format: png 
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Zoom Start: 0 
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Zoom Stop: 8 
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>Bounding Box: [empty]  
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>9. El botón Submit inicia el proceso de creación de tiles. El equipo irá lento 
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>durante un rato mientras se generan los tiles y se guardan en el  directorio 
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>de caché. Paciencia, debes esperar a que el proceso finalice.  El proceso 
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>durará alrededor de 1 hora (depende del procesador de tu equipo). 
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>10. Haz clic en Refresh List  para ver la cuenta atrás del tiempo restante 
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>estimado. Cuando la capa se almacene en caché se te redirigirá a la página 
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>de propiedades. 
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>Ya hemos almacenado en cache nuestro primer mapa.  Las teselas se almacenan 
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>en directorios dentro de \data_dir\gwc 
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>Para más detalles sobre cómo configurar tu propio esquema de teselas, 
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>incluyendo las proyecciones personalizadas, visita la documentación de 
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>GeoWebCache. 
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>Vuelve a GeoServer y en el panel de la izquierda en el grupo selecciona Cacheado 
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>de teselas → Cuota de disco.
+</code></pre></div>
+<p><strong>Página 7</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>                                                                                                   7 
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Habilita los límites de cuota.  
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Estableceremos el tamaño máximo del cache a 1000 MiB. 
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Haz clic en el botón Enviar para guardar los cambios realizados. 
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Vamos a comprobar la cuota que hemos utilizado. Ve a  Cacheado de teselas  → 
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>Capas en caché , comprueba el espacio de disco utilizado ( Cuota utilizada)  y 
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>previsualiza el mapa en la proyección EPSG:4326/png para comprobar la velocidad 
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>de renderizado.  
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>Ejercicio nº 1. Anota en la plantilla de resultados el tamaño que ocupa n en disco 
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>las teselas de worldgroup.
+</code></pre></div>
+</details>
+<details class="source-page"><summary>Ver página 7 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=7" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-7.png" alt="Página 7 del PDF original de Práctica, ejercicio 1" loading="lazy" /></a></details>
+
+<p><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=7" rel="nofollow noopener noreferrer" target="_blank">Consultar en el PDF · página 7</a></p>
+<h3 id="ejercicio-2-comparar-los-dos-mapas">Ejercicio 2 · Comparar los dos mapas</h3>
+<div class="original-statement"><span class="eyebrow">Enunciado original · Práctica</span><p>Haz una captura de pantalla con los dos mapas y comenta si se nota la velocidad de renderizado de las imágenes.</p></div>
+
+<details class="original-exercise">
+<summary>Pasos y contexto originales de la clase</summary>
+<p><strong>Página 7</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>                                                                                                   7 
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Habilita los límites de cuota.  
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Estableceremos el tamaño máximo del cache a 1000 MiB. 
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Haz clic en el botón Enviar para guardar los cambios realizados. 
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Vamos a comprobar la cuota que hemos utilizado. Ve a  Cacheado de teselas  → 
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Capas en caché , comprueba el espacio de disco utilizado ( Cuota utilizada)  y 
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>previsualiza el mapa en la proyección EPSG:4326/png para comprobar la velocidad 
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>de renderizado.  
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>Ejercicio nº 1. Anota en la plantilla de resultados el tamaño que ocupa n en disco 
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>las teselas de worldgroup.
+</code></pre></div>
+<p><strong>Página 8</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>                                                                                                   8 
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Almacenamiento en cache “bajo demanda” 
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>No necesitamos hacer mucho para almacenar en cache los tiles bajo demanda. 
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Sólo tenemos que solicitar las imágenes del mapa desde nuestro WMS a través del 
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>proxy de tiles. GeoWebCache (GWC) se encargará de todo lo demás. 
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>En esta sección vamos a visualizar dos mapas: un mapa para usar imágenes en 
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>caché de GWC por encima de nuestro WMS local, luego compararemos los 
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>tiempos de entrega de los elementos cacheados con peticiones completas de 
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>WMS. 
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>El mapa visualizado tendrá 8 niveles de zoom almacenados en caché co n el 
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>método by seeding  y el resto de tiles se crearán bajo demanda cuando 
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>naveguemos por debajo de ese nivel de zoom. 
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>Ve al directorio &lt; webmapping&gt;\web y abre el archivo 
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>ol_map_comparativa_GeoWebCache.html 
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>Deberías ver dos mapas en una página web. Los mapas en el mismo nivel de zoom 
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>y extensión:
+</code></pre></div>
+<p><strong>Página 9</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>                                                                                                   9 
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>El mapa superior está configurado para renderizar la capa worlgroup como una 
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>imagen WMS. El mapa inferior muestra la misma capa worlgroup, pero está 
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>configurado para renderizar las teselas de imagen. 
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Desplázate en ambos mapas y ajústalos, ¿observas diferencias? 
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>Ejercicio nº 2 . Haz una captura de pantalla con los dos mapas y comenta si se 
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>nota la velocidad de renderizado de las imágenes. 
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>Configuración y creación de teselas vectoriales 
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>Vamos a establecer las propiedades de la caché de nuestro esquema de teselas 
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>para nuestra capa cities. 
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>1. Volvemos a la página principal de  GeoWebCache introduciendo en el 
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>navegador la url:  
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>http://localhost:8080/geoserver/gwc 
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>2. Pinchamos en el enlace A list of all the layers and automatic demos  para ver 
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>todos los elementos actualmente servidos por GeoServer.  
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a>3. Verás como la capa earth:cities tiene habilitada, a diferencia del resto de 
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a>capas, la salida en formato de teselas vectoriales (pbf). 
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a>4. Debajo del nombre de la capa earth:cities haz clic en Seed this layer. 
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a>5. Crearemos una tarea nueva, que incluye los niveles de la escala, los límites 
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a>de las teselas, y el formato de la imagen para el cache de cities. 
+<a id="__codelineno-7-27" name="__codelineno-7-27" href="#__codelineno-7-27"></a>
+<a id="__codelineno-7-28" name="__codelineno-7-28" href="#__codelineno-7-28"></a>6. Los valores que introduciremos serán los siguientes:
+</code></pre></div>
+</details>
+<details class="source-page"><summary>Ver página 9 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=9" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-9.png" alt="Página 9 del PDF original de Práctica, ejercicio 2" loading="lazy" /></a></details>
+
+<p><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=9" rel="nofollow noopener noreferrer" target="_blank">Consultar en el PDF · página 9</a></p>
+<h3 id="ejercicio-3-teselas-vectoriales">Ejercicio 3 · Teselas vectoriales</h3>
+<div class="original-statement"><span class="eyebrow">Enunciado original · Práctica</span><p>Haz una captura de pantalla con la previsualización de la capa cities con el formato de teselas vectoriales (EPSG:4326 / pbf).</p></div>
+
+<details class="original-exercise">
+<summary>Pasos y contexto originales de la clase</summary>
+<p><strong>Página 9</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>                                                                                                   9 
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>El mapa superior está configurado para renderizar la capa worlgroup como una 
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>imagen WMS. El mapa inferior muestra la misma capa worlgroup, pero está 
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>configurado para renderizar las teselas de imagen. 
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Desplázate en ambos mapas y ajústalos, ¿observas diferencias? 
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>Ejercicio nº 2 . Haz una captura de pantalla con los dos mapas y comenta si se 
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>nota la velocidad de renderizado de las imágenes. 
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>Configuración y creación de teselas vectoriales 
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>Vamos a establecer las propiedades de la caché de nuestro esquema de teselas 
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>para nuestra capa cities. 
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>1. Volvemos a la página principal de  GeoWebCache introduciendo en el 
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>navegador la url:  
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>http://localhost:8080/geoserver/gwc 
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>2. Pinchamos en el enlace A list of all the layers and automatic demos  para ver 
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>todos los elementos actualmente servidos por GeoServer.  
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>3. Verás como la capa earth:cities tiene habilitada, a diferencia del resto de 
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>capas, la salida en formato de teselas vectoriales (pbf). 
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>4. Debajo del nombre de la capa earth:cities haz clic en Seed this layer. 
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>5. Crearemos una tarea nueva, que incluye los niveles de la escala, los límites 
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>de las teselas, y el formato de la imagen para el cache de cities. 
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a>6. Los valores que introduciremos serán los siguientes:
+</code></pre></div>
+<p><strong>Página 10</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>                                                                                                   10 
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>Number of tasks to use: 2 
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Type of operation: Reseed - regenerate all tiles 
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Grid Set: EPSG:  4326 
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>Format: application/vnd.mapbox-vector-tile 
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>Zoom Start: 0 
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>Zoom Stop: 8 
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>Modifiable Parameters: STYLES: cities_filter 
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>Bounding Box: [vacío] 
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>Dejaremos el resto de valores con los valores que aparecen por defecto.  
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>7. El botón Submit inicia el proceso de creación de teselas. De nuevo debes ser 
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>paciente, aunque este proceso durará mucho menos que la generación de 
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>teselas raster. 
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>8. Haz clic en el enlace Refresh List  para ver la cuenta atrás del tiempo 
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>restante estimado. Cuando la capa se almacene en caché se te redirigirá a 
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>la página de propiedades. 
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>9. Ahora v amos a comprobar la cuota de disco que hemos utilizado. En 
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>GeoServer, ve a  Cacheado de teselas  → Capas en caché , comprueba el 
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>espacio de disco utilizado ( Cuota utilizada)  y previsualiza el mapa en la 
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>proyección EPSG:4326/pbf.
+</code></pre></div>
+<p><strong>Página 11</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>                                                                                                   11 
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>Ejercicio nº 3 . Haz una captura de pantalla con la previsualización de la capa 
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>cities con el formato de teselas vectoriales (EPSG:4326 / pbf).
+</code></pre></div>
+</details>
+<details class="source-page"><summary>Ver página 11 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=11" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-11.png" alt="Página 11 del PDF original de Práctica, ejercicio 3" loading="lazy" /></a></details>
+
+<p><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=11" rel="nofollow noopener noreferrer" target="_blank">Consultar en el PDF · página 11</a></p>
+<h3 id="ejercicio-4-google-earth">Ejercicio 4 · Google Earth</h3>
+<div class="original-statement"><span class="eyebrow">Enunciado original · Práctica</span><p>Haz una captura de pantalla con el resultado y pégala en la plantilla de resultados</p></div>
+
+<details class="original-exercise">
+<summary>Pasos y contexto originales de la clase</summary>
+<p><strong>Página 11</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>                                                                                                   11 
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Ejercicio nº 3 . Haz una captura de pantalla con la previsualización de la capa 
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>cities con el formato de teselas vectoriales (EPSG:4326 / pbf).
+</code></pre></div>
+<p><strong>Página 12</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>                                                                                                   12 
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Visualización de capas con Google Earth 
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>Google Earth es un potente visor de mapas 3D. GeoServer se integra con Google 
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Earth, proporcionando como salida nativa un KML, lo que permite a cualquier capa 
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>servida por GeoServer cargarse dentro de Google Earth. Además, hay funciones 
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>adicionales de visualización que son posibles a través de Google Earth, tales como 
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>filtros, leyendas y extrusiones. En este ejercicio visualizaremos en Google Earth el 
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>grupo de capas que hemos almacenado en caché. 
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>Visualizando las capas 
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>GeoServer genera de forma nativa datos en KML ( Keyhole Markup Language ). Este 
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>es el lenguaje de marcado que se utiliza en Google Maps y Google Earth. De esta 
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>manera, es fácil convertir shapefiles o cualquier otro dato geoespacial a un 
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>formato que Google entienda. 
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>Hay dos formas de ver los datos  en Google Earth. La primera es estáticamente 
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>cargando un archivo KML. El segundo es el uso de un enlace de red. Vamos a ver 
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>esta segunda opción. 
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>Enlace de red  
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>Conectaremos Google Earth a un KML de GeoServer a través de un enlace de red. 
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>Esto permite que la vista en Google Earth se actualice dinámicamente. 
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>1. Descarga e instala la aplicación Google Earth. 
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>2. Abre Google Earth. 
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a>3. Para añadir un nuevo enlace de red, ve al menú superior y selecciona 
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>Añadir → Enlace de red.
+</code></pre></div>
+<p><strong>Página 13</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>                                                                                                   13 
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>4. En el cuadro de  diálogo que aparece, escribe "world group" en el campo 
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Nombre. 
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>5. En el campo Vínculo introduce la siguiente URL: 
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>http://localhost:8080/geoserver/gwc/service/kml/worldgroup.png.kml
+</code></pre></div>
+<p><strong>Página 14</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Ejercicio 4. GeoWebCache 
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>                                                                                                   14 
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>6. Clic en Aceptar para finalizar. 
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>Ejercicio nº 4. Haz una captura de pantalla con el resultado y pégala en la plantilla de 
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>resultados
+</code></pre></div>
+</details>
+<details class="source-page"><summary>Ver página 14 del PDF original, con sus capturas</summary><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=14" target="_blank" rel="nofollow noopener"><img src="../../assets/ejercicios/unidad-4/1-pagina-14.png" alt="Página 14 del PDF original de Práctica, ejercicio 4" loading="lazy" /></a></details>
+
+<p><a href="../../materiales/Ejercicio_4_GeoWebCache_2025.pdf#page=14" rel="nofollow noopener noreferrer" target="_blank">Consultar en el PDF · página 14</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

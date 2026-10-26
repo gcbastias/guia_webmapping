@@ -1,0 +1,2639 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Resumen estructurado, ejercicios prácticos y glosario del curso de Desarrollo de Aplicaciones Webmapping (MappingGIS)">
+      
+      
+        <meta name="author" content="Gabriela">
+      
+      
+        <link rel="canonical" href="https://gcbastias.github.io/guia_webmapping/glosario/">
+      
+      
+        <link rel="prev" href="../unidades/unidad-8/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Glosario - Guía visual de Webmapping</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/piloto.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  
+  <meta name="robots" content="noindex, nofollow, noimageindex">
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#glosario" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href=".." title="Guía visual de Webmapping" class="md-header__button md-logo" aria-label="Guía visual de Webmapping" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Guía visual de Webmapping
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Glosario
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Cambiar a modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="orange"  aria-label="Cambiar a modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Cambiar a modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/gcbastias/guia_webmapping" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guia_webmapping
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <div class="md-nav__title">
+    <a href=".." title="Guía visual de Webmapping" class="md-nav__button md-logo" aria-label="Guía visual de Webmapping" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <a class="sidebar-home" href=".." aria-label="Ir al inicio">Guía visual de Webmapping</a>
+  </div>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/gcbastias/guia_webmapping" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    guia_webmapping
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidades
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Unidades
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidades/unidad-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 1. Del dato al mapa web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidades/unidad-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 2. PostGIS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidades/unidad-2/#ejercicios-originales-del-curso">Ejercicio Unidad 2</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidades/unidad-3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 3. GeoServer y OGC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidades/unidad-3/#ejercicios-originales-del-curso">Ejercicio Unidad 3</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidades/unidad-4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 4. GeoWebCache
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidades/unidad-4/#ejercicios-originales-del-curso">Ejercicio Unidad 4</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidades/unidad-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 5. Web y Leaflet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidades/unidad-5/#ejercicios-originales-del-curso">Ejercicio Unidad 5</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidades/unidad-6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 6. OpenLayers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidades/unidad-6/#ejercicios-originales-del-curso">Ejercicio Unidad 6</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidades/unidad-7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 7. MapStore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidades/unidad-7/#ejercicios-originales-del-curso">Ejercicio Unidad 7</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../unidades/unidad-8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unidad 8. Proyecto y publicación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+  
+    <ul class="md-nav__list unit-practice-nav">
+      <li class="md-nav__item">
+        <a class="md-nav__link" href="../unidades/unidad-8/#ejercicios-originales-del-curso">Ejercicio Unidad 8</a>
+      </li>
+    </ul>
+  
+
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+      
+  
+
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glosario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        W
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+      
+  
+
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        B
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        D
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        E
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        G
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#h" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        H
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#i" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        I
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#j" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        J
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        K
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#l" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        L
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#m" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        M
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#n" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        N
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#o" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        O
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#p" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        P
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#q" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Q
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#r" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        R
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#s" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        S
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#t" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        T
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#u" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        U
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#v" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        V
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#w" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        W
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="glosario">Glosario</h1>
+<h2 id="a">A</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AddGeometryColumn()</strong></td>
+<td>Función de administración que crea una nueva columna de geometría en una tabla.</td>
+</tr>
+<tr>
+<td><strong>AJAX (Asynchronous JavaScript And XML)</strong></td>
+<td>Técnica que permite a una página web solicitar datos a un servidor de forma asíncrona (sin recargar la página), usada habitualmente para consumir servicios WFS/GetFeature desde Leaflet.</td>
+</tr>
+<tr>
+<td><strong>Anotaciones (MapStore)</strong></td>
+<td>Herramienta de MapStore para dibujar geometrías (marcadores, líneas, polígonos, textos, círculos) directamente sobre el mapa, con posibilidad de exportarlas.</td>
+</tr>
+<tr>
+<td><strong>auth_name / auth_srid</strong></td>
+<td>Columnas de <code>spatial_ref_sys</code>: nombre del organismo que define el sistema de referencia (ej. "EPSG") y el código de ese organismo para dicho sistema.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="b">B</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bajo demanda (creación de teselas)</strong></td>
+<td>Estrategia de generación de teselas en la que las teselas se almacenan en caché a medida que son solicitadas durante la navegación por el mapa; no requiere proceso previo pero la velocidad de visualización es variable para el primer usuario que solicita cada área.</td>
+</tr>
+<tr>
+<td><strong>Bounding box</strong></td>
+<td>Rectángulo de tamaño más pequeño capaz de contener un elemento geográfico dado; usado por los índices espaciales para el procesamiento eficiente.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c">C</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Catálogo (MapStore)</strong></td>
+<td>Herramienta de MapStore para conectar y añadir al mapa servicios OGC (WMS, WFS, CSW, WMTS) de un servidor como GeoServer.</td>
+</tr>
+<tr>
+<td><strong>CDN (Content Delivery Network)</strong></td>
+<td>Red de servidores distribuida desde la que se puede enlazar directamente una librería (como Leaflet) sin necesidad de descargarla, mediante una etiqueta <code>&lt;link&gt;</code> (CSS) o <code>&lt;script&gt;</code> (JS) con su URL.</td>
+</tr>
+<tr>
+<td><strong>Collections (OGC API)</strong></td>
+<td>Punto final (<code>/collections</code>) de una OGC API que da acceso a los datos propiamente dichos, organizados por colecciones temáticas.</td>
+</tr>
+<tr>
+<td><strong>ColorBrewer</strong></td>
+<td>Herramienta/paleta de esquemas de color diseñados para cartografía temática (secuenciales, divergentes, cualitativos), usada habitualmente para definir los colores de un mapa de coropletas.</td>
+</tr>
+<tr>
+<td><strong>Complemento / Plugin (MapStore)</strong></td>
+<td>Módulo funcional que se puede habilitar o deshabilitar en un contexto de MapStore (ej. Catálogo, Geoprocesamiento, Anotaciones, Medida, Importar, Exportación de mapas).</td>
+</tr>
+<tr>
+<td><strong>Confederación Hidrográfica del Duero</strong></td>
+<td>Organismo público español de gestión hidrográfica; entidad ficticia cliente en el enunciado del proyecto final del curso, que solicita migrar su visor cartográfico privativo a una solución open source con PostGIS, GeoServer y Leaflet.</td>
+</tr>
+<tr>
+<td><strong>Consola de errores / DevTools</strong></td>
+<td>Herramientas de depuración integradas en el navegador (Firefox: Consola de errores; Chrome: DevTools, con pestañas Elements/Console/Sources) que permiten identificar errores de sintaxis o de ejecución en HTML/CSS/JS, incluyendo errores por sensibilidad a mayúsculas/minúsculas (ej. <code>Ol.layer.Tile</code> vs <code>ol.layer.Tile</code>).</td>
+</tr>
+<tr>
+<td><strong>Content Security Policy (CSP)</strong></td>
+<td>Página de configuración de GeoServer que controla las cabeceras HTTP de política de seguridad de contenido; conviene deshabilitarla en entornos de desarrollo para poder referenciar librerías externas (Leaflet, OpenStreetMap) por URL sin bloqueos.</td>
+</tr>
+<tr>
+<td><strong>Contexto de aplicación (MapStore)</strong></td>
+<td>Configuración personalizada de un visor MapStore (mapa, capas, complementos y tema) creada con el Gestor de contexto, accesible mediante una URL específica.</td>
+</tr>
+<tr>
+<td><strong>CORS (Cross-Origin Resource Sharing)</strong></td>
+<td>Mecanismo de seguridad del navegador que restringe las peticiones entre distintos orígenes; en GeoServer se habilita editando el filtro <code>CorsFilter</code> (comentado por defecto) en el archivo <code>web.xml</code>.</td>
+</tr>
+<tr>
+<td><strong>CQL (Common Query Language)</strong></td>
+<td>Lenguaje de consulta usado en los filtros de estilos de GeoServer (ej. en CSS, expresiones entre corchetes como <code>[pop_max &lt; 1000000]</code>) para condicionar reglas de estilo según atributos.</td>
+</tr>
+<tr>
+<td><strong>cql_filter / CQL_FILTER</strong></td>
+<td>Parámetro usado en peticiones WMS/WFS (y en <code>params</code> de <code>ol.source.TileWMS</code>/<code>ImageWMS</code>) para filtrar los objetos geográficos devueltos según una expresión CQL sobre sus atributos.</td>
+</tr>
+<tr>
+<td><strong>CSS (Cascading Style Sheets)</strong></td>
+<td>Lenguaje de hojas de estilo que define la presentación visual (colores, tamaños, posiciones) de los elementos HTML; puede aplicarse en línea, embebido en el <code>&lt;head&gt;</code> o en archivo externo enlazado.</td>
+</tr>
+<tr>
+<td><strong>CSS Styling (extensión GeoServer)</strong></td>
+<td>Complemento de GeoServer que añade un editor de estilos alternativo al SLD, basado en una sintaxis derivada de CSS; los estilos CSS se convierten internamente a SLD.</td>
+</tr>
+<tr>
+<td><strong>CSW (Catalogue Service for the Web)</strong></td>
+<td>Estándar OGC de descubrimiento de datos para catálogos y registros geoespaciales.</td>
+</tr>
+<tr>
+<td><strong>Cuota de disco (Disk Quota)</strong></td>
+<td>Configuración de GeoServer/GeoWebCache que permite habilitar límites de almacenamiento para la caché de teselas y definir la política de invalidación (ej. eliminar primero las teselas menos frecuentemente utilizadas) cuando se supera el tamaño máximo establecido.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="d">D</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dashboard</strong></td>
+<td>Panel de mando o de control que combina mapas con tablas, gráficos y KPIs.</td>
+</tr>
+<tr>
+<td><strong>data_dir</strong></td>
+<td>Directorio de datos de GeoServer; contiene, entre otras, las carpetas <code>workspaces/</code>, <code>styles/</code>, <code>layergroups/</code>, <code>gwc/</code>, <code>www/</code> y <code>logs/</code>. Debe copiarse fuera del directorio de instalación antes de actualizar o reinstalar GeoServer para no perder la configuración.</td>
+</tr>
+<tr>
+<td><strong>declutter</strong></td>
+<td>Propiedad de OpenLayers (capa vectorial) que evita la superposición de etiquetas de texto cuando hay muchos objetos próximos, ocultando automáticamente las que no caben sin solaparse.</td>
+</tr>
+<tr>
+<td><strong>deegree</strong></td>
+<td>Software libre alternativo a GeoServer para publicar servicios OGC (WMS, WFS, WCS...) de datos geoespaciales.</td>
+</tr>
+<tr>
+<td><strong>DescribeCoverage</strong></td>
+<td>Operación de WCS que devuelve un documento XML con la descripción detallada de una o varias coberturas (CoverageDescription, coverageID, domainSet, rangeType, serviceParameters).</td>
+</tr>
+<tr>
+<td><strong>DescribeFeatureType</strong></td>
+<td>Operación obligatoria de WFS que devuelve la descripción (esquema) de los tipos de objetos geográficos soportados.</td>
+</tr>
+<tr>
+<td><strong>DescribeLayer</strong></td>
+<td>Operación de WMS/SLD que encamina al cliente hacia el servicio (WMS o WFS) adecuado para conocer la estructura de los datos a simbolizar.</td>
+</tr>
+<tr>
+<td><strong>DescribeProcess</strong></td>
+<td>Operación de WPS que describe los parámetros y formatos de entrada/salida de los procesos ejecutables.</td>
+</tr>
+<tr>
+<td><strong>DOM (Document Object Model)</strong></td>
+<td>Representación en forma de árbol de los elementos de una página HTML que JavaScript puede leer y modificar dinámicamente.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="e">E</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Enlace de red (Network Link)</strong></td>
+<td>Mecanismo de Google Earth que conecta la aplicación a un recurso KML remoto (por ejemplo, servido por GeoWebCache/GeoServer), permitiendo que la vista se actualice dinámicamente en lugar de cargar un archivo KML estático.</td>
+</tr>
+<tr>
+<td><strong>Entornos de desarrollo, pruebas y producción</strong></td>
+<td>Las tres fases por las que pasa el despliegue de una aplicación web mapping: desarrollo (construcción de la aplicación), pruebas (<em>testing</em>, para detectar y corregir fallos) y producción (entorno final, ya publicado en la web).</td>
+</tr>
+<tr>
+<td><strong>Etiqueta <code>&lt;iframe&gt;</code></strong></td>
+<td>Elemento HTML que permite embeber una página o documento web dentro de otra página.</td>
+</tr>
+<tr>
+<td><strong>Eventos (Leaflet)</strong></td>
+<td>Mecanismo mediante <code>map.on()</code>/<code>layer.on()</code> (y <code>off()</code> para eliminarlos) que permite ejecutar funciones en respuesta a interacciones del usuario (click, zoom, moveend, etc.), recibiendo un objeto evento (ej. <code>e.latlng</code>).</td>
+</tr>
+<tr>
+<td><strong>EWKB (Extended Well-Known Binary)</strong></td>
+<td>Extensión de PostGIS al formato WKB equivalente a EWKT, con metadatos SRID.</td>
+</tr>
+<tr>
+<td><strong>EWKT (Extended Well-Known Text)</strong></td>
+<td>Extensión de PostGIS al formato WKT que añade metadatos SRID y soporta geometrías de 3-4 dimensiones.</td>
+</tr>
+<tr>
+<td><strong>Execute</strong></td>
+<td>Operación de WPS que ejecuta un proceso específico con los parámetros suministrados, devolviendo el resultado directamente o como recurso accesible vía web.</td>
+</tr>
+<tr>
+<td><strong>Explorador de metadatos</strong></td>
+<td>Componente de MapStore que actúa como cliente CSW (Catalogue Service for the Web) para explorar metadatos de servicios.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="g">G</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>geography (tipo)</strong></td>
+<td>Tipo de dato de PostGIS (desde v1.5) que trabaja con coordenadas esféricas reales, útil para datos dispersos globalmente; complementa al tipo <code>geometry</code>, que trabaja en el plano cartesiano.</td>
+</tr>
+<tr>
+<td><strong>Geohistoria (MapStore)</strong></td>
+<td>Recurso de MapStore (creado desde "Agregar recurso") asociado a las Stories/StoryMap, para presentaciones dinámicas con mapas y contenido multimedia.</td>
+</tr>
+<tr>
+<td><strong>GeoJSON</strong></td>
+<td>Formato vectorial basado en JSON, ligero y transmisible, ideal para intercambio web; no es consultable ni soporta raster.</td>
+</tr>
+<tr>
+<td><strong>geometry_columns / geography_columns</strong></td>
+<td>Vistas de PostGIS que documentan qué tablas/columnas tienen geometría/geografía y con qué SRID.</td>
+</tr>
+<tr>
+<td><strong>GeoPackage (.gpkg)</strong></td>
+<td>Formato de base de datos SQLite espacial, consultable, que puede contener vector y raster.</td>
+</tr>
+<tr>
+<td><strong>Geoportal</strong></td>
+<td>Materialización práctica de una IDE; ofrece como mínimo tres clientes: localización, nomenclátor y visualización.</td>
+</tr>
+<tr>
+<td><strong>Geoprocesamiento (MapStore)</strong></td>
+<td>Complemento de MapStore que utiliza procesos WPS para realizar operaciones de buffer e intersección sobre las geometrías de una capa del mapa.</td>
+</tr>
+<tr>
+<td><strong>GeoServer / MapServer</strong></td>
+<td>Servidores de mapas open source que exponen datos vectoriales/raster mediante estándares OGC (WMS, WFS...).</td>
+</tr>
+<tr>
+<td><strong>GEOSERVER_DATA_DIR</strong></td>
+<td>Variable de entorno que apunta al directorio de datos de GeoServer (<code>data_dir</code>), donde se almacena toda la configuración: workspaces, estilos, capas, caché de teselas, etc.</td>
+</tr>
+<tr>
+<td><strong>GEOSERVER_HOME</strong></td>
+<td>Variable de entorno que apunta al directorio de instalación de GeoServer.</td>
+</tr>
+<tr>
+<td><strong>GeoSolutions</strong></td>
+<td>Empresa desarrolladora de MapStore, GeoServer y GeoWebCache, especializada en software geoespacial de código abierto.</td>
+</tr>
+<tr>
+<td><strong>GeoWebCache</strong></td>
+<td>Servicio de teselado/caché que trabaja junto a GeoServer en la arquitectura de servidor web.</td>
+</tr>
+<tr>
+<td><strong>GeoWebCache (teselas vectoriales)</strong></td>
+<td>Módulo integrado con GeoServer que gestiona la generación y publicación de teselas (de imagen y vectoriales); para teselas vectoriales solo necesita almacenar una tesela una vez para todos los estilos diferentes.</td>
+</tr>
+<tr>
+<td><strong>Gestor de contexto (MapStore)</strong></td>
+<td>Herramienta administrativa de MapStore para construir y configurar visores personalizados (nombre del contexto, configuración predeterminada del mapa y complementos disponibles para el espectador).</td>
+</tr>
+<tr>
+<td><strong>Gestor de mapas (MapStore)</strong></td>
+<td>Herramienta principal de MapStore para crear, visualizar y trabajar con mapas; incluye barra de menú, tabla de contenidos, barra lateral, selector de mapas de fondo y control de pie de página.</td>
+</tr>
+<tr>
+<td><strong>Gestor de usuarios (MapStore)</strong></td>
+<td>Componente de MapStore para crear y gestionar usuarios, grupos y roles (Anónimo, Normal, Administrador).</td>
+</tr>
+<tr>
+<td><strong>GetCoverage</strong></td>
+<td>Operación de WCS que devuelve una cobertura (o parte de ella, según un bounding box) en un formato conocido.</td>
+</tr>
+<tr>
+<td><strong>GetFeature</strong></td>
+<td>Operación obligatoria de WFS que devuelve instancias de objetos geográficos (geometría + atributos) en formato GML.</td>
+</tr>
+<tr>
+<td><strong>GetFeatureInfo</strong></td>
+<td>Operación opcional de WMS que devuelve los datos (geometría y atributos) subyacentes a una posición de píxel en un mapa.</td>
+</tr>
+<tr>
+<td><strong>GetGmlObject</strong></td>
+<td>Operación opcional de WFS que devuelve instancias de fenómenos identificadas por su ID XML (a diferencia de GetFeature, que devuelve todas las instancias de un tipo).</td>
+</tr>
+<tr>
+<td><strong>GetLegendGraphic</strong></td>
+<td>Operación de WMS/SLD que genera un gráfico de leyenda como imagen, según el estilo del servidor o un SLD suministrado por el usuario.</td>
+</tr>
+<tr>
+<td><strong>GetMap</strong></td>
+<td>Operación obligatoria de WMS/SLD que devuelve una imagen de mapa de un área, capas, estilo y formato especificados.</td>
+</tr>
+<tr>
+<td><strong>Git</strong></td>
+<td>Sistema de control de versiones distribuido; prerrequisito de <code>npm create ol-app</code>, ya que algunas plantillas y dependencias se gestionan mediante repositorios Git.</td>
+</tr>
+<tr>
+<td><strong>Git Bash</strong></td>
+<td>Terminal (emulador de línea de comandos) incluida en la instalación de Git para Windows, usada para verificar la instalación (<code>git --version</code>) y ejecutar comandos Git.</td>
+</tr>
+<tr>
+<td><strong>GML (Geographic Markup Language)</strong></td>
+<td>Formato de intercambio de geometrías basado en XML, soportado por PostGIS para emisión y consumo.</td>
+</tr>
+<tr>
+<td><strong>Golpe fuerte (MapStore)</strong></td>
+<td>Herramienta de comparación de capas que traza una línea (vertical u horizontal) sobre el mapa, ocultando los elementos de la capa a un lado y mostrándolos al otro.</td>
+</tr>
+<tr>
+<td><strong>Google Earth</strong></td>
+<td>Visor de mapas 3D de Google; GeoServer se integra con él proporcionando salida nativa en KML, permitiendo cargar cualquier capa servida por GeoServer (incluyendo grupos de capas cacheados) dentro de Google Earth.</td>
+</tr>
+<tr>
+<td><strong>Grupo de capas</strong></td>
+<td>En GeoServer, contenedor que organiza capas y otros grupos en una estructura jerárquica, referenciable por nombre; no respeta el concepto de workspace y solo es relevante para peticiones WMS.</td>
+</tr>
+<tr>
+<td><strong>gvSIG</strong></td>
+<td>Software SIG de escritorio libre, alternativo a QGIS.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="h">H</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>HTML (HyperText Markup Language)</strong></td>
+<td>Lenguaje de marcado que define la estructura y el contenido de una página web mediante etiquetas (tags); es el "esqueleto" de una aplicación web de mapas.</td>
+</tr>
+<tr>
+<td><strong>HTML5</strong></td>
+<td>Última versión mayor de HTML; incorpora nuevas etiquetas semánticas y elimina la necesidad de declarar tipo/versión en el doctype.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="i">I</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>IDE (Infraestructura de Datos Espaciales)</strong></td>
+<td>Conjunto de tecnologías, políticas y estándares que permiten descubrir, visualizar y compartir datos geoespaciales.</td>
+</tr>
+<tr>
+<td><strong>Índice espacial (GiST / R-Tree)</strong></td>
+<td>Estructura de índice multidimensional que permite el procesamiento eficiente de operaciones espaciales, a diferencia de un B-tree tradicional.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="j">J</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>J2EE (Java 2 Enterprise Edition)</strong></td>
+<td>Plataforma Java para el desarrollo de aplicaciones empresariales; en la arquitectura de ejemplo del curso, un servidor de aplicaciones J2EE se sitúa entre el cliente (OpenLayers) y GeoServer/Oracle.</td>
+</tr>
+<tr>
+<td><strong>JavaScript (JS)</strong></td>
+<td>Lenguaje de programación interpretado que añade comportamiento e interactividad a una página web; es el lenguaje sobre el que se construyen las librerías de mapas web como Leaflet y OpenLayers.</td>
+</tr>
+<tr>
+<td><strong>JDK (Java Development Kit)</strong></td>
+<td>Entorno de desarrollo Java requerido para ejecutar GeoServer; las versiones recientes de GeoServer (desde la 2.25) requieren JDK 17.</td>
+</tr>
+<tr>
+<td><strong>Jetty</strong></td>
+<td>Servidor de aplicaciones Java ligero y portátil sobre el que está construida la versión binaria independiente de plataforma de GeoServer.</td>
+</tr>
+<tr>
+<td><strong>jQuery</strong></td>
+<td>Librería de JavaScript que simplifica la manipulación del DOM, el manejo de eventos y las peticiones AJAX.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="k">K</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>KML (Keyhole Markup Language)</strong></td>
+<td>Formato de intercambio de geometrías basado en XML (usado por Google Maps y Google Earth, entre otros), soportado por PostGIS y generado de forma nativa por GeoServer.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="l">L</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Landing page</strong></td>
+<td>Punto final genérico (<code>/</code>) de acceso a una OGC API, desde el que se enlaza a las colecciones de datos, la definición de la API y la declaración de conformidad.</td>
+</tr>
+<tr>
+<td><strong>LATIN1</strong></td>
+<td>Codificación de caracteres (ISO 8859-1) que debe indicarse al importar shapefiles a PostGIS cuando el archivo de origen no está codificado en UTF-8, para evitar problemas con tildes y caracteres especiales.</td>
+</tr>
+<tr>
+<td><strong>L.circle()</strong></td>
+<td>Método de Leaflet que dibuja un círculo con radio en metros, definido geográficamente (se deforma con el zoom en proyecciones no equidistantes).</td>
+</tr>
+<tr>
+<td><strong>L.circleMarker()</strong></td>
+<td>Método de Leaflet que dibuja un círculo con radio en píxeles, de tamaño constante independiente del zoom.</td>
+</tr>
+<tr>
+<td><strong>L.control()</strong></td>
+<td>Método base de Leaflet para crear controles de interfaz de usuario sobre el mapa (zoom, atribución, capas, escala), posicionables en las esquinas del contenedor.</td>
+</tr>
+<tr>
+<td><strong>L.control.attribution()</strong></td>
+<td>Control de Leaflet que muestra el texto de atribución/copyright de las fuentes de datos.</td>
+</tr>
+<tr>
+<td><strong>L.control.layers()</strong></td>
+<td>Control de Leaflet que permite alternar entre capas base y activar/desactivar capas superpuestas (overlays).</td>
+</tr>
+<tr>
+<td><strong>L.control.scale()</strong></td>
+<td>Control de Leaflet que muestra una barra de escala gráfica (métrica y/o imperial).</td>
+</tr>
+<tr>
+<td><strong>L.control.zoom()</strong></td>
+<td>Control de Leaflet que añade los botones de acercar/alejar zoom al mapa.</td>
+</tr>
+<tr>
+<td><strong>Leaflet</strong></td>
+<td>Librería JavaScript open source (desde 2011) para construir mapas interactivos en la web, orientada a la sencillez, el buen rendimiento en móviles y la extensibilidad mediante plugins.</td>
+</tr>
+<tr>
+<td><strong>L.featureGroup()</strong></td>
+<td>Método de Leaflet similar a <code>L.layerGroup</code> pero que además propaga eventos del grupo y permite aplicar estilos comunes con <code>setStyle()</code>.</td>
+</tr>
+<tr>
+<td><strong>L.geoJson()</strong></td>
+<td>Método de Leaflet que crea una capa a partir de datos en formato GeoJSON, con opciones como <code>pointToLayer</code>, <code>style</code>, <code>onEachFeature</code>, <code>filter</code> y <code>coordsToLatLng</code> para personalizar su representación (ej. mapas de coropletas).</td>
+</tr>
+<tr>
+<td><strong>L.geoJson()</strong></td>
+<td>Clase de Leaflet que permite representar en el mapa un objeto o archivo en formato GeoJSON (como el exportado desde las anotaciones de MapStore), aceptando las opciones <code>style</code> y <code>onEachFeature</code>.</td>
+</tr>
+<tr>
+<td><strong>L.gridLayer()</strong></td>
+<td>Clase base de Leaflet para crear capas de teselas personalizadas (de la que hereda <code>L.tileLayer</code>).</td>
+</tr>
+<tr>
+<td><strong>L.icon()</strong></td>
+<td>Método de Leaflet que define un icono personalizado (imagen, tamaño, anclaje) para asignar a un <code>L.marker</code>.</td>
+</tr>
+<tr>
+<td><strong>L.imageOverlay()</strong></td>
+<td>Método de Leaflet que superpone una imagen estática georreferenciada (por sus esquinas) sobre el mapa.</td>
+</tr>
+<tr>
+<td><strong>Lizmap</strong></td>
+<td>Servidor de mapas web open source que actúa como frontend (interfaz web) para QGIS.</td>
+</tr>
+<tr>
+<td><strong>L.layerGroup()</strong></td>
+<td>Método de Leaflet que agrupa varias capas para manipularlas (añadir/quitar del mapa) como un conjunto único, sin gestión de eventos propia.</td>
+</tr>
+<tr>
+<td><strong>L.map()</strong></td>
+<td>Método de Leaflet que crea el objeto mapa, asociándolo a un <code>&lt;div&gt;</code> del DOM y a un conjunto de opciones (centro, zoom, capas, controles, etc.).</td>
+</tr>
+<tr>
+<td><strong>L.marker()</strong></td>
+<td>Método de Leaflet que añade un marcador puntual al mapa en una coordenada dada.</td>
+</tr>
+<tr>
+<td><strong>LockFeature</strong></td>
+<td>Operación opcional de WFS que bloquea uno o más tipos de fenómenos mientras se edita con Transaction.</td>
+</tr>
+<tr>
+<td><strong>L.polygon()</strong></td>
+<td>Método de Leaflet que dibuja un polígono cerrado a partir de una serie de coordenadas.</td>
+</tr>
+<tr>
+<td><strong>L.polyline()</strong></td>
+<td>Método de Leaflet que dibuja una línea a partir de una serie de coordenadas.</td>
+</tr>
+<tr>
+<td><strong>L.popup()</strong></td>
+<td>Método de Leaflet que muestra una ventana emergente de contenido (HTML) anclada a una coordenada o a una capa, normalmente al hacer clic.</td>
+</tr>
+<tr>
+<td><strong>L.rectangle()</strong></td>
+<td>Método de Leaflet que dibuja un rectángulo a partir de sus esquinas (bounding box).</td>
+</tr>
+<tr>
+<td><strong>L.tileLayer()</strong></td>
+<td>Método de Leaflet que añade una capa de teselas ráster (ej. OpenStreetMap, MapBox) al mapa a partir de una plantilla de URL.</td>
+</tr>
+<tr>
+<td><strong>L.tileLayer.wms()</strong></td>
+<td>Método de Leaflet que añade una capa de teselas generadas dinámicamente por un servicio WMS externo (ej. GeoServer).</td>
+</tr>
+<tr>
+<td><strong>L.tooltip()</strong></td>
+<td>Método de Leaflet que muestra una etiqueta de texto asociada a una capa, normalmente al pasar el cursor (hover).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="m">M</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mapa de coropletas (choropleth)</strong></td>
+<td>Mapa temático que colorea polígonos según el valor de un atributo, típicamente construido en Leaflet combinando <code>L.geoJson()</code> con una función de estilo basada en rangos de color.</td>
+</tr>
+<tr>
+<td><strong>MapBox</strong></td>
+<td>Plataforma de mapas que ofrece, entre otros servicios, estilos de teselas (tile styles) personalizables consumibles en Leaflet/OpenLayers mediante un token de acceso.</td>
+</tr>
+<tr>
+<td><strong>MapComposer</strong></td>
+<td>Módulo/aplicación de MapStore orientado a crear mapas.</td>
+</tr>
+<tr>
+<td><strong>MapManager</strong></td>
+<td>Módulo/aplicación de MapStore orientado a administrar mapas.</td>
+</tr>
+<tr>
+<td><strong>MapProxy</strong></td>
+<td>Servidor de mapas web open source que actúa como proxy para acelerar servicios WMS; se integra con GeoServer y MapServer.</td>
+</tr>
+<tr>
+<td><strong>MapServer</strong></td>
+<td>Servidor de mapas web open source, ligero y rápido; alternativa a GeoServer.</td>
+</tr>
+<tr>
+<td><strong>MapStore</strong></td>
+<td><em>Framework webGIS</em> de código libre (licencia GNU/GPL3) desarrollado por GeoSolutions, que permite crear, gestionar y compartir mapas, así como construir aplicaciones geoespaciales sofisticadas; se apoya en OpenLayers (escritorio), Leaflet (móvil), Cesium (3D) y React (interfaz).</td>
+</tr>
+<tr>
+<td><strong>Map tiling (generación de teselas)</strong></td>
+<td>Forma en que las imágenes de un mapa son pre-renderizadas y guardadas en la memoria caché: en lugar de almacenar la imagen entera, se guarda como pequeñas imágenes rectangulares del mismo tamaño (teselas) que se combinan para formar el mapa completo, en varios niveles de resolución/zoom.</td>
+</tr>
+<tr>
+<td><strong>MapViewer</strong></td>
+<td>Módulo/aplicación WebGIS de MapStore con funciones de geolocalizador y análisis de datos.</td>
+</tr>
+<tr>
+<td><strong>MBTiles</strong></td>
+<td>Especificación de MapBox para almacenar teselas (tiles) en una única base de datos SQLite.</td>
+</tr>
+<tr>
+<td><strong>Motor de renderizado (Canvas / DOM / WebGL)</strong></td>
+<td>Mecanismo interno que usa OpenLayers para dibujar el mapa en el navegador; Canvas es el motor por defecto, DOM es el heredado de versiones antiguas y WebGL aprovecha la GPU para grandes volúmenes de datos.</td>
+</tr>
+<tr>
+<td><strong>MVT (MapBox Vector Tile)</strong></td>
+<td>Formato binario de teselas vectoriales (<code>application/vnd.mapbox-vector-tile</code>), el más recomendado en producción y ampliamente soportado.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="n">N</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Node.js</strong></td>
+<td>Entorno de ejecución de JavaScript fuera del navegador, necesario para usar <code>npm</code> y herramientas de compilación como Vite; prerrequisito para crear un proyecto OpenLayers con <code>npm create ol-app</code>.</td>
+</tr>
+<tr>
+<td><strong>Nominatim</strong></td>
+<td>Base de datos de geocodificación de OpenStreetMap utilizada por MapStore (y otros clientes) para búsquedas de ubicación y direcciones.</td>
+</tr>
+<tr>
+<td><strong>npm (Node Package Manager)</strong></td>
+<td>Gestor de paquetes de Node.js, usado para instalar OpenLayers como dependencia de un proyecto (<code>npm install ol</code>) y para ejecutar los scripts de desarrollo/compilación del proyecto.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="o">O</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OGC API</strong></td>
+<td>Nuevo estándar OGC (en desarrollo), evolución del WFS, que permite acceder a datos geoespaciales en formato web (HTML y/o JSON) mediante "puntos finales" (endpoints) añadidos a la URL, siguiendo las mejores prácticas W3C/OGC.</td>
+</tr>
+<tr>
+<td><strong>OGC ILAF</strong></td>
+<td>Foro Ibérico y Latinoamericano del OGC, para la comunidad de habla hispana y portuguesa interesada en sus desarrollos y objetivos.</td>
+</tr>
+<tr>
+<td><strong>ol.control (concepto)</strong></td>
+<td>Elemento de interfaz de usuario (widget) superpuesto al mapa con el que el usuario interactúa mediante clic (zoom, atribución, capas, escala...), a diferencia de las interacciones.</td>
+</tr>
+<tr>
+<td><strong>ol.control.defaults().extend()</strong></td>
+<td>Patrón de OpenLayers que permite partir de los controles por defecto del mapa (Zoom, Attribution, Rotate) y añadir otros controles adicionales sin sustituir la lista completa.</td>
+</tr>
+<tr>
+<td><strong>ol.control.FullScreen</strong></td>
+<td>Control de OpenLayers que añade un botón para mostrar el mapa en pantalla completa.</td>
+</tr>
+<tr>
+<td><strong>ol.control.MousePosition</strong></td>
+<td>Control de OpenLayers que muestra la coordenada del ratón sobre el mapa en tiempo real.</td>
+</tr>
+<tr>
+<td><strong>ol.control.OverviewMap</strong></td>
+<td>Control de OpenLayers que muestra un mapa de situación en miniatura (minimapa).</td>
+</tr>
+<tr>
+<td><strong>ol.control.ScaleLine</strong></td>
+<td>Control de OpenLayers que muestra una barra de escala gráfica.</td>
+</tr>
+<tr>
+<td><strong>ol.control.ZoomSlider</strong></td>
+<td>Control de OpenLayers que añade un control deslizante (slider) para el zoom, alternativo a los botones.</td>
+</tr>
+<tr>
+<td><strong>ol.control.ZoomToExtent</strong></td>
+<td>Control de OpenLayers que añade un botón para restablecer la vista a una extensión predefinida.</td>
+</tr>
+<tr>
+<td><strong>ol.format.GeoJSON / KML / GML / MVT</strong></td>
+<td>Clases del paquete <code>ol.format</code> que indican a <code>ol.source.Vector</code>/<code>ol.source.VectorTile</code> cómo interpretar (parsear) los datos leídos, según el formato de origen.</td>
+</tr>
+<tr>
+<td><strong>ol.interaction (concepto)</strong></td>
+<td>Mecanismo de OpenLayers que gestiona el comportamiento del mapa en respuesta a gestos del usuario directamente sobre el lienzo (arrastrar, rueda del ratón, pellizco), a diferencia de los controles.</td>
+</tr>
+<tr>
+<td><strong>ol.interaction.DragAndDrop</strong></td>
+<td>Interacción de OpenLayers que permite cargar archivos (GeoJSON, KML...) arrastrándolos sobre el mapa.</td>
+</tr>
+<tr>
+<td><strong>ol.interaction.DragBox</strong></td>
+<td>Interacción de OpenLayers que permite dibujar un rectángulo de selección arrastrando el ratón.</td>
+</tr>
+<tr>
+<td><strong>ol.interaction.Draw</strong></td>
+<td>Interacción de OpenLayers que permite dibujar nuevas geometrías sobre el mapa, configurada mediante <code>type</code> (tipo de geometría) y <code>source</code> (fuente vectorial de destino).</td>
+</tr>
+<tr>
+<td><strong>ol.interaction.Modify</strong></td>
+<td>Interacción de OpenLayers que permite editar los vértices de geometrías existentes, habitualmente combinada con <code>ol.interaction.Select</code> mediante la propiedad <code>features</code>.</td>
+</tr>
+<tr>
+<td><strong>ol.interaction.Select</strong></td>
+<td>Interacción de OpenLayers que selecciona objetos geográficos al hacer clic (u otro evento) sobre ellos, configurable mediante <code>style</code>, <code>layers</code>, <code>condition</code>, <code>toggleCondition</code>, <code>addCondition</code> y <code>removeCondition</code>.</td>
+</tr>
+<tr>
+<td><strong>ol.layer.Group</strong></td>
+<td>Clase de OpenLayers que agrupa varias capas (o grupos) bajo un mismo nodo, usada por ejemplo por el plugin <code>ol-layerswitcher</code> para organizar capas base y superpuestas.</td>
+</tr>
+<tr>
+<td><strong>ol.layer.Heatmap</strong></td>
+<td>Clase de capa de OpenLayers que representa una capa vectorial de puntos como un mapa de calor (densidad), configurable mediante <code>gradient</code>, <code>weight</code>, <code>radius</code>, <code>blur</code> y <code>shadow</code>.</td>
+</tr>
+<tr>
+<td><strong>ol.layer.Image</strong></td>
+<td>Clase de capa de OpenLayers que muestra una única imagen completa (no teselada) que cubre la extensión visible; usada con <code>ol.source.ImageWMS</code> o <code>ol.source.ImageStatic</code>.</td>
+</tr>
+<tr>
+<td><strong>ol-layerswitcher</strong></td>
+<td>Plugin de terceros (Matt Walker) para OpenLayers que añade un control de tipo árbol de capas para gestionar la visibilidad de capas base y superpuestas, apoyado en <code>ol.layer.Group</code>.</td>
+</tr>
+<tr>
+<td><strong>ol.layer.Tile</strong></td>
+<td>Clase de capa de OpenLayers que muestra datos raster organizados en teselas (tiles), habitualmente asociada a fuentes como <code>ol.source.OSM</code>, <code>ol.source.TileWMS</code> o <code>ol.source.BingMaps</code>.</td>
+</tr>
+<tr>
+<td><strong>ol.layer.Vector</strong></td>
+<td>Clase de capa de OpenLayers que muestra objetos geográficos vectoriales estilizados en el cliente, a partir de una fuente <code>ol.source.Vector</code>.</td>
+</tr>
+<tr>
+<td><strong>ol.layer.VectorTile</strong></td>
+<td>Clase de capa de OpenLayers que combina teselado y datos vectoriales, habitualmente usada para consumir teselas en formato MVT.</td>
+</tr>
+<tr>
+<td><strong>ol.Map</strong></td>
+<td>Clase central de OpenLayers que representa el mapa; agrupa las capas, la vista, los controles y las interacciones, y se asocia a un <code>&lt;div&gt;</code> del DOM mediante la propiedad <code>target</code>.</td>
+</tr>
+<tr>
+<td><strong>ol.proj.fromLonLat()</strong></td>
+<td>Función de utilidad de OpenLayers que convierte coordenadas geográficas (longitud/latitud, EPSG:4326) a la proyección del mapa (por defecto EPSG:3857, Web Mercator).</td>
+</tr>
+<tr>
+<td><strong>ol.source.BingMaps</strong></td>
+<td>Fuente de OpenLayers que consume las capas base de Bing Maps mediante una clave de API.</td>
+</tr>
+<tr>
+<td><strong>ol.source.ImageStatic</strong></td>
+<td>Fuente de OpenLayers que muestra una imagen estática ya georreferenciada mediante su extensión y proyección.</td>
+</tr>
+<tr>
+<td><strong>ol.source.ImageWMS</strong></td>
+<td>Fuente de OpenLayers que consume un servicio WMS solicitando una única imagen no teselada, recalculada al desplazar o hacer zoom.</td>
+</tr>
+<tr>
+<td><strong>ol.source.OSM</strong></td>
+<td>Fuente de OpenLayers que sirve la capa base de OpenStreetMap sin necesidad de configuración adicional.</td>
+</tr>
+<tr>
+<td><strong>ol.source.TileWMS</strong></td>
+<td>Fuente de OpenLayers que consume un servicio WMS de forma teselada (peticiones GetMap recortadas en teselas).</td>
+</tr>
+<tr>
+<td><strong>ol.source.Vector</strong></td>
+<td>Fuente de OpenLayers que almacena y gestiona objetos geográficos (<code>ol.Feature</code>) para una capa vectorial, con métodos como <code>addFeature</code>, <code>clear</code>, <code>getFeatures</code>, <code>getFeaturesAtCoordinate</code>, <code>removeFeature</code>, <code>getExtent</code> y <code>forEachFeature</code>.</td>
+</tr>
+<tr>
+<td><strong>ol.source.VectorTile</strong></td>
+<td>Fuente de OpenLayers usada por <code>ol.layer.VectorTile</code> para consumir teselas vectoriales (habitualmente en formato MVT).</td>
+</tr>
+<tr>
+<td><strong>ol.style.Circle</strong></td>
+<td>Componente de estilo de OpenLayers que representa un punto como un símbolo circular, con <code>fill</code> y <code>stroke</code> propios.</td>
+</tr>
+<tr>
+<td><strong>ol.style.Fill</strong></td>
+<td>Componente de estilo de OpenLayers que define el color de relleno de polígonos y símbolos puntuales tipo círculo.</td>
+</tr>
+<tr>
+<td><strong>ol.style.Icon</strong></td>
+<td>Componente de estilo de OpenLayers que representa un punto mediante una imagen externa (icono).</td>
+</tr>
+<tr>
+<td><strong>ol.style.Stroke</strong></td>
+<td>Componente de estilo de OpenLayers que define el color y grosor del trazo/borde de líneas y polígonos.</td>
+</tr>
+<tr>
+<td><strong>ol.style.Style</strong></td>
+<td>Clase de OpenLayers que agrupa los distintos componentes de estilo (<code>fill</code>, <code>stroke</code>, <code>image</code>, <code>text</code>) aplicables a un objeto geográfico.</td>
+</tr>
+<tr>
+<td><strong>ol.style.Text</strong></td>
+<td>Componente de estilo de OpenLayers que añade una etiqueta de texto asociada a cualquier geometría.</td>
+</tr>
+<tr>
+<td><strong>ol.View</strong></td>
+<td>Clase de OpenLayers que define el estado de visualización del mapa: centro, zoom, proyección y rotación; puede manejarse como un objeto independiente del mapa.</td>
+</tr>
+<tr>
+<td><strong>O&amp;M (Observations &amp; Measurements)</strong></td>
+<td>Estándar OGC para codificar observaciones y mediciones de sensores.</td>
+</tr>
+<tr>
+<td><strong>OpenGIS / OGC</strong></td>
+<td>Open Geospatial Consortium; organismo que define estándares para interoperabilidad de datos geoespaciales (ej. la especificación SFSQL, WMS, WFS).</td>
+</tr>
+<tr>
+<td><strong>OpenLayers</strong></td>
+<td>Librería JavaScript open source de alto nivel (desde 2006, proyecto OSGeo) para construir mapas interactivos y aplicaciones webmapping, con gran flexibilidad de capas, formatos, estilos y proyecciones.</td>
+</tr>
+<tr>
+<td><strong>OpenLayers / Leaflet</strong></td>
+<td>Librerías JavaScript open source para construir visores de mapas web.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="p">P</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Panel de control / Dashboard (MapStore)</strong></td>
+<td>Área de trabajo de MapStore para crear una presentación combinando widgets: vistas de mapa, leyendas, textos, tablas, gráficos y contadores.</td>
+</tr>
+<tr>
+<td><strong>Path (Leaflet)</strong></td>
+<td>Clase abstracta base de Leaflet de la que heredan las capas vectoriales (<code>Polyline</code>, <code>Polygon</code>, <code>Rectangle</code>, <code>Circle</code>, <code>CircleMarker</code>), con opciones comunes de estilo (color, weight, opacity, fill) y eventos.</td>
+</tr>
+<tr>
+<td><strong>pgAdmin</strong></td>
+<td>Cliente gráfico (front-end) oficial de PostgreSQL para administrar bases de datos; más amigable que psql.</td>
+</tr>
+<tr>
+<td><strong>Plugin (Leaflet)</strong></td>
+<td>Extensión de funcionalidad de Leaflet desarrollada por la comunidad, incorporable vía CDN o descarga (ej. <code>Leaflet.Search</code> para añadir un buscador de lugares/capas al mapa).</td>
+</tr>
+<tr>
+<td><strong>POO (Programación orientada a objetos)</strong></td>
+<td>Paradigma de programación en el que se definen clases (plantillas de propiedades/métodos) de las que se crean instancias (objetos concretos); OpenLayers está construido íntegramente sobre este paradigma (<code>ol.Map</code>, <code>ol.View</code>, <code>ol.layer.*</code>, etc.).</td>
+</tr>
+<tr>
+<td><strong>Populate_Geometry_Columns()</strong></td>
+<td>Función que asegura que las columnas geométricas tengan las restricciones espaciales correctas y estén registradas en <code>geometry_columns</code>.</td>
+</tr>
+<tr>
+<td><strong>PostGIS</strong></td>
+<td>Extensión espacial de PostgreSQL que añade tipos de datos y funciones geométricas/geográficas a la base de datos.</td>
+</tr>
+<tr>
+<td><strong>PostgreSQL</strong></td>
+<td>Sistema gestor de bases de datos objeto-relacional, open source (licencia BSD), sobre el que se instala PostGIS.</td>
+</tr>
+<tr>
+<td><strong>Proj4</strong></td>
+<td>Biblioteca/formato de cadenas para definir y transformar sistemas de referencia espacial, usada internamente por PostGIS.</td>
+</tr>
+<tr>
+<td><strong>proj4text</strong></td>
+<td>Columna de <code>spatial_ref_sys</code> con la cadena de definición Proj4 de un SRID; PostGIS usa la biblioteca Proj4 para transformar coordenadas.</td>
+</tr>
+<tr>
+<td><strong>psql</strong></td>
+<td>Cliente de línea de comandos (cliente de texto) de PostgreSQL.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="q">Q</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>QGIS Server</strong></td>
+<td>Servidor de mapas web open source, complemento de QGIS que publica proyectos QGIS como servicios OGC (WMS, WFS, WCS, WMTS...).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="r">R</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reseed</strong></td>
+<td>Tipo de operación de una tarea de GeoWebCache que genera (o regenera) todos los <em>tiles</em> del área y niveles de zoom especificados.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="s">S</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>@scale</strong></td>
+<td>Operador de la sintaxis CSS de GeoServer que permite condicionar un estilo según el nivel de escala/zoom del mapa.</td>
+</tr>
+<tr>
+<td><strong>Seeding / Pregeneración de teselas</strong></td>
+<td>Estrategia de generación de teselas en la que se generan y almacenan en caché todas las teselas deseadas antes de que el cliente realice una solicitud; evita tiempos de espera para el usuario a costa de tiempo de planificación, computación y espacio en disco.</td>
+</tr>
+<tr>
+<td><strong>Seeds (operación)</strong></td>
+<td>Tipo de operación de una tarea de GeoWebCache que llena únicamente los huecos donde no existen <em>tiles</em>, sin regenerar los ya existentes.</td>
+</tr>
+<tr>
+<td><strong>SensorML</strong></td>
+<td>Estándar OGC para codificar modelos y metadatos de sensores.</td>
+</tr>
+<tr>
+<td><strong>Servlet</strong></td>
+<td>Módulo escrito en Java que se utiliza en un servidor (sea o no servidor web) para extender sus capacidades de respuesta a los clientes. GeoServer está empaquetado como un servlet independiente.</td>
+</tr>
+<tr>
+<td><strong>SFSQL (Simple Features Specification for SQL)</strong></td>
+<td>Norma de OpenGIS que define los tipos estándar de objetos GIS, las funciones para manipularlos y las tablas de metadatos asociadas. Solo maneja geometrías en 2D. PostGIS se apoya principalmente en la versión SFS1.1 (1999).</td>
+</tr>
+<tr>
+<td><strong>Shapefile (.shp)</strong></td>
+<td>Formato vectorial clásico de ESRI (años 90), muy extendido pero con limitaciones (multifile, sin definición de CRS, límite de 2GB, sin topología).</td>
+</tr>
+<tr>
+<td><strong>SLD (Styled Layer Descriptor)</strong></td>
+<td>Perfil del servicio WMS, estándar OGC basado en XML que permite personalizar la simbología y los colores de un mapa. Operaciones: GetCapabilities, GetMap (obligatorias), DescribeLayer, GetLegendGraphic (opcionales).</td>
+</tr>
+<tr>
+<td><strong>SLD Cookbook / CSS Cookbook</strong></td>
+<td>Colecciones de recetas de estilo (SLD y CSS respectivamente) publicadas en la documentación de GeoServer, con ejemplos para puntos, líneas y polígonos.</td>
+</tr>
+<tr>
+<td><strong>SOS (Sensor Observation Service)</strong></td>
+<td>Estándar OGC para acceder a datos de sensores.</td>
+</tr>
+<tr>
+<td><strong>spatial_ref_sys</strong></td>
+<td>Tabla de metadatos de PostGIS (conforme a OGC) que define ~3.000 sistemas de referencia espacial conocidos y los detalles para transformar/reproyectar entre ellos.</td>
+</tr>
+<tr>
+<td><strong>SQL-MM (SQL Multimedia Applications Spatial)</strong></td>
+<td>Especificación (documento ISO "SQL/MM Part 3: Spatial") que amplía SFSQL definiendo curvas circularmente interpoladas (CIRCULARSTRING, COMPOUNDCURVE, CURVEPOLYGON, etc.); incluye coordenadas 3dm/3dz/4d pero no SRID.</td>
+</tr>
+<tr>
+<td><strong>SRID</strong></td>
+<td>Identificador del sistema de referencia espacial (ej. 4326 = WGS84 lat/lon).</td>
+</tr>
+<tr>
+<td><strong>srtext</strong></td>
+<td>Columna de <code>spatial_ref_sys</code> con la representación WKT del sistema de referencia espacial.</td>
+</tr>
+<tr>
+<td><strong>ST_Area()</strong></td>
+<td>Devuelve el área de un polígono o multipolígono (en unidades del SRID para <code>geometry</code>, en m² para <code>geography</code>).</td>
+</tr>
+<tr>
+<td><strong>ST_AsBinary()</strong></td>
+<td>Devuelve la representación WKB de una geometría/geografía, sin metadatos SRID.</td>
+</tr>
+<tr>
+<td><strong>ST_AsEWKT() / ST_AsEWKB()</strong></td>
+<td>Devuelven la representación WKT/WKB extendida (con metadatos SRID) de una geometría.</td>
+</tr>
+<tr>
+<td><strong>ST_AsGeoJSON()</strong></td>
+<td>Devuelve una geometría como elemento GeoJSON (texto).</td>
+</tr>
+<tr>
+<td><strong>ST_AsGML() / ST_AsKML() / ST_AsSVG()</strong></td>
+<td>Devuelven una geometría en formato GML / KML / SVG respectivamente.</td>
+</tr>
+<tr>
+<td><strong>ST_AsText()</strong></td>
+<td>Función PostGIS que convierte una geometría binaria en texto WKT legible, sin metadatos SRID.</td>
+</tr>
+<tr>
+<td><strong>ST_Buffer()</strong></td>
+<td>Función PostGIS que genera una zona de influencia (área) alrededor de una geometría; el parámetro <code>quad_segs</code> controla la suavidad de las curvas.</td>
+</tr>
+<tr>
+<td><strong>ST_Centroid()</strong></td>
+<td>Función PostGIS que calcula el centroide (punto central) de una geometría.</td>
+</tr>
+<tr>
+<td><strong>ST_Crosses()</strong></td>
+<td>Comprueba si dos geometrías comparten algunos puntos interiores, pero no todos.</td>
+</tr>
+<tr>
+<td><strong>ST_Disjoint()</strong></td>
+<td>Comprueba si dos geometrías no comparten ningún espacio entre sí.</td>
+</tr>
+<tr>
+<td><strong>ST_Distance()</strong></td>
+<td>Calcula la distancia mínima entre dos geometrías; cartesiana 2D en <code>geometry</code> (en unidades del SRID), esferoidal en metros por defecto en <code>geography</code>.</td>
+</tr>
+<tr>
+<td><strong>ST_DWithin()</strong></td>
+<td>Comprueba si dos geometrías están a una distancia menor o igual a un radio dado.</td>
+</tr>
+<tr>
+<td><strong>ST_Equals()</strong></td>
+<td>Comprueba si dos geometrías representan la misma geometría espacial (ignora direccionalidad).</td>
+</tr>
+<tr>
+<td><strong>ST_ExteriorRing()</strong></td>
+<td>Devuelve el anillo exterior (linestring) de un POLYGON.</td>
+</tr>
+<tr>
+<td><strong>ST_GeographyFromText()</strong></td>
+<td>Devuelve un valor <code>geography</code> a partir de su representación WKT/WKT extendida.</td>
+</tr>
+<tr>
+<td><strong>ST_Geometry</strong></td>
+<td>Superclase de la jerarquía de tipos espaciales de la que derivan ST_Point, ST_Curve, ST_Surface, ST_GeometryCollection, etc.</td>
+</tr>
+<tr>
+<td><strong>ST_GeometryN()</strong></td>
+<td>Devuelve la geometría n-ésima (1 a N) de una colección o tipo MULTI*.</td>
+</tr>
+<tr>
+<td><strong>ST_GeometryType()</strong></td>
+<td>Devuelve el tipo de geometría (POINT, POLYGON, etc.) de un valor.</td>
+</tr>
+<tr>
+<td><strong>ST_GeomFromGML() / ST_GeomFromKML()</strong></td>
+<td>Crean una geometría PostGIS a partir de una representación GML/KML de entrada.</td>
+</tr>
+<tr>
+<td><strong>ST_GeomFromText()</strong></td>
+<td>Crea una geometría a partir de su representación WKT.</td>
+</tr>
+<tr>
+<td><strong>ST_GeomFromWKB()</strong></td>
+<td>Crea una geometría a partir de su representación WKB (y opcionalmente el SRID).</td>
+</tr>
+<tr>
+<td><strong>ST_InteriorRingN()</strong></td>
+<td>Devuelve el n-ésimo anillo interior de un POLYGON.</td>
+</tr>
+<tr>
+<td><strong>ST_Intersection()</strong></td>
+<td>Devuelve la geometría que representa la porción compartida (intersección) entre dos geometrías.</td>
+</tr>
+<tr>
+<td><strong>ST_Intersects()</strong></td>
+<td>Comprueba si dos geometrías comparten cualquier porción de espacio (no son disjuntas).</td>
+</tr>
+<tr>
+<td><strong>ST_Length()</strong></td>
+<td>Devuelve la longitud 2D de una geometría lineal (unidades del SRID en <code>geometry</code>, metros en <code>geography</code>).</td>
+</tr>
+<tr>
+<td><strong>ST_NDims()</strong></td>
+<td>Devuelve la dimensión de las coordenadas de una geometría (2, 3 o 4).</td>
+</tr>
+<tr>
+<td><strong>ST_NPoints()</strong></td>
+<td>Devuelve el número de vértices de una geometría.</td>
+</tr>
+<tr>
+<td><strong>ST_NRings()</strong></td>
+<td>Devuelve el número de anillos de un polígono o multipolígono.</td>
+</tr>
+<tr>
+<td><strong>ST_NumGeometries()</strong></td>
+<td>Devuelve el número de geometrías de una GEOMETRYCOLLECTION o tipo MULTI*.</td>
+</tr>
+<tr>
+<td><strong>Store (almacén de datos)</strong></td>
+<td>En GeoServer, contenedor de datos geográficos que se conecta a una fuente de datos raster o vectorial; está asociado a un único workspace.</td>
+</tr>
+<tr>
+<td><strong>StoryMap / Stories (MapStore)</strong></td>
+<td>Herramienta de MapStore que permite crear historias o presentaciones dinámicas combinando elementos cartográficos con recursos multimedia (texto, vídeo, fotografía).</td>
+</tr>
+<tr>
+<td><strong>ST_Overlaps()</strong></td>
+<td>Comprueba si dos geometrías de la misma dimensión comparten espacio sin que una contenga completamente a la otra.</td>
+</tr>
+<tr>
+<td><strong>ST_Perimeter()</strong></td>
+<td>Devuelve la longitud de los límites de una superficie (polígono/multipolígono).</td>
+</tr>
+<tr>
+<td><strong>ST_PointOnSurface()</strong></td>
+<td>Devuelve un punto garantizado dentro de la superficie de una geometría (útil en formas cóncavas, a diferencia de <code>ST_Centroid</code>).</td>
+</tr>
+<tr>
+<td><strong>ST_SRID()</strong></td>
+<td>Devuelve el identificador de referencia espacial (SRID) de una geometría, según <code>spatial_ref_sys</code>.</td>
+</tr>
+<tr>
+<td><strong>ST_StartPoint() / ST_EndPoint()</strong></td>
+<td>Devuelven el primer/último punto de una geometría LINESTRING como POINT.</td>
+</tr>
+<tr>
+<td><strong>ST_Touches()</strong></td>
+<td>Comprueba si dos geometrías comparten al menos un punto pero sus interiores no se intersectan.</td>
+</tr>
+<tr>
+<td><strong>ST_Transform()</strong></td>
+<td>Devuelve una nueva geometría con sus coordenadas reproyectadas a otro SRID.</td>
+</tr>
+<tr>
+<td><strong>ST_Union()</strong></td>
+<td>Devuelve la geometría que representa la unión de puntos de dos o más geometrías.</td>
+</tr>
+<tr>
+<td><strong>ST_Within() / ST_Contains()</strong></td>
+<td>Comprueban si una geometría está completamente dentro de otra (relación inversa entre ambas).</td>
+</tr>
+<tr>
+<td><strong>ST_X() / ST_Y()</strong></td>
+<td>Devuelven la coordenada X / Y de un punto.</td>
+</tr>
+<tr>
+<td><strong>StyleFunction (función de estilo)</strong></td>
+<td>Función que, en lugar de un estilo fijo, recibe cada <code>feature</code> (y la resolución del mapa) y devuelve dinámicamente el <code>ol.style.Style</code> a aplicar, permitiendo estilos condicionados por atributos o por zoom.</td>
+</tr>
+<tr>
+<td><strong>SVG / Canvas (renderers de Leaflet)</strong></td>
+<td>Motores de renderizado de las capas vectoriales de Leaflet; SVG ofrece mejor interactividad y calidad, Canvas mejor rendimiento con grandes volúmenes de datos.</td>
+</tr>
+<tr>
+<td><strong>SVG (Scalable Vector Graphics)</strong></td>
+<td>Formato vectorial gráfico; PostGIS puede exportar una geometría como ruta de datos SVG.</td>
+</tr>
+<tr>
+<td><strong>SWE (Sensor Web Enablement)</strong></td>
+<td>Estándar OGC para codificar datos relacionados con sensores.</td>
+</tr>
+<tr>
+<td><strong>symbol()</strong></td>
+<td>Función de la sintaxis CSS de GeoServer que permite usar marcas predefinidas (circle, square, triangle, arrow, cross, star…) sin necesidad de un editor de imágenes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="t">T</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tabla de contenidos (MapStore)</strong></td>
+<td>Panel de gestión de capas de MapStore desde el que se configuran, filtran, eliminan y exportan las capas del mapa, y se crean widgets.</td>
+</tr>
+<tr>
+<td><strong>Teselas vectoriales (Vector Tiles)</strong></td>
+<td>Formato de salida (no de origen) que contiene datos vectoriales georreferenciados recortados en teselas; a diferencia de las teselas de imagen, el estilo se renderiza en el cliente y no en el servidor. Estándar abierto bajo licencia Creative Commons Attribution 3.0 US.</td>
+</tr>
+<tr>
+<td><strong>TileCache</strong></td>
+<td>Software libre alternativo a GeoWebCache para el almacenamiento en caché de teselas de mapas web.</td>
+</tr>
+<tr>
+<td><strong>Tile Proxying</strong></td>
+<td>Modo de funcionamiento de GeoWebCache: actúa como proxy entre los clientes y uno o varios servidores WMS, interceptando las peticiones para servir la imagen desde caché si ya existe, o solicitarla al WMS y cachearla si no existe.</td>
+</tr>
+<tr>
+<td><strong>TJS (Georeferenced Table Join Service)</strong></td>
+<td>Estándar OGC para visualizar datos uniendo tablas georreferenciadas.</td>
+</tr>
+<tr>
+<td><strong>TopoJSON</strong></td>
+<td>Formato JSON de teselas vectoriales (<code>application/json;type=topojson</code>) que admite topología, útil para coberturas de tipo polígono; poco soportado fuera de OpenLayers.</td>
+</tr>
+<tr>
+<td><strong>Transaction (WFS-T)</strong></td>
+<td>Operación opcional de WFS que permite crear, actualizar y eliminar instancias de objetos geográficos; un servidor WFS que la soporta se llama WFS-T.</td>
+</tr>
+<tr>
+<td><strong>Tree-shaking</strong></td>
+<td>Técnica de optimización de los bundlers (como Vite/Webpack) que elimina del resultado final el código de las clases/módulos importados que no se llegan a usar realmente en la aplicación.</td>
+</tr>
+<tr>
+<td><strong>Truncate</strong></td>
+<td>Tipo de operación de una tarea de GeoWebCache que vacía la memoria caché de una capa.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="u">U</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>UTM (Universal Transverse Mercator)</strong></td>
+<td>Sistema de proyección dividido en zonas que cubren 6 grados de longitud cada una; es de los más idóneos para mediciones precisas.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="v">V</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Vidrio espía (MapStore)</strong></td>
+<td>Herramienta de comparación de capas con forma de círculo que muestra/oculta los elementos de una capa según la posición del cursor.</td>
+</tr>
+<tr>
+<td><strong>Vite</strong></td>
+<td>Herramienta moderna de compilación y servidor de desarrollo usada por <code>npm create ol-app</code> para los proyectos OpenLayers basados en npm; ofrece recarga en caliente y generación de una versión de producción optimizada (<code>npm run build</code>).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="w">W</h2>
+<table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>WCS (Web Coverage Service)</strong></td>
+<td>Estándar OGC, analogía ráster de WFS: da acceso a datos ráster (coberturas) junto con su descripción detallada y semántica original. Operaciones (todas obligatorias): GetCapabilities, DescribeCoverage, GetCoverage.</td>
+</tr>
+<tr>
+<td><strong>WCTS (Coordinate Transformation Service)</strong></td>
+<td>Estándar OGC para el procesado/transformación de coordenadas.</td>
+</tr>
+<tr>
+<td><strong>Webmapping / SIG web</strong></td>
+<td>Aplicación que permite visualizar e interactuar con cartografía y datos geográficos a través de un navegador web.</td>
+</tr>
+<tr>
+<td><strong>web.xml (GeoServer)</strong></td>
+<td>Archivo de configuración de la aplicación web de GeoServer (dentro de <code>WEB-INF</code>) donde se activa, entre otras cosas, el filtro CORS necesario para que aplicaciones OpenLayers de otro origen consuman sus servicios WMS/WFS.</td>
+</tr>
+<tr>
+<td><strong>WFS (Web Feature Service)</strong></td>
+<td>Estándar OGC para servir entidades vectoriales (features) con sus atributos.</td>
+</tr>
+<tr>
+<td><strong>WFS (Web Feature Service)</strong></td>
+<td>Estándar OGC para crear, modificar e intercambiar información geográfica vectorial vía HTTP, codificada en GML. Operaciones: GetCapabilities, DescribeFeatureType, GetFeature (obligatorias), LockFeature, Transaction (opcionales).</td>
+</tr>
+<tr>
+<td><strong>Widget (MapStore)</strong></td>
+<td>Gráfico, tabla, texto o contador generado por MapStore a partir de los datos de una capa del mapa; sus datos se sincronizan con el área visible del mapa.</td>
+</tr>
+<tr>
+<td><strong>WKB (Well-Known Binary)</strong></td>
+<td>Representación binaria de una geometría (equivalente binario del WKT); la mayoría de procesos reales la utilizan por eficiencia.</td>
+</tr>
+<tr>
+<td><strong>WKT (Well-Known Text)</strong></td>
+<td>Representación de texto plano de una geometría, ej. <code>POINT(-3.68 40.40)</code>. Sigue SFSQL; no maneja geometrías de 3-4 dimensiones.</td>
+</tr>
+<tr>
+<td><strong>WMS (Web Map Service)</strong></td>
+<td>Estándar OGC para servir mapas como imágenes ráster a través de la web.</td>
+</tr>
+<tr>
+<td><strong>WMS (Web Map Service)</strong></td>
+<td>Estándar OGC que sirve imágenes de mapas (no los datos en sí) a partir de información geográfica; permite reproyección al vuelo. Operaciones: GetCapabilities, GetMap (obligatorias), GetFeatureInfo, DescribeLayer, GetLegendGraphic (opcionales).</td>
+</tr>
+<tr>
+<td><strong>WMS en cascada</strong></td>
+<td>Almacén de datos de GeoServer que permite servir un servicio WMS externo como si fuera local, con la limitación de no poder modificar su estilo.</td>
+</tr>
+<tr>
+<td><strong>WMTS (Web Map Tile Service)</strong></td>
+<td>Estándar OGC para visualizar datos mediante teselas (tiles) pre-generadas.</td>
+</tr>
+<tr>
+<td><strong>Workspace (espacio de trabajo)</strong></td>
+<td>En GeoServer, contenedor usado para agrupar capas similares, aislado y ligado a un proyecto; formado por un nombre (máx. 10 caracteres) y un URI único. Toda capa/almacén de datos debe tener un workspace asociado.</td>
+</tr>
+<tr>
+<td><strong>WPS (Web Processing Service)</strong></td>
+<td>Estándar OGC para publicar procesos geoespaciales, algoritmos y cálculos sobre datos ráster o vectoriales. Operaciones (todas obligatorias): GetCapabilities, DescribeProcess, Execute.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.instant", "navigation.tracking", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
