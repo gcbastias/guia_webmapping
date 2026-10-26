@@ -10,19 +10,6 @@
 Esta guía visual integra las tres clases de la unidad: introducción a PostGIS, gestión de datos y análisis espacial. Las ilustraciones son explicativas; la práctica al final corresponde exclusivamente al PDF original de MappingGIS.
 
 
-## Antes de comenzar {#antes-de-comenzar}
-
-| Necesitas | Cómo saber si está listo |
-|---|---|
-| PostgreSQL con PostGIS y pgAdmin 4 | Puedes conectarte al servidor y ejecutar `SELECT version();` |
-| QGIS con el Administrador de bases de datos | Encuentras el menú **Base de datos → Administrador de BBDD** |
-| El paquete `webmapping.zip` del curso | Tienes la carpeta `Capas` con países, lugares poblados y `ne_110_rivers_lake.gpkg` |
-| Una carpeta para guardar resultados | Puedes guardar capturas y archivos exportados |
-
-**Disponibilidad de datos.** El paquete `webmapping.zip` se obtiene desde la plataforma del curso. En tu carpeta de trabajo el paquete se llama `Unidad_2/Archivos_webmapping.zip` y también está extraído en `Unidad_2/Archivos_curso_webmapping`. Copia su contenido a la ruta de práctica si lo necesitas. El sitio publicado no incluye ese paquete: los PDF por sí solos no contienen las capas. Si no lo conservas, debes recuperarlo antes de realizar las importaciones y los ejercicios que dependen de él. La creación de `lugares` y sus tres registros escritos en SQL funciona sin ese paquete, una vez activado PostGIS; las consultas sobre las capas importadas requieren los archivos del curso.
-
-**Versiones y nombres de menú.** El curso utiliza PostgreSQL 17 y PostGIS 3.5. Las rutas siguientes describen ese flujo en Windows; los nombres de algunos botones pueden variar con la versión o el idioma. Anota tus versiones para poder interpretar diferencias.
-
 ## 1. Arquitectura y datos
 
 ### Del archivo a PostGIS
@@ -263,6 +250,19 @@ Los esquemas muestran relaciones entre superficies; las definiciones también co
 
 Las consultas de la clase utilizan ejemplos de Nueva York para explicar relaciones y construcción. La práctica entregable de esta unidad utiliza las capas y ciudades indicadas en su PDF; se conserva esa distinción.
 
+
+## Antes de comenzar {#antes-de-comenzar}
+
+| Necesitas | Cómo saber si está listo |
+|---|---|
+| PostgreSQL con PostGIS y pgAdmin 4 | Puedes conectarte al servidor y ejecutar `SELECT version();` |
+| QGIS con el Administrador de bases de datos | Encuentras el menú **Base de datos → Administrador de BBDD** |
+| El paquete `webmapping.zip` del curso | Tienes la carpeta `Capas` con países, lugares poblados y `ne_110_rivers_lake.gpkg` |
+| Una carpeta para guardar resultados | Puedes guardar capturas y archivos exportados |
+
+**Disponibilidad de datos.** El paquete `webmapping.zip` se obtiene desde la plataforma del curso. En tu carpeta de trabajo el paquete se llama `Unidad_2/Archivos_webmapping.zip` y también está extraído en `Unidad_2/Archivos_curso_webmapping`. Copia su contenido a la ruta de práctica si lo necesitas. El sitio publicado no incluye ese paquete: los PDF por sí solos no contienen las capas. Si no lo conservas, debes recuperarlo antes de realizar las importaciones y los ejercicios que dependen de él. La creación de `lugares` y sus tres registros escritos en SQL funciona sin ese paquete, una vez activado PostGIS; las consultas sobre las capas importadas requieren los archivos del curso.
+
+**Versiones y nombres de menú.** El curso utiliza PostgreSQL 17 y PostGIS 3.5. Las rutas siguientes describen ese flujo en Windows; los nombres de algunos botones pueden variar con la versión o el idioma. Anota tus versiones para poder interpretar diferencias.
 
 ## Preparación de la práctica {#preparacion-practica}
 
